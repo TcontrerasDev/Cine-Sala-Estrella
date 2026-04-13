@@ -1,0 +1,404 @@
+/* ─── HOME PAGE ───────────────────────────────────────── */
+/* Estilos exclusivos de index.html */
+
+/* ─── SECCIÓN BASE ───────────────────────────────────── */
+
+.seccion {
+  padding: var(--section-padding);
+}
+
+.seccion__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+
+/* ─── CARTELERA ──────────────────────────────────────── */
+
+.seccion-cartelera {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg);
+}
+
+.cartelera__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.cartelera__header-left {}
+
+/* Grid de películas */
+.cartelera__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+/* Estado vacío si no hay películas para un filtro */
+.cartelera__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-16) 0;
+}
+
+.cartelera__empty-icon {
+  font-size: 3rem;
+  color: var(--color-verde);
+  margin-bottom: var(--space-4);
+  opacity: 0.5;
+}
+
+.cartelera__empty-text {
+  color: var(--color-gris);
+  font-size: var(--text-base);
+  max-width: none;
+}
+
+/* ─── PRÓXIMAMENTE ───────────────────────────────────── */
+
+.seccion-proximamente {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg-card);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo decorativo */
+.seccion-proximamente::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 50%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(192, 57, 43, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.proximamente__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+/* ─── HORARIOS Y PRECIOS ─────────────────────────────── */
+
+.seccion-horarios {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg);
+}
+
+.horarios__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+.horarios__sede-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: var(--border-sutil);
+  transition: border-color 0.3s var(--ease-out-strong);
+}
+
+.horarios__sede-card--pa:hover {
+  border-color: rgba(39, 174, 96, 0.3);
+}
+
+.horarios__sede-card--pn:hover {
+  border-color: rgba(192, 57, 43, 0.3);
+}
+
+.horarios__sede-header {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: var(--border-sutil);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.horarios__sede-header--pa {
+  background-color: rgba(39, 174, 96, 0.08);
+}
+
+.horarios__sede-header--pn {
+  background-color: rgba(192, 57, 43, 0.08);
+}
+
+.horarios__sede-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.horarios__sede-header--pa .horarios__sede-dot {
+  background-color: var(--color-verde-hover);
+}
+
+.horarios__sede-header--pn .horarios__sede-dot {
+  background-color: var(--color-rojo-vivo);
+}
+
+.horarios__sede-nombre {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-blanco);
+  flex: 1;
+}
+
+.horarios__sede-direccion {
+  font-size: var(--text-xs);
+  color: var(--color-gris);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.horarios__sede-body {
+  padding: var(--space-6);
+}
+
+/* Precios table */
+.precios-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: var(--space-6);
+}
+
+.precios-table th {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gris);
+  padding: 0 0 var(--space-3);
+  text-align: left;
+  border-bottom: var(--border-sutil);
+}
+
+.precios-table th:last-child { text-align: right; }
+
+.precios-table td {
+  padding: var(--space-3) 0;
+  font-size: var(--text-sm);
+  color: rgba(245, 240, 232, 0.75);
+  border-bottom: var(--border-sutil);
+  vertical-align: middle;
+}
+
+.precios-table tr:last-child td {
+  border-bottom: none;
+}
+
+.precios-table td:last-child {
+  text-align: right;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  letter-spacing: 0.04em;
+  color: var(--color-blanco);
+}
+
+.precios-table .tag-especial {
+  font-size: 10px;
+  background-color: rgba(230, 126, 34, 0.15);
+  color: var(--color-naranja);
+  border: 1px solid rgba(230, 126, 34, 0.25);
+  border-radius: var(--radius-pill);
+  padding: 1px 6px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-left: var(--space-2);
+}
+
+/* Info horarios */
+.horarios__info-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: rgba(245, 240, 232, 0.6);
+  margin-bottom: var(--space-2);
+}
+
+.horarios__info-row i {
+  color: var(--color-verde-hover);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+}
+
+.horarios__info-row.pn i {
+  color: var(--color-rojo-vivo);
+}
+
+/* ─── HISTORIA TEASER ────────────────────────────────── */
+
+.seccion-historia-teaser {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.seccion-historia-teaser::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(39, 174, 96, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.historia-teaser__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.historia-teaser__content {}
+
+.historia-teaser__year-badge {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 12vw, 10rem);
+  line-height: 0.85;
+  color: var(--color-verde);
+  opacity: 0.3;
+  letter-spacing: 0.02em;
+  margin-bottom: calc(var(--space-4) * -1);
+  user-select: none;
+}
+
+.historia-teaser__titulo {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-blanco);
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.historia-teaser__texto {
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+  color: rgba(245, 240, 232, 0.65);
+  margin-bottom: var(--space-8);
+  max-width: none;
+}
+
+.historia-teaser__imagen-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: auto auto;
+  gap: var(--space-3);
+  position: relative;
+}
+
+.historia-teaser__foto {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-verde);
+}
+
+.historia-teaser__foto:first-child {
+  grid-row: 1 / 3;
+}
+
+.historia-teaser__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.7) sepia(0.2);
+  opacity: 0.8;
+  transition: filter 0.5s var(--ease-out-strong),
+              opacity 0.5s var(--ease-out-strong);
+}
+
+.historia-teaser__foto:hover img {
+  filter: grayscale(0.2) sepia(0.1);
+  opacity: 1;
+}
+
+.historia-teaser__foto--tall img {
+  aspect-ratio: 3 / 4;
+}
+
+.historia-teaser__foto--sq img {
+  aspect-ratio: 1 / 1;
+}
+
+/* ─── RESPONSIVE HOME ────────────────────────────────── */
+
+@media (max-width: 1199px) {
+  .cartelera__grid,
+  .proximamente__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .seccion__inner {
+    padding: 0 var(--space-6);
+  }
+
+  .cartelera__grid,
+  .proximamente__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .horarios__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .historia-teaser__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .historia-teaser__imagen-grid {
+    order: -1;
+    max-height: 360px;
+  }
+}
+
+@media (max-width: 767px) {
+  .seccion-cartelera,
+  .seccion-proximamente,
+  .seccion-horarios,
+  .seccion-historia-teaser {
+    padding: var(--space-16) 0;
+  }
+
+  .cartelera__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 575px) {
+  .seccion__inner {
+    padding: 0 var(--space-4);
+  }
+
+  .cartelera__grid,
+  .proximamente__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .historia-teaser__year-badge {
+    font-size: 5rem;
+  }
+}

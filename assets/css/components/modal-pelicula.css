@@ -1,0 +1,323 @@
+/* ─── MODAL PELÍCULA ──────────────────────────────────── */
+
+/* Override Bootstrap modal — dark theme */
+#modalPelicula .modal-dialog {
+  max-width: 900px;
+  margin: var(--space-8) auto;
+}
+
+#modalPelicula .modal-content {
+  background-color: var(--color-bg-card);
+  border: var(--border-sutil);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-modal);
+  overflow: hidden;
+}
+
+/* ─── HEADER ─────────────────────────────────────────── */
+
+#modalPelicula .modal-header {
+  background-color: var(--color-negro);
+  border-bottom: var(--border-sutil);
+  padding: var(--space-4) var(--space-6);
+  align-items: center;
+}
+
+#modalPelicula .modal-title {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-blanco);
+}
+
+#modalPelicula .btn-close {
+  filter: invert(1) opacity(0.6);
+  transition: opacity 0.2s var(--ease-out-strong),
+              transform 0.15s var(--ease-out-strong);
+}
+
+#modalPelicula .btn-close:hover {
+  opacity: 1;
+  transform: rotate(90deg) scale(0.9);
+}
+
+/* ─── BODY ───────────────────────────────────────────── */
+
+#modalPelicula .modal-body {
+  padding: 0;
+}
+
+.modal-pelicula__grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+/* ─── COLUMNA IZQUIERDA: POSTER ───────────────────────── */
+
+.modal-pelicula__poster-col {
+  position: relative;
+  background-color: var(--color-negro);
+}
+
+.modal-pelicula__poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.modal-pelicula__poster-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 60%, var(--color-bg-card));
+  pointer-events: none;
+}
+
+/* ─── COLUMNA DERECHA: INFO ───────────────────────────── */
+
+.modal-pelicula__info-col {
+  padding: var(--space-8) var(--space-6) var(--space-6);
+  overflow-y: auto;
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.modal-pelicula__titulo {
+  font-family: var(--font-marca);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-black);
+  color: var(--color-blanco);
+  line-height: 1.1;
+  margin-bottom: var(--space-2);
+}
+
+.modal-pelicula__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.modal-pelicula__meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-top: var(--border-sutil);
+  border-bottom: var(--border-sutil);
+}
+
+.modal-pelicula__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.modal-pelicula__meta-label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gris);
+}
+
+.modal-pelicula__meta-value {
+  font-size: var(--text-sm);
+  color: var(--color-blanco);
+  font-weight: var(--weight-medium);
+}
+
+/* ─── SINOPSIS ───────────────────────────────────────── */
+
+.modal-pelicula__sinopsis-label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gris);
+  margin-bottom: var(--space-2);
+}
+
+.modal-pelicula__sinopsis {
+  font-size: var(--text-sm);
+  line-height: var(--leading-loose);
+  color: rgba(245, 240, 232, 0.75);
+  max-width: none;
+}
+
+/* ─── HORARIOS ───────────────────────────────────────── */
+
+.modal-pelicula__horarios {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  border: var(--border-sutil);
+}
+
+.modal-pelicula__horarios-label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gris);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.modal-pelicula__horarios-label i {
+  color: var(--color-verde-hover);
+}
+
+.modal-pelicula__horarios-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.modal-pelicula__horario-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px var(--space-4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-blanco);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: var(--border-sutil);
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-out-strong),
+              border-color 0.2s var(--ease-out-strong),
+              transform 0.15s var(--ease-out-strong);
+  min-height: 36px;
+}
+
+.modal-pelicula__horario-chip:hover {
+  background-color: rgba(39, 174, 96, 0.15);
+  border-color: rgba(39, 174, 96, 0.4);
+  color: var(--color-verde-hover);
+}
+
+.modal-pelicula__horario-chip:active {
+  transform: scale(0.96);
+}
+
+/* Override para sede PN */
+.sede-pn .modal-pelicula__horario-chip:hover {
+  background-color: rgba(192, 57, 43, 0.15);
+  border-color: rgba(192, 57, 43, 0.4);
+  color: var(--color-rojo-vivo);
+}
+
+/* Sin horarios */
+.modal-pelicula__no-horarios {
+  font-size: var(--text-sm);
+  color: var(--color-gris);
+  font-style: italic;
+}
+
+/* ─── TRAILER ────────────────────────────────────────── */
+
+.modal-pelicula__trailer {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-negro);
+  border: var(--border-sutil);
+}
+
+.modal-pelicula__trailer iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+}
+
+/* ─── CTA ────────────────────────────────────────────── */
+
+.modal-pelicula__cta {
+  padding-top: var(--space-2);
+  margin-top: auto;
+}
+
+.modal-pelicula__cta .btn-cine {
+  width: 100%;
+  justify-content: center;
+  font-size: var(--text-base);
+  padding: var(--space-4);
+}
+
+/* ─── FOOTER MODAL ───────────────────────────────────── */
+
+#modalPelicula .modal-footer {
+  background-color: var(--color-negro);
+  border-top: var(--border-sutil);
+  padding: var(--space-3) var(--space-6);
+  justify-content: space-between;
+}
+
+.modal-sede-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-gris);
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  #modalPelicula .modal-dialog {
+    margin: 0;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  #modalPelicula .modal-content {
+    height: 100%;
+    border-radius: 0;
+    border: none;
+  }
+
+  .modal-pelicula__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-pelicula__poster-col {
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .modal-pelicula__poster {
+    aspect-ratio: auto;
+    height: 300px;
+    object-fit: cover;
+    object-position: center 15%;
+  }
+
+  .modal-pelicula__poster-overlay {
+    background: linear-gradient(to bottom, transparent 50%, var(--color-bg-card));
+  }
+
+  .modal-pelicula__info-col {
+    max-height: none;
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .modal-pelicula__titulo {
+    font-size: var(--text-2xl);
+  }
+
+  .modal-pelicula__meta-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .modal-pelicula__meta-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cine Sala Estrella — La mejor experiencia cinematográfica en Magallanes. Proyección 4K en 3D, audio de 16 canales. Sedes en Punta Arenas y Puerto Natales. Abierto 365 días al año.">
+  <meta name="theme-color" content="#0A1A0F">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cine Sala Estrella — La mejor experiencia en Magallanes">
+  <meta property="og:description" content="Más de 100 años de historia familiar. Proyección 4K 3D, audio 16 canales. Punta Arenas y Puerto Natales.">
+  <meta property="og:type" content="website">
+
+  <title>Cine Sala Estrella — La mejor experiencia en Magallanes</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- CSS Base -->
+  <link rel="stylesheet" href="assets/css/base/variables.css">
+  <link rel="stylesheet" href="assets/css/base/reset.css">
+  <link rel="stylesheet" href="assets/css/base/typography.css">
+
+  <!-- CSS Components -->
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/hero.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/btn.css">
+  <link rel="stylesheet" href="assets/css/components/filtro-generos.css">
+  <link rel="stylesheet" href="assets/css/components/card-pelicula.css">
+  <link rel="stylesheet" href="assets/css/components/modal-pelicula.css">
+  <link rel="stylesheet" href="assets/css/components/sede-selector.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+
+  <!-- CSS Page -->
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+</head>
+<body class="sede-pa">
+
+  <!-- Skip to content -->
+  <a href="#main" class="skip-link">Ir al contenido principal</a>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════════ -->
+  <header>
+    <nav class="navbar-cine" role="navigation" aria-label="Navegación principal">
+      <div class="navbar-cine__inner">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar-cine__logo" aria-label="Cine Sala Estrella — Inicio">
+          <img
+            src="assets/img/logo.png"
+            alt="Cine Sala Estrella"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          >
+          <span class="navbar-cine__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+        </a>
+
+        <!-- Nav links (desktop) -->
+        <nav class="navbar-cine__nav" aria-label="Secciones">
+          <a href="#cartelera" class="navbar-cine__link">En Cartelera</a>
+          <a href="#proximamente" class="navbar-cine__link">Próximamente</a>
+          <a href="#horarios" class="navbar-cine__link">Horarios</a>
+          <a href="historia.html" class="navbar-cine__link">Historia</a>
+          <a href="contacto.html" class="navbar-cine__link">Contacto</a>
+        </nav>
+
+        <div class="navbar-cine__spacer"></div>
+
+        <!-- Selector sede (desktop) -->
+        <div class="navbar-cine__sede" role="group" aria-label="Selección de sede">
+          <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pa active" data-sede="pa" aria-pressed="true">
+            <span class="dot"></span>
+            Punta Arenas
+          </button>
+          <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pn" data-sede="pn" aria-pressed="false">
+            <span class="dot"></span>
+            Puerto Natales
+          </button>
+        </div>
+
+        <!-- Toggler mobile -->
+        <button
+          class="navbar-cine__toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNav"
+          aria-controls="offcanvasNav"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Offcanvas Mobile -->
+    <div class="offcanvas offcanvas-start offcanvas-cine" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
+      <div class="offcanvas-header">
+        <span class="navbar-cine__logo-text" id="offcanvasNavLabel">CINE SALA <span style="color: var(--color-verde-hover);">ESTRELLA</span></span>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button>
+      </div>
+      <div class="offcanvas-body">
+        <a href="#cartelera" class="nav-link-mobile" data-bs-dismiss="offcanvas">En Cartelera</a>
+        <a href="#proximamente" class="nav-link-mobile" data-bs-dismiss="offcanvas">Próximamente</a>
+        <a href="#horarios" class="nav-link-mobile" data-bs-dismiss="offcanvas">Horarios y Precios</a>
+        <a href="historia.html" class="nav-link-mobile">Historia</a>
+        <a href="contacto.html" class="nav-link-mobile">Contacto</a>
+
+        <div class="sede-section">
+          <p class="sede-label">Seleccionar sede</p>
+          <div class="sede-btns">
+            <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pa active" data-sede="pa" style="width: 100%; justify-content: flex-start; border-radius: var(--radius-md);">
+              <span class="dot"></span> Punta Arenas — Mejicana 777
+            </button>
+            <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pn" data-sede="pn" style="width: 100%; justify-content: flex-start; border-radius: var(--radius-md);">
+              <span class="dot"></span> Puerto Natales — Esmeralda 777
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ═══════════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════════ -->
+    <section class="hero" aria-label="Presentación">
+      <div class="hero__bg">
+        <img
+          src="assets/img/hero-bg.jpg"
+          alt=""
+          class="hero__bg-img"
+          aria-hidden="true"
+          onerror="this.style.display='none';"
+        >
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <span class="hero__eyebrow">Magallanes · Desde 1891</span>
+
+        <h1 class="hero__titulo">
+          La mejor<br>
+          experiencia<br>
+          en <span>Magallanes</span>
+        </h1>
+
+        <p class="hero__frase">"Quien ama la vida, ama también al cine"</p>
+
+        <div class="hero__ctas">
+          <a href="#cartelera" class="btn-cine btn-lg btn-pa" id="heroBtnCartelera">
+            <i class="bi bi-camera-reels-fill"></i>
+            Ver cartelera
+          </a>
+          <a href="#horarios" class="btn-cine btn-lg btn-ghost">
+            <i class="bi bi-clock"></i>
+            Horarios y precios
+          </a>
+        </div>
+
+        <div class="hero__sedes">
+          <div class="hero__sede-info">
+            <span class="hero__sede-nombre hero__sede-nombre--pa">
+              <i class="bi bi-geo-alt-fill"></i>
+              Punta Arenas
+            </span>
+            <span class="hero__sede-direccion">Mejicana 777 · Abierto hoy</span>
+          </div>
+          <div class="hero__sede-info">
+            <span class="hero__sede-nombre hero__sede-nombre--pn">
+              <i class="bi bi-geo-alt-fill"></i>
+              Puerto Natales
+            </span>
+            <span class="hero__sede-direccion">Esmeralda 777 · Abierto hoy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-line"></span>
+        <span class="hero__scroll-text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SEDE BANNER
+    ═══════════════════════════════════════════════════════ -->
+    <div class="sede-banner" role="banner" aria-label="Sede activa">
+      <div class="sede-banner__inner">
+        <div class="sede-banner__info">
+          <span class="sede-banner__dot sede-banner__dot--pa" data-sede-dot></span>
+          <span class="sede-banner__nombre sede-banner__nombre--pa" data-sede-nombre>Punta Arenas</span>
+          <span class="sede-banner__divider" aria-hidden="true"></span>
+          <span class="sede-banner__address">
+            <i class="bi bi-geo-alt" style="font-size: 11px;"></i>
+            <span data-sede-direccion>Mejicana 777</span>
+          </span>
+          <span class="sede-banner__divider" aria-hidden="true"></span>
+          <span class="sede-banner__address">
+            <i class="bi bi-calendar3" style="font-size: 11px;"></i>
+            Abierto 365 días al año
+          </span>
+        </div>
+
+        <div class="sede-banner__toggle" role="group" aria-label="Cambiar sede">
+          <span class="sede-banner__toggle-label">Sede:</span>
+          <button class="sede-toggle-btn active" data-sede="pa" aria-pressed="true">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--color-verde-hover);display:inline-block;"></span>
+            Punta Arenas
+          </button>
+          <button class="sede-toggle-btn" data-sede="pn" aria-pressed="false">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--color-rojo-vivo);display:inline-block;"></span>
+            Puerto Natales
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         EN CARTELERA
+    ═══════════════════════════════════════════════════════ -->
+    <section class="seccion-cartelera" id="cartelera" aria-labelledby="tituloCartelera">
+      <div class="seccion__inner">
+
+        <div class="cartelera__header">
+          <div class="cartelera__header-left">
+            <span class="label-seccion">Cartelera</span>
+            <h2 class="titulo-seccion" id="tituloCartelera">En Cartelera</h2>
+          </div>
+        </div>
+
+        <!-- Filtro géneros — llenado por JS -->
+        <div
+          class="filtro-generos"
+          id="filtroGeneros"
+          role="group"
+          aria-label="Filtrar por género"
+        ></div>
+
+        <!-- Grid de cards — llenado por JS -->
+        <div
+          class="cartelera__grid"
+          id="carteleraGrid"
+          role="list"
+          aria-label="Películas en cartelera"
+        >
+          <!-- Skeleton loaders mientras carga JS -->
+          <div style="aspect-ratio: 2/3; background: var(--color-bg-card); border-radius: var(--radius-lg); animation: pulse 1.5s ease infinite alternate;" aria-hidden="true"></div>
+          <div style="aspect-ratio: 2/3; background: var(--color-bg-card); border-radius: var(--radius-lg); animation: pulse 1.5s ease 0.1s infinite alternate;" aria-hidden="true"></div>
+          <div style="aspect-ratio: 2/3; background: var(--color-bg-card); border-radius: var(--radius-lg); animation: pulse 1.5s ease 0.2s infinite alternate;" aria-hidden="true"></div>
+          <div style="aspect-ratio: 2/3; background: var(--color-bg-card); border-radius: var(--radius-lg); animation: pulse 1.5s ease 0.3s infinite alternate;" aria-hidden="true"></div>
+        </div>
+        <style>
+          @keyframes pulse {
+            from { opacity: 0.4; }
+            to   { opacity: 0.7; }
+          }
+        </style>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         PRÓXIMAMENTE
+    ═══════════════════════════════════════════════════════ -->
+    <section class="seccion-proximamente" id="proximamente" aria-labelledby="tituloProximamente">
+      <div class="seccion__inner">
+
+        <div class="cartelera__header">
+          <div class="cartelera__header-left">
+            <span class="label-seccion" style="color: var(--color-rojo-vivo);">Cartelera</span>
+            <h2 class="titulo-seccion rojo" id="tituloProximamente">Próximamente</h2>
+          </div>
+        </div>
+
+        <!-- Grid próximamente — llenado por JS -->
+        <div
+          class="proximamente__grid"
+          id="proximamenteGrid"
+          role="list"
+          aria-label="Próximas películas"
+        ></div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HORARIOS Y PRECIOS
+    ═══════════════════════════════════════════════════════ -->
+    <section class="seccion-horarios" id="horarios" aria-labelledby="tituloHorarios">
+      <div class="seccion__inner">
+
+        <span class="label-seccion">Información</span>
+        <h2 class="titulo-seccion" id="tituloHorarios">Horarios y Precios</h2>
+
+        <div class="horarios__grid">
+
+          <!-- Punta Arenas -->
+          <article class="horarios__sede-card horarios__sede-card--pa reveal-element" aria-labelledby="horariosPATitulo">
+            <div class="horarios__sede-header horarios__sede-header--pa">
+              <span class="horarios__sede-dot"></span>
+              <span class="horarios__sede-nombre" id="horariosPATitulo">Punta Arenas</span>
+              <span class="horarios__sede-direccion">
+                <i class="bi bi-geo-alt"></i>
+                Mejicana 777
+              </span>
+            </div>
+            <div class="horarios__sede-body">
+              <table class="precios-table" aria-label="Precios sede Punta Arenas">
+                <thead>
+                  <tr>
+                    <th scope="col">Tipo de entrada</th>
+                    <th scope="col" style="text-align:right;">Precio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      General
+                      <span class="tag-especial">Lunes a viernes</span>
+                    </td>
+                    <td>$4.500</td>
+                  </tr>
+                  <tr>
+                    <td>General fin de semana</td>
+                    <td>$5.500</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Estudiante
+                      <span class="tag-especial">Con credencial</span>
+                    </td>
+                    <td>$3.500</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      3D
+                      <span class="tag-especial">Incluye lentes</span>
+                    </td>
+                    <td>$6.500</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Niños
+                      <span class="tag-especial">Hasta 10 años</span>
+                    </td>
+                    <td>$3.000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Tercera edad
+                      <span class="tag-especial">Con credencial</span>
+                    </td>
+                    <td>$3.000</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="horarios__info-row">
+                <i class="bi bi-clock-fill"></i>
+                <span>Primera función desde las 14:00 hrs</span>
+              </div>
+              <div class="horarios__info-row">
+                <i class="bi bi-calendar-check-fill"></i>
+                <span>Abierto todos los días, incluyendo festivos</span>
+              </div>
+              <div class="horarios__info-row">
+                <i class="bi bi-telephone-fill"></i>
+                <span>Consultas: +56 61 222 3456</span>
+              </div>
+
+              <div style="margin-top: var(--space-4);">
+                <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer" class="btn-cine btn-pa btn-sm">
+                  <i class="bi bi-ticket-perforated"></i>
+                  Comprar entradas en línea
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Puerto Natales -->
+          <article class="horarios__sede-card horarios__sede-card--pn reveal-element" aria-labelledby="horariosPNTitulo">
+            <div class="horarios__sede-header horarios__sede-header--pn">
+              <span class="horarios__sede-dot" style="background-color: var(--color-rojo-vivo);"></span>
+              <span class="horarios__sede-nombre" id="horariosPNTitulo">Puerto Natales</span>
+              <span class="horarios__sede-direccion">
+                <i class="bi bi-geo-alt"></i>
+                Esmeralda 777
+              </span>
+            </div>
+            <div class="horarios__sede-body">
+              <table class="precios-table" aria-label="Precios sede Puerto Natales">
+                <thead>
+                  <tr>
+                    <th scope="col">Tipo de entrada</th>
+                    <th scope="col" style="text-align:right;">Precio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      General
+                      <span class="tag-especial">Lunes a viernes</span>
+                    </td>
+                    <td>$4.000</td>
+                  </tr>
+                  <tr>
+                    <td>General fin de semana</td>
+                    <td>$5.000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Estudiante
+                      <span class="tag-especial">Con credencial</span>
+                    </td>
+                    <td>$3.000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      3D
+                      <span class="tag-especial">Incluye lentes</span>
+                    </td>
+                    <td>$6.000</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Niños
+                      <span class="tag-especial">Hasta 10 años</span>
+                    </td>
+                    <td>$2.500</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Tercera edad
+                      <span class="tag-especial">Con credencial</span>
+                    </td>
+                    <td>$2.500</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="horarios__info-row pn">
+                <i class="bi bi-clock-fill"></i>
+                <span>Primera función desde las 16:00 hrs</span>
+              </div>
+              <div class="horarios__info-row pn">
+                <i class="bi bi-calendar-check-fill"></i>
+                <span>Abierto todos los días, incluyendo festivos</span>
+              </div>
+              <div class="horarios__info-row pn">
+                <i class="bi bi-telephone-fill"></i>
+                <span>Consultas: +56 61 241 5678</span>
+              </div>
+
+              <div style="margin-top: var(--space-4);">
+                <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer" class="btn-cine btn-pn btn-sm">
+                  <i class="bi bi-ticket-perforated"></i>
+                  Comprar entradas en línea
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /.horarios__grid -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HISTORIA TEASER
+    ═══════════════════════════════════════════════════════ -->
+    <section class="seccion-historia-teaser" aria-labelledby="tituloHistoriaTeaser">
+      <div class="seccion__inner">
+        <div class="historia-teaser__grid">
+
+          <div class="historia-teaser__content">
+            <p class="historia-teaser__year-badge" aria-hidden="true">1891</p>
+            <span class="label-seccion">Nuestra historia</span>
+            <h2 class="historia-teaser__titulo" id="tituloHistoriaTeaser">
+              Más de 100 años<br>de cine en el fin<br>del mundo
+            </h2>
+            <p class="historia-teaser__texto">
+              Desde 1891, la familia Mattioni ha mantenido viva la llama del cine en Magallanes.
+              Tres generaciones, dos ciudades, una sola pasión. Hoy somos el complejo
+              cinematográfico de referencia en la Región de Magallanes con tecnología de
+              proyección de clase mundial.
+            </p>
+            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+              <a href="historia.html" class="btn-cine btn-outline-pa">
+                <i class="bi bi-book-half"></i>
+                Conocer nuestra historia
+              </a>
+            </div>
+          </div>
+
+          <div class="historia-teaser__imagen-grid">
+            <div class="historia-teaser__foto historia-teaser__foto--tall">
+              <img
+                src="https://placehold.co/400x533/0D2B1A/27AE60?text=Cine+1920s"
+                alt="Fotografía histórica del cine, décadas de 1920"
+                loading="lazy"
+              >
+            </div>
+            <div class="historia-teaser__foto historia-teaser__foto--sq">
+              <img
+                src="https://placehold.co/300x300/1A4D2E/F5F0E8?text=Sala+clásica"
+                alt="Sala de proyección clásica del Cine Sala Estrella"
+                loading="lazy"
+              >
+            </div>
+            <div class="historia-teaser__foto historia-teaser__foto--sq">
+              <img
+                src="https://placehold.co/300x300/060E08/C0392B?text=Familia+Mattioni"
+                alt="Familia Mattioni, fundadores del cine"
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__grid">
+
+        <!-- Columna marca -->
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img
+              src="assets/img/logo.png"
+              alt="Cine Sala Estrella"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            >
+            <span class="footer__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+          </div>
+          <p class="footer__tagline">"Quien ama la vida, ama también al cine"</p>
+
+          <nav class="footer__socials" aria-label="Redes sociales">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram de Cine Sala Estrella">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook de Cine Sala Estrella">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="TikTok de Cine Sala Estrella">
+              <i class="bi bi-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="YouTube de Cine Sala Estrella">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Columna sedes -->
+        <div class="footer__sedes">
+          <p class="footer__section-title">Nuestras sedes</p>
+
+          <div class="footer__sede-item">
+            <p class="footer__sede-nombre footer__sede-nombre--pa">
+              <span class="dot"></span>
+              Punta Arenas
+            </p>
+            <ul class="footer__sede-info">
+              <li>
+                <i class="bi bi-geo-alt-fill"></i>
+                Mejicana 777, Punta Arenas
+              </li>
+              <li>
+                <i class="bi bi-telephone-fill"></i>
+                +56 61 222 3456
+              </li>
+              <li>
+                <i class="bi bi-clock-fill"></i>
+                Abierto todos los días
+              </li>
+              <li>
+                <i class="bi bi-star-fill" style="color: var(--color-naranja);"></i>
+                4.5 ⭐ (1.922 reseñas)
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__sede-item">
+            <p class="footer__sede-nombre footer__sede-nombre--pn">
+              <span class="dot"></span>
+              Puerto Natales
+            </p>
+            <ul class="footer__sede-info">
+              <li>
+                <i class="bi bi-geo-alt-fill"></i>
+                Esmeralda 777, Puerto Natales
+              </li>
+              <li>
+                <i class="bi bi-telephone-fill"></i>
+                +56 61 241 5678
+              </li>
+              <li>
+                <i class="bi bi-clock-fill"></i>
+                Abierto todos los días
+              </li>
+              <li>
+                <i class="bi bi-star-fill" style="color: var(--color-naranja);"></i>
+                4.7 ⭐ (242 reseñas)
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Columna links -->
+        <div class="footer__links">
+          <p class="footer__section-title">Navegación</p>
+          <nav class="footer__nav-list" aria-label="Navegación del footer">
+            <a href="index.html">Inicio</a>
+            <a href="#cartelera">En Cartelera</a>
+            <a href="#proximamente">Próximamente</a>
+            <a href="#horarios">Horarios y Precios</a>
+            <a href="historia.html">Nuestra Historia</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer">Comprar entradas</a>
+          </nav>
+        </div>
+
+      </div><!-- /.footer__grid -->
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; 2025 <strong>Cine Sala Estrella</strong>. Todos los derechos reservados.
+          Familia Mattioni · Desde 1891 · Punta Arenas, Chile.
+        </p>
+        <nav class="footer__legal-links" aria-label="Enlaces legales">
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos de uso</a>
+          <a href="#">Condiciones de cambio</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MODAL PELÍCULA
+  ═══════════════════════════════════════════════════════ -->
+  <div
+    class="modal fade"
+    id="modalPelicula"
+    tabindex="-1"
+    aria-labelledby="modalPeliculaLabel"
+    aria-modal="true"
+    role="dialog"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modalPeliculaLabel">Título de la película</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Contenido inyectado por modal.js -->
+        </div>
+        <div class="modal-footer">
+          <div id="modalFooterSede"></div>
+          <button type="button" class="btn-cine btn-ghost btn-sm" data-bs-dismiss="modal">
+            <i class="bi bi-x-lg"></i>
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════════════════ -->
+  <!-- Bootstrap 5.3 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 1. DATA -->
+  <script src="assets/js/data/peliculas.js"></script>
+
+  <!-- 2. MÓDULOS -->
+  <script src="assets/js/sede-selector.js"></script>
+  <script src="assets/js/cartelera.js"></script>
+  <script src="assets/js/modal.js"></script>
+  <script src="assets/js/scroll-effects.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La historia de Cine Sala Estrella — más de 100 años de la familia Mattioni en Magallanes. Desde 1891 hasta hoy, el cine como institución cultural del fin del mundo.">
+  <meta name="theme-color" content="#0A1A0F">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nuestra Historia — Cine Sala Estrella desde 1891">
+  <meta property="og:description" content="Más de 100 años de historia familiar cinematográfica en Magallanes. Familia Mattioni desde 1891.">
+  <meta property="og:type" content="website">
+
+  <title>Historia — Cine Sala Estrella</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- CSS Base -->
+  <link rel="stylesheet" href="assets/css/base/variables.css">
+  <link rel="stylesheet" href="assets/css/base/reset.css">
+  <link rel="stylesheet" href="assets/css/base/typography.css">
+
+  <!-- CSS Components -->
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/btn.css">
+  <link rel="stylesheet" href="assets/css/components/timeline.css">
+  <link rel="stylesheet" href="assets/css/components/sede-selector.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+
+  <!-- CSS Page -->
+  <link rel="stylesheet" href="assets/css/pages/historia.css">
+</head>
+<body class="sede-pa">
+
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Ir al contenido principal</a>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════════ -->
+  <header>
+    <nav class="navbar-cine navbar-cine--scrolled" role="navigation" aria-label="Navegación principal">
+      <div class="navbar-cine__inner">
+
+        <a href="index.html" class="navbar-cine__logo" aria-label="Cine Sala Estrella — Inicio">
+          <img
+            src="assets/img/logo.png"
+            alt="Cine Sala Estrella"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          >
+          <span class="navbar-cine__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+        </a>
+
+        <nav class="navbar-cine__nav" aria-label="Secciones">
+          <a href="index.html#cartelera" class="navbar-cine__link">En Cartelera</a>
+          <a href="index.html#proximamente" class="navbar-cine__link">Próximamente</a>
+          <a href="index.html#horarios" class="navbar-cine__link">Horarios</a>
+          <a href="historia.html" class="navbar-cine__link active">Historia</a>
+          <a href="contacto.html" class="navbar-cine__link">Contacto</a>
+        </nav>
+
+        <div class="navbar-cine__spacer"></div>
+
+        <div class="navbar-cine__sede" role="group" aria-label="Selección de sede">
+          <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pa active" data-sede="pa">
+            <span class="dot"></span>
+            Punta Arenas
+          </button>
+          <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pn" data-sede="pn">
+            <span class="dot"></span>
+            Puerto Natales
+          </button>
+        </div>
+
+        <button
+          class="navbar-cine__toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNav"
+          aria-controls="offcanvasNav"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Offcanvas Mobile -->
+    <div class="offcanvas offcanvas-start offcanvas-cine" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
+      <div class="offcanvas-header">
+        <span class="navbar-cine__logo-text" id="offcanvasNavLabel">CINE SALA <span style="color: var(--color-verde-hover);">ESTRELLA</span></span>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button>
+      </div>
+      <div class="offcanvas-body">
+        <a href="index.html#cartelera" class="nav-link-mobile">En Cartelera</a>
+        <a href="index.html#proximamente" class="nav-link-mobile">Próximamente</a>
+        <a href="index.html#horarios" class="nav-link-mobile">Horarios y Precios</a>
+        <a href="historia.html" class="nav-link-mobile active">Historia</a>
+        <a href="contacto.html" class="nav-link-mobile">Contacto</a>
+        <div class="sede-section">
+          <p class="sede-label">Seleccionar sede</p>
+          <div class="sede-btns">
+            <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pa active" data-sede="pa" style="width: 100%; justify-content: flex-start; border-radius: var(--radius-md);">
+              <span class="dot"></span> Punta Arenas — Mejicana 777
+            </button>
+            <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pn" data-sede="pn" style="width: 100%; justify-content: flex-start; border-radius: var(--radius-md);">
+              <span class="dot"></span> Puerto Natales — Esmeralda 777
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ═══════════════════════════════════════════════════════
+         HERO HISTORIA
+    ═══════════════════════════════════════════════════════ -->
+    <section class="hero-historia" aria-label="Historia del cine">
+      <div class="hero-historia__bg" aria-hidden="true"></div>
+      <div class="hero-historia__overlay" aria-hidden="true"></div>
+      <div class="hero-historia__content">
+        <span class="hero-historia__eyebrow">Fundado en 1891 · Familia Mattioni</span>
+        <h1 class="hero-historia__titulo">
+          Una historia<br>
+          de película
+        </h1>
+        <p class="hero-historia__subtitulo">
+          Más de 100 años llevando el cine a Magallanes. Tres generaciones,
+          una pasión, una institución que pertenece a toda la región.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         INTRO ESTADÍSTICAS
+    ═══════════════════════════════════════════════════════ -->
+    <section class="historia-intro" aria-labelledby="tituloHistoriaIntro">
+      <div class="historia-intro__inner">
+        <div class="historia-intro__grid">
+
+          <div>
+            <span class="label-seccion">Nuestra identidad</span>
+            <h2 class="titulo-seccion" id="tituloHistoriaIntro">Institución cultural<br>de Magallanes</h2>
+            <p style="color: rgba(245,240,232,0.7); line-height: var(--leading-loose); margin-bottom: var(--space-4); max-width: none;">
+              El Cine Sala Estrella no es simplemente un lugar donde se proyectan películas:
+              es un pedazo de la identidad de Magallanes. Desde que Ángel Mattioni abrió
+              sus puertas en 1891, el cine ha sido testigo de bodas, primeros amores,
+              tardes de domingo y generaciones enteras de familias magallánicas.
+            </p>
+            <p style="color: rgba(245,240,232,0.7); line-height: var(--leading-loose); max-width: none;">
+              Hoy operamos con tecnología de proyección 4K en 3D y un sistema de audio de
+              16 canales, único en Chile al momento de su instalación — pero sin perder
+              jamás el calor de lo familiar. Porque el cine, como decimos nosotros,
+              es para quien ama la vida.
+            </p>
+
+            <div class="historia-intro__stats">
+              <div class="historia-stat reveal-element">
+                <div class="historia-stat__numero">+100</div>
+                <div class="historia-stat__label">Años de historia familiar ininterrumpida</div>
+              </div>
+              <div class="historia-stat historia-stat--rojo reveal-element">
+                <div class="historia-stat__numero">3</div>
+                <div class="historia-stat__label">Generaciones de la familia Mattioni</div>
+              </div>
+              <div class="historia-stat reveal-element">
+                <div class="historia-stat__numero">2</div>
+                <div class="historia-stat__label">Sedes activas en la Región de Magallanes</div>
+              </div>
+              <div class="historia-stat historia-stat--rojo reveal-element">
+                <div class="historia-stat__numero">365</div>
+                <div class="historia-stat__label">Días al año con funciones, sin excepción</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="historia-intro__imagen reveal-element">
+            <img
+              src="https://placehold.co/600x750/0D2B1A/27AE60?text=Archivo+histórico"
+              alt="Fotografía del archivo histórico del Cine Sala Estrella, Punta Arenas"
+              loading="lazy"
+            >
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         LÍNEA DE TIEMPO
+    ═══════════════════════════════════════════════════════ -->
+    <section class="historia-timeline" aria-labelledby="tituloTimeline">
+      <div class="historia-timeline__inner">
+
+        <div class="historia-timeline__header">
+          <span class="label-seccion">1891 — hoy</span>
+          <h2 class="titulo-seccion" id="tituloTimeline">La línea del tiempo</h2>
+        </div>
+
+        <div class="timeline" role="list" aria-label="Hitos históricos del Cine Sala Estrella">
+
+          <!-- 1891 -->
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__content-left">
+              <div class="timeline__card">
+                <h3 class="timeline__card-titulo">Fundación del cine</h3>
+                <p class="timeline__card-texto">
+                  Ángel Mattioni inaugura la primera sala de proyección cinematográfica
+                  de Punta Arenas. En una ciudad en pleno auge del ciclo lanar y la
+                  navegación por el Estrecho, el cine llega para quedarse como el
+                  entretenimiento preferido de los magallánicos.
+                </p>
+                <div class="timeline__card-foto">
+                  <img
+                    src="https://placehold.co/400x300/060E08/27AE60?text=1891+Fundación"
+                    alt="Fotografía de la fundación del cine en 1891"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__year-col">
+              <span class="timeline__year">1891</span>
+            </div>
+          </div>
+
+          <!-- 1920s -->
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__year-col">
+              <span class="timeline__year">1924</span>
+            </div>
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content-right">
+              <div class="timeline__card">
+                <h3 class="timeline__card-titulo">El cine del sonido</h3>
+                <p class="timeline__card-texto">
+                  Con la llegada del cine sonoro, Cine Sala Estrella moderniza su sala
+                  y se convierte en el referente del entretenimiento en Magallanes.
+                  Las colas de los domingos se extienden por la cuadra entera.
+                </p>
+                <div class="timeline__card-foto">
+                  <img
+                    src="https://placehold.co/400x300/0D2B1A/F5F0E8?text=1920s+El+sonido"
+                    alt="Fotografía de la sala en los años 1920"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1950s -->
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__content-left">
+              <div class="timeline__card">
+                <h3 class="timeline__card-titulo">Segunda generación</h3>
+                <p class="timeline__card-texto">
+                  Los hijos de Ángel Mattioni toman las riendas del negocio familiar.
+                  La sala se amplía y moderniza. Es la época dorada: la audiencia llega
+                  a miles de espectadores semanales en una ciudad que apenas supera
+                  los 50.000 habitantes.
+                </p>
+              </div>
+            </div>
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__year-col">
+              <span class="timeline__year">1953</span>
+            </div>
+          </div>
+
+          <!-- 1970s -->
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__year-col">
+              <span class="timeline__year">1971</span>
+            </div>
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content-right">
+              <div class="timeline__card">
+                <h3 class="timeline__card-titulo">Renovación total</h3>
+                <p class="timeline__card-texto">
+                  Gran remodelación de la sala principal. Nueva butaquería, sistema
+                  de proyección moderno y acondicionamiento acústico. El cine vuelve
+                  a ser el corazón del entretenimiento en Punta Arenas frente al
+                  avance de la televisión.
+                </p>
+                <div class="timeline__card-foto">
+                  <img
+                    src="https://placehold.co/400x300/1A4D2E/E67E22?text=1971+Renovación"
+                    alt="Fotografía de la remodelación del cine en 1971"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1994 -->
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__content-left">
+              <div class="timeline__card">
+                <h3 class="timeline__card-titulo">Puerto Natales</h3>
+                <p class="timeline__card-texto">
+                  La familia Mattioni abre la segunda sede en Puerto Natales,
+                  llevando el cine a la capital de la Última Esperanza. Una ciudad
+                  que en esa época vivía el crecimiento del turismo de aventura y
+                  la Patagonia como destino mundial.
+                </p>
+              </div>
+            </div>
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__year-col">
+              <span class="timeline__year">1994</span>
+            </div>
+          </div>
+
+          <!-- 2010 -->
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__year-col">
+              <span class="timeline__year">2010</span>
+            </div>
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content-right">
+              <div class="timeline__card">
+                <h3 class="timeline__card-titulo">Era digital</h3>
+                <p class="timeline__card-texto">
+                  Transición completa a proyección digital. La tercera generación de los
+                  Mattioni invierte en equipos de última generación, garantizando la
+                  misma calidad de imagen que los grandes complejos del centro del país.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2018 -->
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__content-left">
+              <div class="timeline__card">
+                <h3 class="timeline__card-titulo">Audio de 16 canales</h3>
+                <p class="timeline__card-texto">
+                  Instalación del sistema de audio de 16 canales, único en Chile al
+                  momento de su instalación. La experiencia sonora del Cine Sala
+                  Estrella se convierte en referencia nacional. Punta Arenas suena
+                  distinto en el cine.
+                </p>
+                <div class="timeline__card-foto">
+                  <img
+                    src="https://placehold.co/400x300/0D2B1A/27AE60?text=2018+Audio+16ch"
+                    alt="Sistema de audio profesional de 16 canales instalado en 2018"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__year-col">
+              <span class="timeline__year">2018</span>
+            </div>
+          </div>
+
+          <!-- 2022 -->
+          <div class="timeline__item" role="listitem">
+            <div class="timeline__year-col">
+              <span class="timeline__year">2022</span>
+            </div>
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content-right">
+              <div class="timeline__card">
+                <h3 class="timeline__card-titulo">Proyección 4K en 3D</h3>
+                <p class="timeline__card-texto">
+                  Incorporación de proyectores 4K con capacidad 3D en ambas sedes.
+                  La imagen más nítida del extremo austral de Chile. Una inversión
+                  que reafirma el compromiso de la familia con Magallanes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hoy -->
+          <div class="timeline__item timeline__item--hoy" role="listitem">
+            <div class="timeline__content-left">
+              <div class="timeline__card">
+                <h3 class="timeline__card-titulo">Hoy: más vivos que nunca</h3>
+                <p class="timeline__card-texto">
+                  Cine Sala Estrella cumple más de 130 años siendo el corazón
+                  cinematográfico de Magallanes. Dos sedes, tecnología de primera
+                  línea, 365 días al año. La familia Mattioni sigue aquí, igual que
+                  siempre: cuidando cada función con el mismo amor del primer día.
+                </p>
+              </div>
+            </div>
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__year-col">
+              <span class="timeline__year" style="color: var(--color-verde-hover);">Hoy</span>
+            </div>
+          </div>
+
+        </div><!-- /.timeline -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HOY
+    ═══════════════════════════════════════════════════════ -->
+    <section class="historia-hoy" aria-labelledby="tituloHistoriaHoy">
+      <div class="historia-hoy__inner">
+        <div class="historia-hoy__grid">
+
+          <div class="historia-hoy__numero" aria-hidden="true">130+</div>
+
+          <div class="historia-hoy__content">
+            <span class="label-seccion">La experiencia hoy</span>
+            <h2 class="titulo-seccion" id="tituloHistoriaHoy">
+              Tecnología de primera<br>en el fin del mundo
+            </h2>
+            <p style="color: rgba(245,240,232,0.7); line-height: var(--leading-loose); margin-bottom: var(--space-6); max-width: none;">
+              Creemos que vivir en Magallanes no significa resignarse a menos.
+              Por eso invertimos en tecnología que muchos complejos del centro del
+              país no tienen. Porque la mejor experiencia de cine en Chile está aquí.
+            </p>
+
+            <div class="historia-hoy__features">
+              <div class="historia-hoy__feature reveal-element">
+                <div class="historia-hoy__feature-icon"><i class="bi bi-film"></i></div>
+                <p class="historia-hoy__feature-titulo">Proyección 4K en 3D</p>
+                <p class="historia-hoy__feature-texto">Imagen cinematográfica de resolución máxima en ambas sedes.</p>
+              </div>
+              <div class="historia-hoy__feature reveal-element">
+                <div class="historia-hoy__feature-icon"><i class="bi bi-soundwave"></i></div>
+                <p class="historia-hoy__feature-titulo">Audio 16 canales</p>
+                <p class="historia-hoy__feature-texto">Sistema único en Chile al momento de su instalación. Sonido envolvente real.</p>
+              </div>
+              <div class="historia-hoy__feature reveal-element">
+                <div class="historia-hoy__feature-icon"><i class="bi bi-calendar-check"></i></div>
+                <p class="historia-hoy__feature-titulo">Abierto 365 días</p>
+                <p class="historia-hoy__feature-texto">Sin excepción. Navidad, Año Nuevo, feriados. El cine no descansa.</p>
+              </div>
+              <div class="historia-hoy__feature reveal-element">
+                <div class="historia-hoy__feature-icon"><i class="bi bi-people-fill"></i></div>
+                <p class="historia-hoy__feature-titulo">Familia Mattioni</p>
+                <p class="historia-hoy__feature-texto">Tres generaciones al frente. El cine más personal del país.</p>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--space-8);">
+              <a href="index.html#cartelera" class="btn-cine btn-lg btn-pa">
+                <i class="bi bi-camera-reels-fill"></i>
+                Ver cartelera
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img
+              src="assets/img/logo.png"
+              alt="Cine Sala Estrella"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            >
+            <span class="footer__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+          </div>
+          <p class="footer__tagline">"Quien ama la vida, ama también al cine"</p>
+          <nav class="footer__socials" aria-label="Redes sociales">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="TikTok">
+              <i class="bi bi-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </nav>
+        </div>
+
+        <div class="footer__sedes">
+          <p class="footer__section-title">Nuestras sedes</p>
+          <div class="footer__sede-item">
+            <p class="footer__sede-nombre footer__sede-nombre--pa"><span class="dot"></span>Punta Arenas</p>
+            <ul class="footer__sede-info">
+              <li><i class="bi bi-geo-alt-fill"></i>Mejicana 777</li>
+              <li><i class="bi bi-telephone-fill"></i>+56 61 222 3456</li>
+            </ul>
+          </div>
+          <div class="footer__sede-item">
+            <p class="footer__sede-nombre footer__sede-nombre--pn"><span class="dot"></span>Puerto Natales</p>
+            <ul class="footer__sede-info">
+              <li><i class="bi bi-geo-alt-fill"></i>Esmeralda 777</li>
+              <li><i class="bi bi-telephone-fill"></i>+56 61 241 5678</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__links">
+          <p class="footer__section-title">Navegación</p>
+          <nav class="footer__nav-list" aria-label="Navegación del footer">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#cartelera">En Cartelera</a>
+            <a href="historia.html">Nuestra Historia</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer">Comprar entradas</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; 2025 <strong>Cine Sala Estrella</strong>. Todos los derechos reservados.
+          Familia Mattioni · Desde 1891 · Punta Arenas, Chile.
+        </p>
+        <nav class="footer__legal-links" aria-label="Legales">
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos de uso</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data/peliculas.js"></script>
+  <script src="assets/js/sede-selector.js"></script>
+  <script src="assets/js/scroll-effects.js"></script>
+
+</body>
+</html>

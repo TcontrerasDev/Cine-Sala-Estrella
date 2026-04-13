@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto Cine Sala Estrella — Punta Arenas (Mejicana 777) y Puerto Natales (Esmeralda 777). Horarios, teléfonos y formulario de contacto.">
+  <meta name="theme-color" content="#0A1A0F">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contacto — Cine Sala Estrella">
+  <meta property="og:description" content="Punta Arenas: Mejicana 777. Puerto Natales: Esmeralda 777. Abiertos 365 días al año.">
+  <meta property="og:type" content="website">
+
+  <title>Contacto — Cine Sala Estrella</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- CSS Base -->
+  <link rel="stylesheet" href="assets/css/base/variables.css">
+  <link rel="stylesheet" href="assets/css/base/reset.css">
+  <link rel="stylesheet" href="assets/css/base/typography.css">
+
+  <!-- CSS Components -->
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/btn.css">
+  <link rel="stylesheet" href="assets/css/components/sede-selector.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+
+  <!-- CSS Page -->
+  <link rel="stylesheet" href="assets/css/pages/contacto.css">
+</head>
+<body class="sede-pa">
+
+  <a href="#main" class="skip-link">Ir al contenido principal</a>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════════ -->
+  <header>
+    <nav class="navbar-cine navbar-cine--scrolled" role="navigation" aria-label="Navegación principal">
+      <div class="navbar-cine__inner">
+
+        <a href="index.html" class="navbar-cine__logo" aria-label="Cine Sala Estrella — Inicio">
+          <img
+            src="assets/img/logo.png"
+            alt="Cine Sala Estrella"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          >
+          <span class="navbar-cine__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+        </a>
+
+        <nav class="navbar-cine__nav" aria-label="Secciones">
+          <a href="index.html#cartelera" class="navbar-cine__link">En Cartelera</a>
+          <a href="index.html#proximamente" class="navbar-cine__link">Próximamente</a>
+          <a href="index.html#horarios" class="navbar-cine__link">Horarios</a>
+          <a href="historia.html" class="navbar-cine__link">Historia</a>
+          <a href="contacto.html" class="navbar-cine__link active">Contacto</a>
+        </nav>
+
+        <div class="navbar-cine__spacer"></div>
+
+        <div class="navbar-cine__sede" role="group" aria-label="Selección de sede">
+          <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pa active" data-sede="pa">
+            <span class="dot"></span>
+            Punta Arenas
+          </button>
+          <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pn" data-sede="pn">
+            <span class="dot"></span>
+            Puerto Natales
+          </button>
+        </div>
+
+        <button
+          class="navbar-cine__toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNav"
+          aria-controls="offcanvasNav"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Offcanvas Mobile -->
+    <div class="offcanvas offcanvas-start offcanvas-cine" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
+      <div class="offcanvas-header">
+        <span class="navbar-cine__logo-text" id="offcanvasNavLabel">CINE SALA <span style="color: var(--color-verde-hover);">ESTRELLA</span></span>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button>
+      </div>
+      <div class="offcanvas-body">
+        <a href="index.html#cartelera" class="nav-link-mobile">En Cartelera</a>
+        <a href="index.html#proximamente" class="nav-link-mobile">Próximamente</a>
+        <a href="index.html#horarios" class="nav-link-mobile">Horarios y Precios</a>
+        <a href="historia.html" class="nav-link-mobile">Historia</a>
+        <a href="contacto.html" class="nav-link-mobile active">Contacto</a>
+        <div class="sede-section">
+          <p class="sede-label">Seleccionar sede</p>
+          <div class="sede-btns">
+            <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pa active" data-sede="pa" style="width:100%;justify-content:flex-start;border-radius:var(--radius-md);">
+              <span class="dot"></span> Punta Arenas — Mejicana 777
+            </button>
+            <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pn" data-sede="pn" style="width:100%;justify-content:flex-start;border-radius:var(--radius-md);">
+              <span class="dot"></span> Puerto Natales — Esmeralda 777
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ═══════════════════════════════════════════════════════
+         HERO CONTACTO
+    ═══════════════════════════════════════════════════════ -->
+    <section class="hero-contacto" aria-label="Contacto">
+      <div class="hero-contacto__inner">
+        <span class="label-seccion">¿Necesitas ayuda?</span>
+        <h1 class="titulo-seccion" style="font-family: var(--font-marca); font-size: clamp(2.5rem, 6vw, 5rem); font-weight: var(--weight-black); letter-spacing: 0.02em; text-transform: none; padding-bottom: var(--space-4);">
+          Estamos aquí
+        </h1>
+        <p style="font-size: var(--text-lg); color: rgba(245,240,232,0.65); max-width: 520px; line-height: var(--leading-loose);">
+          Dos sedes en Magallanes, abiertas todos los días del año.
+          Escríbenos, llámanos o simplemente ven.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SEDES CONTACTO
+    ═══════════════════════════════════════════════════════ -->
+    <section class="contacto-main" aria-labelledby="tituloContactoSedes">
+      <div class="contacto-main__inner">
+
+        <span class="label-seccion">Dónde estamos</span>
+        <h2 class="titulo-seccion" id="tituloContactoSedes">Nuestras sedes</h2>
+
+        <div class="contacto-sedes__grid">
+
+          <!-- Punta Arenas -->
+          <article class="contacto-sede-card contacto-sede-card--pa reveal-element" aria-labelledby="contactoPATitulo">
+            <div class="contacto-sede-card__header contacto-sede-card__header--pa">
+              <span class="contacto-sede-card__dot"></span>
+              <h3 class="contacto-sede-card__nombre" id="contactoPATitulo">Punta Arenas</h3>
+            </div>
+            <div class="contacto-sede-card__body">
+
+              <ul class="contacto-info-list">
+                <li class="contacto-info-item">
+                  <div class="contacto-info-item__icon">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div class="contacto-info-item__content">
+                    <p class="contacto-info-item__label">Dirección</p>
+                    <p class="contacto-info-item__value">Mejicana 777, Punta Arenas<br>Región de Magallanes, Chile</p>
+                  </div>
+                </li>
+                <li class="contacto-info-item">
+                  <div class="contacto-info-item__icon">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <div class="contacto-info-item__content">
+                    <p class="contacto-info-item__label">Teléfono</p>
+                    <p class="contacto-info-item__value">
+                      <a href="tel:+56612223456" style="color: var(--color-verde-hover);">+56 61 222 3456</a>
+                    </p>
+                  </div>
+                </li>
+                <li class="contacto-info-item">
+                  <div class="contacto-info-item__icon">
+                    <i class="bi bi-envelope-fill"></i>
+                  </div>
+                  <div class="contacto-info-item__content">
+                    <p class="contacto-info-item__label">Email</p>
+                    <p class="contacto-info-item__value">
+                      <a href="mailto:puntaarenas@cineestrella.cl" style="color: var(--color-verde-hover);">puntaarenas@cineestrella.cl</a>
+                    </p>
+                  </div>
+                </li>
+                <li class="contacto-info-item">
+                  <div class="contacto-info-item__icon">
+                    <i class="bi bi-clock-fill"></i>
+                  </div>
+                  <div class="contacto-info-item__content">
+                    <p class="contacto-info-item__label">Horario de atención</p>
+                    <p class="contacto-info-item__value">Todos los días — primera función 14:00 hrs</p>
+                  </div>
+                </li>
+                <li class="contacto-info-item">
+                  <div class="contacto-info-item__icon">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="contacto-info-item__content">
+                    <p class="contacto-info-item__label">Valoración en Google</p>
+                    <p class="contacto-info-item__value">4.5 / 5.0 — 1.922 reseñas</p>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- Mapa Punta Arenas -->
+              <div class="contacto-mapa" aria-label="Mapa ubicación Punta Arenas">
+                <div class="contacto-mapa__placeholder">
+                  <i class="bi bi-map"></i>
+                  <p>Mejicana 777, Punta Arenas</p>
+                  <a
+                    href="https://maps.google.com/?q=Mejicana+777+Punta+Arenas+Chile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-cine btn-sm btn-outline-pa"
+                  >
+                    <i class="bi bi-box-arrow-up-right"></i>
+                    Ver en Google Maps
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- Puerto Natales -->
+          <article class="contacto-sede-card contacto-sede-card--pn reveal-element" aria-labelledby="contactoPNTitulo">
+            <div class="contacto-sede-card__header contacto-sede-card__header--pn">
+              <span class="contacto-sede-card__dot"></span>
+              <h3 class="contacto-sede-card__nombre" id="contactoPNTitulo">Puerto Natales</h3>
+            </div>
+            <div class="contacto-sede-card__body">
+
+              <ul class="contacto-info-list">
+                <li class="contacto-info-item">
+                  <div class="contacto-info-item__icon">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div class="contacto-info-item__content">
+                    <p class="contacto-info-item__label">Dirección</p>
+                    <p class="contacto-info-item__value">Esmeralda 777, Puerto Natales<br>Región de Magallanes, Chile</p>
+                  </div>
+                </li>
+                <li class="contacto-info-item">
+                  <div class="contacto-info-item__icon">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <div class="contacto-info-item__content">
+                    <p class="contacto-info-item__label">Teléfono</p>
+                    <p class="contacto-info-item__value">
+                      <a href="tel:+56612415678" style="color: var(--color-rojo-vivo);">+56 61 241 5678</a>
+                    </p>
+                  </div>
+                </li>
+                <li class="contacto-info-item">
+                  <div class="contacto-info-item__icon">
+                    <i class="bi bi-envelope-fill"></i>
+                  </div>
+                  <div class="contacto-info-item__content">
+                    <p class="contacto-info-item__label">Email</p>
+                    <p class="contacto-info-item__value">
+                      <a href="mailto:puertonatales@cineestrella.cl" style="color: var(--color-rojo-vivo);">puertonatales@cineestrella.cl</a>
+                    </p>
+                  </div>
+                </li>
+                <li class="contacto-info-item">
+                  <div class="contacto-info-item__icon">
+                    <i class="bi bi-clock-fill"></i>
+                  </div>
+                  <div class="contacto-info-item__content">
+                    <p class="contacto-info-item__label">Horario de atención</p>
+                    <p class="contacto-info-item__value">Todos los días — primera función 16:00 hrs</p>
+                  </div>
+                </li>
+                <li class="contacto-info-item">
+                  <div class="contacto-info-item__icon">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="contacto-info-item__content">
+                    <p class="contacto-info-item__label">Valoración en Google</p>
+                    <p class="contacto-info-item__value">4.7 / 5.0 — 242 reseñas</p>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- Mapa Puerto Natales -->
+              <div class="contacto-mapa" aria-label="Mapa ubicación Puerto Natales">
+                <div class="contacto-mapa__placeholder">
+                  <i class="bi bi-map"></i>
+                  <p>Esmeralda 777, Puerto Natales</p>
+                  <a
+                    href="https://maps.google.com/?q=Esmeralda+777+Puerto+Natales+Chile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-cine btn-sm btn-outline-pn"
+                  >
+                    <i class="bi bi-box-arrow-up-right"></i>
+                    Ver en Google Maps
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+        </div><!-- /.contacto-sedes__grid -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         FORMULARIO
+    ═══════════════════════════════════════════════════════ -->
+    <section class="contacto-form-section" aria-labelledby="tituloFormulario">
+      <div class="contacto-form-section__inner">
+
+        <div class="contacto-form-grid">
+
+          <!-- Columna info -->
+          <div>
+            <span class="label-seccion">Escríbenos</span>
+            <h2 class="titulo-seccion" id="tituloFormulario">¿Tienes alguna<br>consulta?</h2>
+            <p style="color: rgba(245,240,232,0.65); line-height: var(--leading-loose); margin-bottom: var(--space-8); max-width: none;">
+              Para reservas de sala, auspicios, colegios y grupos,
+              condiciones especiales o simplemente para saludar.
+              Respondemos en menos de 24 horas.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+              <div style="display: flex; align-items: center; gap: var(--space-3);">
+                <div style="width: 40px; height: 40px; border-radius: var(--radius-md); background: rgba(39,174,96,0.1); display:flex; align-items:center; justify-content:center; color: var(--color-verde-hover); font-size: 1.1rem; flex-shrink:0;">
+                  <i class="bi bi-lightning-charge-fill"></i>
+                </div>
+                <div>
+                  <p style="font-weight: var(--weight-bold); color: var(--color-blanco); font-size: var(--text-sm); margin-bottom: 0; max-width: none;">Respuesta rápida</p>
+                  <p style="font-size: var(--text-xs); color: var(--color-gris); max-width: none;">Respondemos en menos de 24 horas hábiles.</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-3);">
+                <div style="width: 40px; height: 40px; border-radius: var(--radius-md); background: rgba(39,174,96,0.1); display:flex; align-items:center; justify-content:center; color: var(--color-verde-hover); font-size: 1.1rem; flex-shrink:0;">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <div>
+                  <p style="font-weight: var(--weight-bold); color: var(--color-blanco); font-size: var(--text-sm); margin-bottom: 0; max-width: none;">Atención personalizada</p>
+                  <p style="font-size: var(--text-xs); color: var(--color-gris); max-width: none;">Hablamos directamente con la familia Mattioni.</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-3);">
+                <div style="width: 40px; height: 40px; border-radius: var(--radius-md); background: rgba(39,174,96,0.1); display:flex; align-items:center; justify-content:center; color: var(--color-verde-hover); font-size: 1.1rem; flex-shrink:0;">
+                  <i class="bi bi-ticket-perforated-fill"></i>
+                </div>
+                <div>
+                  <p style="font-weight: var(--weight-bold); color: var(--color-blanco); font-size: var(--text-sm); margin-bottom: 0; max-width: none;">Entradas en línea</p>
+                  <p style="font-size: var(--text-xs); color: var(--color-gris); max-width: none;">
+                    Compra en <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer" style="color: var(--color-verde-hover);">cineestrella.cl</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <div>
+            <form
+              class="contacto-form__card"
+              id="contactoForm"
+              novalidate
+              aria-label="Formulario de contacto"
+            >
+              <div class="contacto-form__group">
+                <label class="contacto-form__label" for="contactoNombre">Nombre completo</label>
+                <input
+                  type="text"
+                  id="contactoNombre"
+                  name="nombre"
+                  class="contacto-form__input"
+                  placeholder="Tu nombre"
+                  required
+                  autocomplete="name"
+                >
+                <span class="contacto-form__error" role="alert">Por favor ingresa tu nombre.</span>
+              </div>
+
+              <div class="contacto-form__group">
+                <label class="contacto-form__label" for="contactoEmail">Correo electrónico</label>
+                <input
+                  type="email"
+                  id="contactoEmail"
+                  name="email"
+                  class="contacto-form__input"
+                  placeholder="tu@correo.cl"
+                  required
+                  autocomplete="email"
+                >
+                <span class="contacto-form__error" role="alert">Ingresa un correo válido.</span>
+              </div>
+
+              <div class="contacto-form__group">
+                <label class="contacto-form__label" for="contactoSede">Sede de interés</label>
+                <select id="contactoSede" name="sede" class="contacto-form__select">
+                  <option value="">Seleccionar sede</option>
+                  <option value="pa">Punta Arenas</option>
+                  <option value="pn">Puerto Natales</option>
+                  <option value="ambas">Ambas sedes</option>
+                </select>
+              </div>
+
+              <div class="contacto-form__group">
+                <label class="contacto-form__label" for="contactoAsunto">Asunto</label>
+                <select id="contactoAsunto" name="asunto" class="contacto-form__select" required>
+                  <option value="">Seleccionar asunto</option>
+                  <option value="info">Información general</option>
+                  <option value="reserva">Reserva de sala</option>
+                  <option value="grupo">Visita de grupo / colegio</option>
+                  <option value="auspicios">Auspicios</option>
+                  <option value="prensa">Prensa</option>
+                  <option value="otro">Otro</option>
+                </select>
+                <span class="contacto-form__error" role="alert">Selecciona un asunto.</span>
+              </div>
+
+              <div class="contacto-form__group">
+                <label class="contacto-form__label" for="contactoMensaje">Mensaje</label>
+                <textarea
+                  id="contactoMensaje"
+                  name="mensaje"
+                  class="contacto-form__textarea"
+                  placeholder="Cuéntanos en qué podemos ayudarte..."
+                  required
+                  rows="5"
+                ></textarea>
+                <span class="contacto-form__error" role="alert">Escribe tu mensaje.</span>
+              </div>
+
+              <button type="submit" class="btn-cine btn-pa btn-lg contacto-form__submit">
+                <i class="bi bi-send-fill"></i>
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
+
+        </div><!-- /.contacto-form-grid -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img
+              src="assets/img/logo.png"
+              alt="Cine Sala Estrella"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            >
+            <span class="footer__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+          </div>
+          <p class="footer__tagline">"Quien ama la vida, ama también al cine"</p>
+          <nav class="footer__socials" aria-label="Redes sociales">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </nav>
+        </div>
+        <div class="footer__sedes">
+          <p class="footer__section-title">Nuestras sedes</p>
+          <div class="footer__sede-item">
+            <p class="footer__sede-nombre footer__sede-nombre--pa"><span class="dot"></span>Punta Arenas</p>
+            <ul class="footer__sede-info">
+              <li><i class="bi bi-geo-alt-fill"></i>Mejicana 777</li>
+              <li><i class="bi bi-telephone-fill"></i>+56 61 222 3456</li>
+            </ul>
+          </div>
+          <div class="footer__sede-item">
+            <p class="footer__sede-nombre footer__sede-nombre--pn"><span class="dot"></span>Puerto Natales</p>
+            <ul class="footer__sede-info">
+              <li><i class="bi bi-geo-alt-fill"></i>Esmeralda 777</li>
+              <li><i class="bi bi-telephone-fill"></i>+56 61 241 5678</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__links">
+          <p class="footer__section-title">Navegación</p>
+          <nav class="footer__nav-list" aria-label="Navegación del footer">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#cartelera">En Cartelera</a>
+            <a href="historia.html">Nuestra Historia</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer">Comprar entradas</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; 2025 <strong>Cine Sala Estrella</strong>. Todos los derechos reservados.
+          Familia Mattioni · Desde 1891 · Punta Arenas, Chile.
+        </p>
+        <nav class="footer__legal-links" aria-label="Legales">
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos de uso</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data/peliculas.js"></script>
+  <script src="assets/js/sede-selector.js"></script>
+  <script src="assets/js/scroll-effects.js"></script>
+
+  <!-- Validación del formulario -->
+  <script>
+    (function () {
+      'use strict';
+      const form = document.getElementById('contactoForm');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let valid = true;
+
+        ['contactoNombre', 'contactoEmail', 'contactoAsunto', 'contactoMensaje'].forEach(id => {
+          const input = document.getElementById(id);
+          const group = input ? input.closest('.contacto-form__group') : null;
+          if (!group) return;
+
+          const val = input.value.trim();
+          const isEmail = input.type === 'email';
+          const emailValid = isEmail ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) : true;
+
+          if (!val || !emailValid) {
+            group.classList.add('has-error');
+            valid = false;
+          } else {
+            group.classList.remove('has-error');
+          }
+        });
+
+        if (valid) {
+          const btn = form.querySelector('[type="submit"]');
+          btn.innerHTML = '<i class="bi bi-check-circle-fill"></i> Mensaje enviado';
+          btn.disabled = true;
+          setTimeout(() => {
+            btn.innerHTML = '<i class="bi bi-send-fill"></i> Enviar mensaje';
+            btn.disabled = false;
+            form.reset();
+          }, 3500);
+        }
+      });
+
+      /* Limpiar errores al escribir */
+      form.querySelectorAll('input, select, textarea').forEach(el => {
+        el.addEventListener('input', () => {
+          el.closest('.contacto-form__group')?.classList.remove('has-error');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

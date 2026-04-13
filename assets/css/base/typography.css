@@ -1,0 +1,182 @@
+/* ─── TIPOGRAFÍA BASE ─────────────────────────────────── */
+
+/* Google Fonts — cargadas aquí como @import de respaldo
+   (preferiblemente via <link> en HTML para performance) */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+
+/* ─── JERARQUÍA ─────────────────────────────────────── */
+
+h1, .h1 {
+  font-family: var(--font-marca);
+  font-weight: var(--weight-black);
+  font-size: var(--text-hero);
+  line-height: var(--leading-tight);
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+h3, .h3 {
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  text-align: left;
+}
+
+h4, .h4 {
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  text-align: left;
+}
+
+h5, .h5 {
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  text-align: left;
+}
+
+h6, .h6 {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  text-align: left;
+}
+
+p {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+  color: var(--color-blanco);
+  text-align: left;
+  max-width: 65ch;
+}
+
+/* Nunca justificado */
+p, li, td, th {
+  text-align: left;
+}
+
+/* ─── UTILIDADES TIPOGRÁFICAS ───────────────────────── */
+
+.font-display  { font-family: var(--font-display); }
+.font-marca    { font-family: var(--font-marca); }
+.font-body     { font-family: var(--font-body); }
+
+.text-xs       { font-size: var(--text-xs); }
+.text-sm       { font-size: var(--text-sm); }
+.text-base     { font-size: var(--text-base); }
+.text-lg       { font-size: var(--text-lg); }
+.text-xl       { font-size: var(--text-xl); }
+.text-2xl      { font-size: var(--text-2xl); }
+.text-3xl      { font-size: var(--text-3xl); }
+.text-4xl      { font-size: var(--text-4xl); }
+
+.text-gris     { color: var(--color-gris); }
+.text-verde    { color: var(--color-verde-hover); }
+.text-rojo     { color: var(--color-rojo-vivo); }
+.text-naranja  { color: var(--color-naranja); }
+
+.uppercase     { text-transform: uppercase; }
+.tracking-wide { letter-spacing: 0.1em; }
+.tracking-display { letter-spacing: 0.05em; }
+
+/* Sección label — eyebrow tag */
+.label-seccion {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-verde-hover);
+  margin-bottom: var(--space-3);
+}
+
+/* Tagline / frase filosófica */
+.tagline {
+  font-family: var(--font-marca);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: var(--weight-regular);
+  font-style: italic;
+  color: var(--color-blanco);
+  opacity: 0.75;
+  letter-spacing: 0.03em;
+}
+
+/* Título de sección con línea decorativa */
+.titulo-seccion {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-blanco);
+  position: relative;
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.titulo-seccion::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-verde-hover);
+  border-radius: var(--radius-pill);
+}
+
+.titulo-seccion.rojo::after {
+  background-color: var(--color-rojo);
+}
+
+/* Links */
+a.link-acento {
+  color: var(--color-verde-hover);
+  font-weight: var(--weight-medium);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s var(--ease-out-strong);
+}
+
+a.link-acento:hover {
+  color: var(--color-verde-hover);
+  border-bottom-color: var(--color-verde-hover);
+}
+
+/* Sinopsis / cuerpo de texto */
+.sinopsis {
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+  color: rgba(245, 240, 232, 0.8);
+}
+
+/* Metadatos (duración, director, etc.) */
+.meta {
+  font-size: var(--text-sm);
+  color: var(--color-gris);
+  font-weight: var(--weight-light);
+}
+
+/* Precio */
+.precio {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  letter-spacing: 0.04em;
+  color: var(--color-blanco);
+}
