@@ -18,30 +18,30 @@
 /* ─── SEDE ───────────────────────────────────────────── */
 
 .badge-pa {
-  background-color: rgba(39, 174, 96, 0.15);
-  color: var(--color-verde-hover);
-  border: 1px solid rgba(39, 174, 96, 0.35);
+  background-color: transparent;
+  color: var(--color-blanco);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .badge-pn {
-  background-color: rgba(192, 57, 43, 0.15);
-  color: var(--color-rojo-vivo);
-  border: 1px solid rgba(192, 57, 43, 0.35);
+  background-color: transparent;
+  color: var(--color-blanco);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* ─── CLASIFICACIÓN ETARIA ───────────────────────────── */
 
 .badge-clasificacion {
-  background-color: rgba(230, 126, 34, 0.15);
+  background-color: rgba(197, 163, 127, 0.15);
   color: var(--color-naranja);
-  border: 1px solid rgba(230, 126, 34, 0.35);
+  border: 1px solid rgba(197, 163, 127, 0.35);
   font-weight: var(--weight-bold);
 }
 
 .badge-atp {
-  background-color: rgba(39, 174, 96, 0.1);
-  color: var(--color-verde-hover);
-  border: 1px solid rgba(39, 174, 96, 0.25);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(245, 240, 232, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ─── GÉNEROS ────────────────────────────────────────── */
@@ -81,3 +81,5 @@
   font-weight: var(--weight-black);
   padding: 2px 7px;
 }
+
+

@@ -75,7 +75,7 @@
   right: -10%;
   width: 50%;
   height: 200%;
-  background: radial-gradient(ellipse at center, rgba(192, 57, 43, 0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(169, 50, 38, 0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -107,11 +107,11 @@
 }
 
 .horarios__sede-card--pa:hover {
-  border-color: rgba(39, 174, 96, 0.3);
+  border-color: rgba(46, 204, 113, 0.3);
 }
 
 .horarios__sede-card--pn:hover {
-  border-color: rgba(192, 57, 43, 0.3);
+  border-color: rgba(169, 50, 38, 0.3);
 }
 
 .horarios__sede-header {
@@ -123,11 +123,11 @@
 }
 
 .horarios__sede-header--pa {
-  background-color: rgba(39, 174, 96, 0.08);
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 .horarios__sede-header--pn {
-  background-color: rgba(192, 57, 43, 0.08);
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 .horarios__sede-dot {
@@ -209,9 +209,9 @@
 
 .precios-table .tag-especial {
   font-size: 10px;
-  background-color: rgba(230, 126, 34, 0.15);
+  background-color: rgba(197, 163, 127, 0.15);
   color: var(--color-naranja);
-  border: 1px solid rgba(230, 126, 34, 0.25);
+  border: 1px solid rgba(197, 163, 127, 0.25);
   border-radius: var(--radius-pill);
   padding: 1px 6px;
   letter-spacing: 0.04em;
@@ -230,13 +230,13 @@
 }
 
 .horarios__info-row i {
-  color: var(--color-verde-hover);
+  color: var(--color-gris);
   font-size: var(--text-sm);
   flex-shrink: 0;
 }
 
 .horarios__info-row.pn i {
-  color: var(--color-rojo-vivo);
+  color: var(--color-gris);
 }
 
 /* ─── HISTORIA TEASER ────────────────────────────────── */
@@ -253,7 +253,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(39, 174, 96, 0.06) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(46, 204, 113, 0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -271,7 +271,7 @@
   font-size: clamp(5rem, 12vw, 10rem);
   line-height: 0.85;
   color: var(--color-verde);
-  opacity: 0.3;
+  opacity: 0.06;
   letter-spacing: 0.02em;
   margin-bottom: calc(var(--space-4) * -1);
   user-select: none;
@@ -402,3 +402,4 @@
     font-size: 5rem;
   }
 }
+

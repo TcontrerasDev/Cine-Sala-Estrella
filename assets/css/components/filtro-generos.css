@@ -53,15 +53,15 @@
 }
 
 .filtro-btn.active {
-  background-color: var(--color-verde-hover);
-  border-color: var(--color-verde-hover);
-  color: var(--color-negro);
+  background-color: var(--color-verde);
+  border-color: rgba(30, 86, 49, 0.8);
+  color: var(--color-blanco);
   font-weight: var(--weight-bold);
 }
 
 .filtro-btn.active:hover {
-  background-color: var(--color-verde-hover-alt);
-  border-color: var(--color-verde-hover-alt);
+  background-color: rgba(30, 86, 49, 0.9);
+  border-color: var(--color-verde);
 }
 
 /* Contador (opcional) */
@@ -96,3 +96,4 @@
     margin-bottom: var(--space-1);
   }
 }
+

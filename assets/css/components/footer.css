@@ -48,7 +48,7 @@
 }
 
 .footer__logo-text span {
-  color: var(--color-verde-hover);
+  color: var(--color-blanco);
 }
 
 .footer__tagline {
@@ -87,9 +87,9 @@
 }
 
 .footer__social-link:hover {
-  background-color: rgba(39, 174, 96, 0.12);
-  border-color: rgba(39, 174, 96, 0.35);
-  color: var(--color-verde-hover);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-blanco);
   transform: translateY(-2px);
 }
 
@@ -126,11 +126,11 @@
 }
 
 .footer__sede-nombre--pa {
-  color: var(--color-verde-hover);
+  color: var(--color-blanco);
 }
 
 .footer__sede-nombre--pn {
-  color: var(--color-rojo-vivo);
+  color: var(--color-blanco);
 }
 
 .footer__sede-nombre .dot {
@@ -184,7 +184,7 @@
 }
 
 .footer__nav-list a:hover {
-  color: var(--color-verde-hover);
+  color: var(--color-blanco);
   padding-left: var(--space-2);
 }
 
@@ -258,3 +258,4 @@
     gap: var(--space-3);
   }
 }
+

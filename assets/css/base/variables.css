@@ -1,21 +1,21 @@
 :root {
 
-  /* ─── COLORES ─────────────────────────────────── */
-  --color-bg:              #0A1A0F;
-  --color-bg-card:         #0D2B1A;
-  --color-verde:           #1A4D2E;
-  --color-verde-hover:     #27AE60;
-  --color-verde-hover-alt: #2ecc71;   /* Verde hover bright — botones activos */
-  --color-rojo:            #C0392B;
-  --color-rojo-vivo:       #E74C3C;
-  --color-naranja:         #E67E22;
-  --color-blanco:          #F5F0E8;
-  --color-gris:            #8A8A8A;
-  --color-negro:           #060E08;
+  /* ─── COLORES VIVOS Y CINEMATOGRÁFICOS ───────────────── */
+  --color-bg:              #0A0F0B;   /* Negro verdoso muy profundo */
+  --color-bg-card:         #0F1611;   /* Fondo de card un poco más claro */
+  --color-verde:           #1E5631;   /* Verde bosque profundo y vivo (Sede PA) */
+  --color-verde-hover:     #2ECC71;   /* Verde esmeralda vibrante */
+  --color-verde-hover-alt: #27AE60;   /* Verde esmeralda profundo */
+  --color-rojo:            #A93226;   /* Rojo ladrillo vivo (Sede PN) */
+  --color-rojo-vivo:       #E74C3C;   /* Rojo coral vibrante */
+  --color-naranja:         #F39C12;   /* Naranja vivo (Avisos/Estrenos) */
+  --color-blanco:          #FDFEFE;   /* Blanco puro para contraste */
+  --color-gris:            #95A5A6;   /* Gris plateado (textos secundarios) */
+  --color-negro:           #050806;   /* Negro casi total */
 
   /* Sedes */
-  --sede-pa-color:         #27AE60;   /* Punta Arenas */
-  --sede-pn-color:         #C0392B;   /* Puerto Natales */
+  --sede-pa-color:         #2ECC71;   /* Punta Arenas */
+  --sede-pn-color:         #E74C3C;   /* Puerto Natales */
 
   /* ─── TIPOGRAFÍA ──────────────────────────────── */
   --font-display:          'Bebas Neue', sans-serif;
@@ -30,7 +30,7 @@
   --text-2xl:              1.5rem;
   --text-3xl:              2rem;
   --text-4xl:              3rem;
-  --text-hero:             clamp(3rem, 8vw, 7rem);
+  --text-hero:             clamp(3rem, 8vw, 6rem);
 
   --weight-light:          300;
   --weight-regular:        400;
@@ -64,11 +64,11 @@
   --border-rojo:           1px solid var(--color-rojo);
   --border-sutil:          1px solid rgba(255,255,255,0.08);
 
-  /* ─── SOMBRAS ─────────────────────────────────── */
-  --shadow-card:           0 4px 24px rgba(0,0,0,0.5);
-  --shadow-card-hover:     0 8px 40px rgba(39,174,96,0.25);
-  --shadow-rojo-hover:     0 8px 40px rgba(192,57,43,0.25);
-  --shadow-modal:          0 24px 80px rgba(0,0,0,0.8);
+  /* ─── SOMBRAS (Más profundas y vibrantes) ─────── */
+  --shadow-card:           0 8px 32px rgba(0,0,0,0.6);
+  --shadow-card-hover:     0 12px 48px rgba(46, 204, 113, 0.25);
+  --shadow-rojo-hover:     0 12px 48px rgba(231, 76, 60, 0.25);
+  --shadow-modal:          0 32px 100px rgba(0,0,0,0.85);
 
   /* ─── TRANSICIONES ────────────────────────────── */
   --transition-base:       all 0.3s ease;
@@ -101,3 +101,4 @@
   --grid-cols-mobile:      1;
   --section-padding:       var(--space-24) 0;
 }
+

@@ -5,7 +5,7 @@
   position: sticky;
   top: var(--navbar-height);
   z-index: calc(var(--z-navbar) - 1);
-  background-color: rgba(6, 14, 8, 0.95);
+  background-color: rgba(13, 12, 11, 0.95);
   border-bottom: var(--border-sutil);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -103,14 +103,14 @@
 .sede-toggle-btn:active { transform: scale(0.95); }
 
 .sede-toggle-btn[data-sede="pa"].active {
-  background-color: rgba(39, 174, 96, 0.15);
-  border-color: rgba(39, 174, 96, 0.4);
+  background-color: rgba(46, 204, 113, 0.15);
+  border-color: rgba(46, 204, 113, 0.4);
   color: var(--color-verde-hover);
 }
 
 .sede-toggle-btn[data-sede="pn"].active {
-  background-color: rgba(192, 57, 43, 0.15);
-  border-color: rgba(192, 57, 43, 0.4);
+  background-color: rgba(169, 50, 38, 0.15);
+  border-color: rgba(169, 50, 38, 0.4);
   color: var(--color-rojo-vivo);
 }
 
@@ -122,8 +122,8 @@
     flex-wrap: wrap;
   }
 
-  .sede-banner__address,
-  .sede-banner__divider {
+  .sede-banner__dot,
+  .sede-banner__nombre{
     display: none;
   }
 }
@@ -133,3 +133,4 @@
     display: none;
   }
 }
+

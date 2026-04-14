@@ -17,14 +17,14 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 30% 40%, rgba(26, 77, 46, 0.35) 0%, transparent 70%),
-    linear-gradient(160deg, rgba(6, 14, 8, 0.4) 0%, var(--color-negro) 80%);
+    radial-gradient(ellipse 70% 60% at 30% 40%, rgba(30, 86, 49, 0.35) 0%, transparent 70%),
+    linear-gradient(160deg, rgba(13, 12, 11, 0.4) 0%, var(--color-negro) 80%);
 }
 
 .hero-historia__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, var(--color-negro) 0%, rgba(6, 14, 8, 0.6) 50%, transparent 100%);
+  background: linear-gradient(to top, var(--color-negro) 0%, rgba(13, 12, 11, 0.6) 50%, transparent 100%);
 }
 
 .hero-historia__content {
@@ -42,7 +42,7 @@
   font-weight: var(--weight-medium);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-verde-hover);
+  color: rgba(245, 240, 232, 0.45);
   margin-bottom: var(--space-3);
 }
 
@@ -91,11 +91,11 @@
 
 .historia-stat {
   padding: var(--space-4);
-  border-left: 2px solid var(--color-verde-hover);
+  border-left: 2px solid rgba(245, 240, 232, 0.2);
 }
 
 .historia-stat--rojo {
-  border-left-color: var(--color-rojo-vivo);
+  border-left-color: rgba(169, 50, 38, 0.5);
 }
 
 .historia-stat__numero {
@@ -108,7 +108,7 @@
 }
 
 .historia-stat--rojo .historia-stat__numero {
-  color: var(--color-rojo-vivo);
+  color: var(--color-blanco);
 }
 
 .historia-stat__label {
@@ -135,7 +135,7 @@
   position: absolute;
   inset: 0;
   border-radius: var(--radius-lg);
-  border: var(--border-accent);
+  border: var(--border-sutil);
   pointer-events: none;
 }
 
@@ -180,7 +180,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 80% at 50% 50%, rgba(39, 174, 96, 0.08) 0%, transparent 70%);
+    radial-gradient(ellipse 60% 80% at 50% 50%, rgba(46, 204, 113, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -202,8 +202,8 @@
   font-size: clamp(6rem, 15vw, 14rem);
   line-height: 0.85;
   letter-spacing: 0.01em;
-  color: var(--color-verde-hover);
-  opacity: 0.15;
+  color: var(--color-verde);
+  opacity: 0.06;
   user-select: none;
 }
 
@@ -226,13 +226,13 @@
 }
 
 .historia-hoy__feature:hover {
-  border-color: rgba(39, 174, 96, 0.2);
-  background-color: rgba(39, 174, 96, 0.04);
+  border-color: rgba(245, 240, 232, 0.1);
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 .historia-hoy__feature-icon {
   font-size: 1.5rem;
-  color: var(--color-verde-hover);
+  color: var(--color-gris);
   margin-bottom: var(--space-2);
 }
 
@@ -294,3 +294,4 @@
     grid-template-columns: 1fr;
   }
 }
+

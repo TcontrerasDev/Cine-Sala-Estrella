@@ -33,18 +33,18 @@
 
 /* ─── VARIANTES ───────────────────────────────────────── */
 
-/* Punta Arenas — Verde */
+/* Punta Arenas — Verde oscuro */
 .btn-pa {
-  background-color: var(--color-verde-hover);
-  color: var(--color-negro);
-  border-color: var(--color-verde-hover);
+  background-color: var(--color-verde);
+  color: var(--color-blanco);
+  border-color: var(--color-verde);
 }
 
 .btn-pa:hover {
-  background-color: var(--color-verde-hover-alt);
-  border-color: var(--color-verde-hover-alt);
-  box-shadow: var(--shadow-card-hover);
-  color: var(--color-negro);
+  background-color: rgba(30, 86, 49, 0.85);
+  border-color: rgba(30, 86, 49, 0.9);
+  box-shadow: none;
+  color: var(--color-blanco);
 }
 
 /* Puerto Natales — Rojo */
@@ -61,29 +61,29 @@
   color: var(--color-blanco);
 }
 
-/* Outline verde */
+/* Outline blanco (CTA secundario) */
 .btn-outline-pa {
   background-color: transparent;
-  color: var(--color-verde-hover);
-  border-color: rgba(39, 174, 96, 0.5);
+  color: var(--color-blanco);
+  border-color: rgba(245, 240, 232, 0.35);
 }
 
 .btn-outline-pa:hover {
-  background-color: rgba(39, 174, 96, 0.12);
-  border-color: var(--color-verde-hover);
-  color: var(--color-verde-hover);
-  box-shadow: var(--shadow-card-hover);
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(245, 240, 232, 0.6);
+  color: var(--color-blanco);
+  box-shadow: none;
 }
 
 /* Outline rojo */
 .btn-outline-pn {
   background-color: transparent;
   color: var(--color-rojo-vivo);
-  border-color: rgba(192, 57, 43, 0.5);
+  border-color: rgba(169, 50, 38, 0.5);
 }
 
 .btn-outline-pn:hover {
-  background-color: rgba(192, 57, 43, 0.12);
+  background-color: rgba(169, 50, 38, 0.12);
   border-color: var(--color-rojo);
   color: var(--color-rojo-vivo);
   box-shadow: var(--shadow-rojo-hover);
@@ -134,16 +134,16 @@
 
 /* Clase que cambia según sede activa (asignada por JS) */
 .btn-sede-activa {
-  background-color: var(--color-verde-hover);
-  color: var(--color-negro);
-  border-color: var(--color-verde-hover);
+  background-color: var(--color-verde);
+  color: var(--color-blanco);
+  border-color: var(--color-verde);
 }
 
 .btn-sede-activa:hover {
-  background-color: var(--color-verde-hover-alt);
-  border-color: var(--color-verde-hover-alt);
-  box-shadow: var(--shadow-card-hover);
-  color: var(--color-negro);
+  background-color: rgba(30, 86, 49, 0.85);
+  border-color: rgba(30, 86, 49, 0.9);
+  box-shadow: none;
+  color: var(--color-blanco);
 }
 
 /* Puerto Natales override */
@@ -183,3 +183,5 @@
     font-size: var(--text-sm);
   }
 }
+
+

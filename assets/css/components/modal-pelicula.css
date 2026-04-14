@@ -167,7 +167,7 @@
 }
 
 .modal-pelicula__horarios-label i {
-  color: var(--color-verde-hover);
+  color: var(--color-gris);
 }
 
 .modal-pelicula__horarios-grid {
@@ -196,9 +196,9 @@
 }
 
 .modal-pelicula__horario-chip:hover {
-  background-color: rgba(39, 174, 96, 0.15);
-  border-color: rgba(39, 174, 96, 0.4);
-  color: var(--color-verde-hover);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--color-blanco);
 }
 
 .modal-pelicula__horario-chip:active {
@@ -207,9 +207,9 @@
 
 /* Override para sede PN */
 .sede-pn .modal-pelicula__horario-chip:hover {
-  background-color: rgba(192, 57, 43, 0.15);
-  border-color: rgba(192, 57, 43, 0.4);
-  color: var(--color-rojo-vivo);
+  background-color: rgba(169, 50, 38, 0.12);
+  border-color: rgba(169, 50, 38, 0.3);
+  color: var(--color-blanco);
 }
 
 /* Sin horarios */
@@ -321,3 +321,4 @@
     grid-template-columns: 1fr;
   }
 }
+
