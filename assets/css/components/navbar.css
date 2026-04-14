@@ -44,7 +44,7 @@
 }
 
 .navbar-cine__logo img {
-  height: 44px;
+  height: 63px;
   width: auto;
   object-fit: contain;
 }
@@ -310,7 +310,7 @@
   }
 
   .navbar-cine__logo img {
-    height: 36px;
+    height: 60px;
   }
 }
 

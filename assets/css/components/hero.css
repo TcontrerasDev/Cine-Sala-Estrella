@@ -4,8 +4,9 @@
   position: relative;
   min-height: 100dvh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding-bottom: var(--space-24);
+  padding-top: 3rem;
   overflow: hidden;
   background-color: var(--color-negro);
 }
