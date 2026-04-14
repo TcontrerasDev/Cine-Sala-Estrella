@@ -92,7 +92,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background-color: var(--color-verde-hover);
+  background-color: var(--color-rojo-vivo);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s var(--ease-out-strong);
@@ -114,76 +114,6 @@
   flex: 1;
 }
 
-/* ─── SEDE SELECTOR ──────────────────────────────────── */
-/* 
-.navbar-cine__sede {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  flex-shrink: 0;
-}
-
-.navbar-cine__sede-btn {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-pill);
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
-  color: var(--color-blanco);
-  cursor: pointer;
-  transition: background-color 0.2s var(--ease-out-strong),
-              box-shadow 0.2s var(--ease-out-strong),
-              transform 0.15s var(--ease-out-strong);
-  border: 1px solid transparent;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-.navbar-cine__sede-btn:active {
-  transform: scale(0.97);
-}
-
-.navbar-cine__sede-btn--pa {
-  border-color: rgba(46, 204, 113, 0.4);
-}
-
-.navbar-cine__sede-btn--pa.active,
-.navbar-cine__sede-btn--pa:hover {
-  background-color: rgba(30, 86, 49, 0.35);
-  border-color: rgba(30, 86, 49, 0.7);
-  color: var(--color-blanco);
-  box-shadow: none;
-}
-
-.navbar-cine__sede-btn--pn {
-  border-color: rgba(169, 50, 38, 0.4);
-}
-
-.navbar-cine__sede-btn--pn.active,
-.navbar-cine__sede-btn--pn:hover {
-  background-color: rgba(169, 50, 38, 0.2);
-  border-color: rgba(169, 50, 38, 0.55);
-  color: var(--color-blanco);
-  box-shadow: none;
-}
-
-.navbar-cine__sede-btn .dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.navbar-cine__sede-btn--pa .dot { background-color: var(--color-verde-hover); }
-.navbar-cine__sede-btn--pn .dot { background-color: var(--color-rojo-vivo); }
-
-.navbar-cine__sede-btn i {
-  font-size: var(--text-sm);
-  opacity: 0.7;
-} */
 
 /* ─── TOGGLER MOBILE ─────────────────────────────────── */
 

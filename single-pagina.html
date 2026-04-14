@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sinners — Ficha de película. Cine Sala Estrella, Magallanes. Horarios, sinopsis y tráiler oficial.">
+  <meta name="theme-color" content="#0A1A0F">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sinners — Cine Sala Estrella">
+  <meta property="og:description" content="Dos gemelos regresan al sur profundo de los años treinta para abrir un club y comenzar desde cero.">
+  <meta property="og:type" content="website">
+
+  <title>Sinners — Cine Sala Estrella</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- CSS Base -->
+  <link rel="stylesheet" href="assets/css/base/variables.css">
+  <link rel="stylesheet" href="assets/css/base/reset.css">
+  <link rel="stylesheet" href="assets/css/base/typography.css">
+
+  <!-- CSS Components -->
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/btn.css">
+  <link rel="stylesheet" href="assets/css/components/modal-pelicula.css">
+  <link rel="stylesheet" href="assets/css/components/sede-selector.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+
+  <style>
+    /* Overrides necesarios para contexto de página (no modal) */
+    .modal-pelicula__info-col {
+      max-height: none;
+      overflow: visible;
+    }
+
+    .single-pagina {
+      padding-top: var(--navbar-height);
+      min-height: 100dvh;
+      background-color: var(--color-bg);
+    }
+
+    .single-pagina__inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: var(--space-12) var(--space-8);
+    }
+
+    /* Enlace de vuelta */
+    .single-pagina__back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-medium);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 232, 0.45);
+      text-decoration: none;
+      margin-bottom: var(--space-8);
+      transition: color 0.2s ease;
+    }
+
+    .single-pagina__back:hover {
+      color: var(--color-blanco);
+    }
+
+    /* Contenedor de ficha — mismo que #modalPelicula .modal-content */
+    .single-pelicula {
+      background-color: var(--color-bg-card);
+      border: var(--border-sutil);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-modal);
+      overflow: hidden;
+    }
+
+    @media (max-width: 575px) {
+      .single-pagina__inner {
+        padding: var(--space-6) var(--space-4);
+      }
+    }
+  </style>
+</head>
+<body class="sede-pa">
+
+  <!-- Skip to content -->
+  <a href="#main" class="skip-link">Ir al contenido principal</a>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════════ -->
+  <header>
+    <nav class="navbar-cine" role="navigation" aria-label="Navegación principal">
+      <div class="navbar-cine__inner">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar-cine__logo" aria-label="Cine Sala Estrella — Inicio">
+          <img
+            src="assets/img/logo.png"
+            alt="Cine Sala Estrella"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          >
+          <span class="navbar-cine__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+        </a>
+
+        <!-- Nav links (desktop) -->
+        <nav class="navbar-cine__nav" aria-label="Secciones">
+          <a href="index.html#cartelera" class="navbar-cine__link">En Cartelera</a>
+          <a href="index.html#proximamente" class="navbar-cine__link">Próximamente</a>
+          <a href="index.html#horarios" class="navbar-cine__link">Horarios</a>
+          <a href="historia.html" class="navbar-cine__link">Historia</a>
+          <a href="contacto.html" class="navbar-cine__link">Contacto</a>
+        </nav>
+
+        <div class="navbar-cine__spacer"></div>
+
+        <!-- Toggler mobile -->
+        <button
+          class="navbar-cine__toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNav"
+          aria-controls="offcanvasNav"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Offcanvas Mobile -->
+    <div class="offcanvas offcanvas-start offcanvas-cine" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
+      <div class="offcanvas-header">
+        <span class="navbar-cine__logo-text" id="offcanvasNavLabel">CINE SALA <span style="color: var(--color-verde-hover);">ESTRELLA</span></span>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button>
+      </div>
+      <div class="offcanvas-body">
+        <a href="index.html#cartelera" class="nav-link-mobile" data-bs-dismiss="offcanvas">En Cartelera</a>
+        <a href="index.html#proximamente" class="nav-link-mobile" data-bs-dismiss="offcanvas">Próximamente</a>
+        <a href="index.html#horarios" class="nav-link-mobile" data-bs-dismiss="offcanvas">Horarios y Precios</a>
+        <a href="historia.html" class="nav-link-mobile">Historia</a>
+        <a href="contacto.html" class="nav-link-mobile">Contacto</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="single-pagina">
+    <div class="single-pagina__inner">
+
+      <!-- Volver -->
+      <a href="index.html#cartelera" class="single-pagina__back">
+        <i class="bi bi-arrow-left"></i>
+        Volver a cartelera
+      </a>
+
+      <!-- ═══════════════════════════════════════════════════════
+           FICHA PELÍCULA
+      ═══════════════════════════════════════════════════════ -->
+      <article class="single-pelicula" aria-labelledby="peliculaTitulo">
+
+        <div class="modal-pelicula__grid">
+
+          <!-- POSTER -->
+          <div class="modal-pelicula__poster-col">
+            <img
+              src="https://placehold.co/300x450/0D2B1A/27AE60?text=SINNERS"
+              alt="Póster de Sinners"
+              class="modal-pelicula__poster"
+              loading="eager"
+            >
+            <div class="modal-pelicula__poster-overlay"></div>
+          </div>
+
+          <!-- INFO -->
+          <div class="modal-pelicula__info-col">
+
+            <h1 class="modal-pelicula__titulo" id="peliculaTitulo">Sinners</h1>
+
+            <div class="modal-pelicula__badges">
+              <span class="badge-cine badge-clasificacion">TE+14</span>
+              <span class="badge-cine badge-genero">Terror</span>
+              <span class="badge-cine badge-estreno">Estreno</span>
+            </div>
+
+            <div class="modal-pelicula__meta-grid">
+              <div class="modal-pelicula__meta-item">
+                <span class="modal-pelicula__meta-label">Director</span>
+                <span class="modal-pelicula__meta-value">Ryan Coogler</span>
+              </div>
+              <div class="modal-pelicula__meta-item">
+                <span class="modal-pelicula__meta-label">Duración</span>
+                <span class="modal-pelicula__meta-value">
+                  <i class="bi bi-clock"></i>
+                  2h 17m
+                </span>
+              </div>
+              <div class="modal-pelicula__meta-item">
+                <span class="modal-pelicula__meta-label">Clasificación</span>
+                <span class="modal-pelicula__meta-value">TE+14</span>
+              </div>
+              <div class="modal-pelicula__meta-item">
+                <span class="modal-pelicula__meta-label">Sedes</span>
+                <div style="display: flex; gap: var(--space-1); flex-wrap: wrap; margin-top: 2px;">
+                  <span class="badge-cine badge-pa">Punta Arenas</span>
+                  <span class="badge-cine badge-pn">Puerto Natales</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SINOPSIS -->
+            <div>
+              <p class="modal-pelicula__sinopsis-label">Sinopsis</p>
+              <p class="modal-pelicula__sinopsis">
+                Dos gemelos regresan al sur profundo de los años treinta para abrir un club y
+                comenzar desde cero. Pero al invitar a desconocidos a celebrar, descubren que
+                han atraído a algo mucho más antiguo y peligroso que cualquier problema que
+                dejaron atrás.
+              </p>
+            </div>
+
+            <!-- HORARIOS -->
+            <div class="modal-pelicula__horarios">
+              <p class="modal-pelicula__horarios-label">
+                <i class="bi bi-geo-alt-fill"></i>
+                Horarios — Punta Arenas
+              </p>
+              <div class="modal-pelicula__horarios-grid">
+                <button class="modal-pelicula__horario-chip" type="button">15:00</button>
+                <button class="modal-pelicula__horario-chip" type="button">18:30</button>
+                <button class="modal-pelicula__horario-chip" type="button">22:00</button>
+              </div>
+            </div>
+
+            <!-- TRAILER -->
+            <div>
+              <p class="modal-pelicula__sinopsis-label" style="margin-bottom: var(--space-3);">Tráiler oficial</p>
+              <div class="modal-pelicula__trailer">
+                <iframe
+                  src="https://www.youtube.com/embed/JuXGFQZRcGk"
+                  title="Tráiler de Sinners"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="modal-pelicula__cta">
+              <a
+                href="https://cineestrella.cl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-cine btn-lg btn-pa"
+              >
+                <i class="bi bi-ticket-perforated-fill"></i>
+                Comprar entradas
+              </a>
+            </div>
+
+          </div><!-- /.modal-pelicula__info-col -->
+        </div><!-- /.modal-pelicula__grid -->
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__grid">
+
+        <!-- Columna marca -->
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img
+              src="assets/img/logo.png"
+              alt="Cine Sala Estrella"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            >
+            <span class="footer__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+          </div>
+          <p class="footer__tagline">"Quien ama la vida, ama también al cine"</p>
+
+          <nav class="footer__socials" aria-label="Redes sociales">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram de Cine Sala Estrella">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook de Cine Sala Estrella">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="TikTok de Cine Sala Estrella">
+              <i class="bi bi-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="YouTube de Cine Sala Estrella">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Columna sedes -->
+        <div class="footer__sedes">
+          <p class="footer__section-title">Nuestras sedes</p>
+
+          <div class="footer__sede-item">
+            <p class="footer__sede-nombre footer__sede-nombre--pa">
+              <span class="dot"></span>
+              Punta Arenas
+            </p>
+            <ul class="footer__sede-info">
+              <li>
+                <i class="bi bi-geo-alt-fill"></i>
+                Mejicana 777, Punta Arenas
+              </li>
+              <li>
+                <i class="bi bi-telephone-fill"></i>
+                +56 61 222 3456
+              </li>
+              <li>
+                <i class="bi bi-clock-fill"></i>
+                Abierto todos los días
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__sede-item">
+            <p class="footer__sede-nombre footer__sede-nombre--pn">
+              <span class="dot"></span>
+              Puerto Natales
+            </p>
+            <ul class="footer__sede-info">
+              <li>
+                <i class="bi bi-geo-alt-fill"></i>
+                Esmeralda 777, Puerto Natales
+              </li>
+              <li>
+                <i class="bi bi-telephone-fill"></i>
+                +56 61 241 5678
+              </li>
+              <li>
+                <i class="bi bi-clock-fill"></i>
+                Abierto todos los días
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Columna links -->
+        <div class="footer__links">
+          <p class="footer__section-title">Navegación</p>
+          <nav class="footer__nav-list" aria-label="Navegación del footer">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#cartelera">En Cartelera</a>
+            <a href="index.html#proximamente">Próximamente</a>
+            <a href="index.html#horarios">Horarios y Precios</a>
+            <a href="historia.html">Nuestra Historia</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer">Comprar entradas</a>
+          </nav>
+        </div>
+
+      </div><!-- /.footer__grid -->
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; 2025 <strong>Cine Sala Estrella</strong>. Todos los derechos reservados.
+          Familia Mattioni · Desde 1891 · Punta Arenas, Chile.
+        </p>
+        <nav class="footer__legal-links" aria-label="Enlaces legales">
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos de uso</a>
+          <a href="#">Condiciones de cambio</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data/peliculas.js"></script>
+  <script src="assets/js/sede-selector.js"></script>
+  <script src="assets/js/scroll-effects.js"></script>
+
+</body>
+</html>

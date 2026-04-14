@@ -70,14 +70,13 @@
     const posterUrl = buildPosterUrl(pelicula.poster, pelicula.titulo);
 
     return `
-      <article
+      <a
+        href="single-pagina.html"
         class="card-pelicula ${proximamenteClass}"
         data-id="${pelicula.id}"
         data-genero="${pelicula.genero}"
         style="--index: ${index}; animation-delay: ${index * STAGGER_DELAY}ms;"
-        role="button"
-        tabindex="0"
-        aria-label="Ver detalles de ${pelicula.titulo}"
+        aria-label="Ver ficha de ${pelicula.titulo}"
       >
         <div class="card-pelicula__poster">
           <img
@@ -99,7 +98,7 @@
                 <i class="bi bi-clock"></i> ${pelicula.duracion}
               </span>
             </div>
-            ${!isProximamente ? `<button class="btn-cine btn-sm btn-pa card-pelicula__btn-ver" data-id="${pelicula.id}">Ver detalles</button>` : ''}
+            ${!isProximamente ? `<span class="btn-cine btn-sm btn-pa card-pelicula__btn-ver">Ver detalles</span>` : ''}
           </div>
         </div>
 
@@ -112,7 +111,7 @@
             }
           </div>
         </div>
-      </article>
+      </a>
     `;
   }
 
@@ -132,7 +131,6 @@
     }
 
     grid.innerHTML = peliculas.map((p, i) => renderCard(p, i, false)).join('');
-    attachCardListeners(grid);
     scheduleReveal(grid);
     renderFiltros();
   }
@@ -238,31 +236,6 @@
     });
 
     cards.forEach(card => observer.observe(card));
-  }
-
-  /* ─── CARD LISTENERS ─────────────────────────────── */
-
-  function attachCardListeners(grid) {
-    grid.addEventListener('click', e => {
-      const card = e.target.closest('.card-pelicula');
-      if (!card) return;
-      const id = parseInt(card.dataset.id);
-      if (id && window.ModalPelicula) {
-        window.ModalPelicula.abrir(id);
-      }
-    });
-
-    grid.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        const card = e.target.closest('.card-pelicula');
-        if (!card) return;
-        e.preventDefault();
-        const id = parseInt(card.dataset.id);
-        if (id && window.ModalPelicula) {
-          window.ModalPelicula.abrir(id);
-        }
-      }
-    });
   }
 
   /* ─── ACTUALIZAR HORARIOS AL CAMBIAR SEDE ────────── */

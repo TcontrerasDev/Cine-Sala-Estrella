@@ -1,6 +1,9 @@
 /* ─── CARD PELÍCULA ───────────────────────────────────── */
 
 .card-pelicula {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   position: relative;
   background-color: var(--color-bg-card);
   border-radius: var(--radius-lg);
