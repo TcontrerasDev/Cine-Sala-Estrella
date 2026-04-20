@@ -1,0 +1,64 @@
+.modal-pelicula__info-col {
+  max-height: none;
+  overflow: visible;
+}
+
+.single-pagina {
+  padding-top: var(--navbar-height);
+  min-height: 100dvh;
+  background-color: var(--color-bg);
+}
+
+.single-pagina__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-8);
+}
+
+/* Enlace de vuelta */
+.single-pagina__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.45);
+  text-decoration: none;
+  margin-bottom: var(--space-8);
+  transition: color 0.2s ease;
+}
+
+.single-pagina__back:hover {
+  color: var(--color-blanco);
+}
+
+/* Contenedor de ficha — mismo que #modalPelicula .modal-content */
+.single-pelicula {
+  background-color: var(--color-bg-card);
+  border: solid 1px #C9A96E1F;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-modal);
+  overflow: hidden;
+}
+
+/* Sedes badges en la ficha de película */
+.modal-pelicula__sedes-badges {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+/* Margin extra para el label de tráiler */
+.modal-pelicula__trailer-label {
+  margin-bottom: var(--space-3);
+}
+
+@media (max-width: 575px) {
+  .single-pagina__inner {
+    padding: var(--space-6) var(--space-4);
+  }
+}

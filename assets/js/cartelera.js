@@ -50,7 +50,7 @@
       ? horarios.slice(0, 3).map(h =>
           `<span class="card-pelicula__horario-pill ${sede === 'pn' ? 'card-pelicula__horario-pill--pn' : ''}">${h}</span>`
         ).join('')
-      : `<span style="color: var(--color-gris); font-size: var(--text-xs);">Solo ${sede === 'pa' ? 'Puerto Natales' : 'Punta Arenas'}</span>`;
+      : `<span class="card-pelicula__solo-text">Solo ${sede === 'pa' ? 'Puerto Natales' : 'Punta Arenas'}</span>`;
 
     const badgesSede = pelicula.sedes.map(s =>
       `<span class="badge-cine badge-card-sede ${s === 'pa' ? 'badge-pa' : 'badge-pn'}">${s === 'pa' ? 'PA' : 'PN'}</span>`
@@ -61,7 +61,7 @@
       : ``;
 
     const badgeEstreno = pelicula.enEstreno
-      ? `<span class="badge-cine badge-estreno" style="position: absolute; top: var(--space-3); left: var(--space-3); z-index: var(--z-card-overlay);">Estreno</span>`
+      ? `<span class="badge-cine badge-estreno badge-card-sede">Estreno</span>`
       : '';
 
     const badgeClasificacion = `<span class="badge-cine badge-card-clasificacion ${getClasificacionClass(pelicula.clasificacion)}">${pelicula.clasificacion}</span>`;
@@ -75,7 +75,7 @@
         class="card-pelicula ${proximamenteClass}"
         data-id="${pelicula.id}"
         data-genero="${pelicula.genero}"
-        style="--index: ${index}; animation-delay: ${index * STAGGER_DELAY}ms;"
+        data-index="${index}"
         aria-label="Ver ficha de ${pelicula.titulo}"
       >
         <div class="card-pelicula__poster">
@@ -93,7 +93,7 @@
             <p class="card-pelicula__overlay-titulo">${pelicula.titulo}</p>
             <div class="card-pelicula__overlay-meta">
               <span class="card-pelicula__overlay-genero">${getGeneroLabel(pelicula.genero)}</span>
-              <span style="color: var(--color-gris); font-size: var(--text-xs);">·</span>
+              <span class="card-pelicula__separator">·</span>
               <span class="card-pelicula__overlay-duracion">
                 <i class="bi bi-clock"></i> ${pelicula.duracion}
               </span>
@@ -106,7 +106,7 @@
           <p class="card-pelicula__titulo">${pelicula.titulo}</p>
           <div class="card-pelicula__horario-preview">
             ${isProximamente
-              ? `<span style="color: var(--color-gris); font-size: var(--text-xs); font-style: italic;">Próximamente</span>`
+              ? `<span class="card-pelicula__proximamente-text">Próximamente</span>`
               : horariosHtml
             }
           </div>
@@ -220,7 +220,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const card = entry.target;
-          const index = parseInt(card.style.getPropertyValue('--index')) || 0;
+          const index = parseInt(card.dataset.index) || 0;
           setTimeout(() => {
             card.classList.add('revealed');
             /* Lazy images */
@@ -259,7 +259,7 @@
           `<span class="card-pelicula__horario-pill ${sede === 'pn' ? 'card-pelicula__horario-pill--pn' : ''}">${h}</span>`
         ).join('');
       } else {
-        preview.innerHTML = `<span style="color: var(--color-gris); font-size: var(--text-xs);">Solo ${sede === 'pa' ? 'Puerto Natales' : 'Punta Arenas'}</span>`;
+        preview.innerHTML = `<span class="card-pelicula__solo-text">Solo ${sede === 'pa' ? 'Puerto Natales' : 'Punta Arenas'}</span>`;
       }
     });
   });

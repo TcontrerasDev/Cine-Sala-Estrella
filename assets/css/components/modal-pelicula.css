@@ -49,14 +49,13 @@
 
 .modal-pelicula__grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 30rem 1fr;
 }
 
 /* ─── COLUMNA IZQUIERDA: POSTER ───────────────────────── */
 
 .modal-pelicula__poster-col {
   position: relative;
-  background-color: var(--color-negro);
 }
 
 .modal-pelicula__poster {
@@ -70,7 +69,7 @@
 .modal-pelicula__poster-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, transparent 60%, var(--color-bg-card));
+  background: linear-gradient(to right , transparent 60%, var(--color-bg-card));
   pointer-events: none;
 }
 

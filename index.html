@@ -59,9 +59,9 @@
           <img
             src="assets/img/logo.png"
             alt="Cine Sala Estrella"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            onerror="this.parentElement.classList.add('logo-error')"
           >
-          <span class="navbar-cine__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+          <span class="navbar-cine__logo-text navbar-cine__logo-fallback">CINE SALA <span class="navbar-cine__logo-accent">ESTRELLA</span></span>
         </a>
 
         <!-- Nav links (desktop) -->
@@ -74,18 +74,6 @@
         </nav>
 
         <div class="navbar-cine__spacer"></div>
-
-        <!-- Selector sede (desktop) -->
-        <!-- <div class="navbar-cine__sede" role="group" aria-label="Selección de sede">
-          <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pa active" data-sede="pa" aria-pressed="true">
-            <span class="dot"></span>
-            Punta Arenas
-          </button>
-          <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pn" data-sede="pn" aria-pressed="false">
-            <span class="dot"></span>
-            Puerto Natales
-          </button>
-        </div> -->
 
         <!-- Toggler mobile -->
         <button
@@ -107,7 +95,7 @@
     <!-- Offcanvas Mobile -->
     <div class="offcanvas offcanvas-start offcanvas-cine" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
       <div class="offcanvas-header">
-        <span class="navbar-cine__logo-text" id="offcanvasNavLabel">CINE SALA <span style="color: var(--color-verde-hover);">ESTRELLA</span></span>
+        <span class="navbar-cine__logo-text" id="offcanvasNavLabel">CINE SALA <span class="navbar-cine__logo-accent">ESTRELLA</span></span>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button>
       </div>
       <div class="offcanvas-body">
@@ -132,7 +120,7 @@
           alt=""
           class="hero__bg-img"
           aria-hidden="true"
-          onerror="this.style.display='none';"
+          onerror="this.classList.add('img-error')"
         >
       </div>
       <div class="hero__overlay" aria-hidden="true"></div>
@@ -188,12 +176,12 @@
           <span class="sede-banner__nombre sede-banner__nombre--pa" data-sede-nombre>Punta Arenas</span>
           <span class="sede-banner__divider" aria-hidden="true"></span>
           <span class="sede-banner__address">
-            <i class="bi bi-geo-alt" style="font-size: 11px;"></i>
+            <i class="bi bi-geo-alt sede-banner__icon"></i>
             <span data-sede-direccion>Mejicana 777</span>
           </span>
           <span class="sede-banner__divider" aria-hidden="true"></span>
           <span class="sede-banner__address">
-            <i class="bi bi-calendar3" style="font-size: 11px;"></i>
+            <i class="bi bi-calendar3 sede-banner__icon"></i>
             Abierto 365 días al año
           </span>
         </div>
@@ -201,11 +189,11 @@
         <div class="sede-banner__toggle" role="group" aria-label="Cambiar sede">
           <span class="sede-banner__toggle-label">Sede:</span>
           <button class="sede-toggle-btn active" data-sede="pa" aria-pressed="true">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--color-verde-hover);display:inline-block;"></span>
+            <span class="dot-pa"></span>
             Punta Arenas
           </button>
           <button class="sede-toggle-btn" data-sede="pn" aria-pressed="false">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--color-rojo-vivo);display:inline-block;"></span>
+            <span class="dot-pn"></span>
             Puerto Natales
           </button>
         </div>
@@ -241,17 +229,11 @@
           aria-label="Películas en cartelera"
         >
           <!-- Skeleton loaders mientras carga JS -->
-          <div style="aspect-ratio: 2/3; background: var(--color-bg-card); border-radius: var(--radius-lg); animation: pulse 1.5s ease infinite alternate;" aria-hidden="true"></div>
-          <div style="aspect-ratio: 2/3; background: var(--color-bg-card); border-radius: var(--radius-lg); animation: pulse 1.5s ease 0.1s infinite alternate;" aria-hidden="true"></div>
-          <div style="aspect-ratio: 2/3; background: var(--color-bg-card); border-radius: var(--radius-lg); animation: pulse 1.5s ease 0.2s infinite alternate;" aria-hidden="true"></div>
-          <div style="aspect-ratio: 2/3; background: var(--color-bg-card); border-radius: var(--radius-lg); animation: pulse 1.5s ease 0.3s infinite alternate;" aria-hidden="true"></div>
+          <div class="cartelera__skeleton" aria-hidden="true"></div>
+          <div class="cartelera__skeleton cartelera__skeleton--2" aria-hidden="true"></div>
+          <div class="cartelera__skeleton cartelera__skeleton--3" aria-hidden="true"></div>
+          <div class="cartelera__skeleton cartelera__skeleton--4" aria-hidden="true"></div>
         </div>
-        <style>
-          @keyframes pulse {
-            from { opacity: 0.4; }
-            to   { opacity: 0.7; }
-          }
-        </style>
 
       </div>
     </section>
@@ -264,8 +246,8 @@
 
         <div class="cartelera__header">
           <div class="cartelera__header-left">
-            <span class="label-seccion" style="color: var(--color-rojo-vivo);">Cartelera</span>
-            <h2 class="titulo-seccion rojo" id="tituloProximamente">Próximamente</h2>
+            <span class="label-seccion">Cartelera</span>
+            <h2 class="titulo-seccion" id="tituloProximamente">Próximamente</h2>
           </div>
         </div>
 
@@ -306,7 +288,7 @@
                 <thead>
                   <tr>
                     <th scope="col">Tipo de entrada</th>
-                    <th scope="col" style="text-align:right;">Precio</th>
+                    <th scope="col">Precio</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -365,7 +347,7 @@
                 <span>Consultas: +56 61 222 3456</span>
               </div>
 
-              <div style="margin-top: var(--space-4);">
+              <div class="horarios__cta-wrapper">
                 <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer" class="btn-cine btn-pa btn-sm">
                   <i class="bi bi-ticket-perforated"></i>
                   Comprar entradas en línea
@@ -377,7 +359,7 @@
           <!-- Puerto Natales -->
           <article class="horarios__sede-card horarios__sede-card--pn reveal-element" aria-labelledby="horariosPNTitulo">
             <div class="horarios__sede-header horarios__sede-header--pn">
-              <span class="horarios__sede-dot" style="background-color: var(--color-rojo-vivo);"></span>
+              <span class="horarios__sede-dot"></span>
               <span class="horarios__sede-nombre" id="horariosPNTitulo">Puerto Natales</span>
               <span class="horarios__sede-direccion">
                 <i class="bi bi-geo-alt"></i>
@@ -389,7 +371,7 @@
                 <thead>
                   <tr>
                     <th scope="col">Tipo de entrada</th>
-                    <th scope="col" style="text-align:right;">Precio</th>
+                    <th scope="col">Precio</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -448,7 +430,7 @@
                 <span>Consultas: +56 61 241 5678</span>
               </div>
 
-              <div style="margin-top: var(--space-4);">
+              <div class="horarios__cta-wrapper">
                 <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer" class="btn-cine btn-pn btn-sm">
                   <i class="bi bi-ticket-perforated"></i>
                   Comprar entradas en línea
@@ -480,7 +462,7 @@
               cinematográfico de referencia en la Región de Magallanes con tecnología de
               proyección de clase mundial.
             </p>
-            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+            <div class="historia-teaser__ctas">
               <a href="historia.html" class="btn-cine btn-outline-pa">
                 <i class="bi bi-book-half"></i>
                 Conocer nuestra historia
@@ -531,9 +513,9 @@
             <img
               src="assets/img/logo.png"
               alt="Cine Sala Estrella"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              onerror="this.parentElement.classList.add('logo-error')"
             >
-            <span class="footer__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+            <span class="footer__logo-text footer__logo-fallback">CINE SALA <span>ESTRELLA</span></span>
           </div>
           <p class="footer__tagline">"Quien ama la vida, ama también al cine"</p>
 
@@ -576,7 +558,7 @@
                 Abierto todos los días
               </li>
               <li>
-                <i class="bi bi-star-fill" style="color: var(--color-naranja);"></i>
+                <i class="bi bi-star-fill footer__rating-star"></i>
                 4.5 ⭐ (1.922 reseñas)
               </li>
             </ul>
@@ -601,7 +583,7 @@
                 Abierto todos los días
               </li>
               <li>
-                <i class="bi bi-star-fill" style="color: var(--color-naranja);"></i>
+                <i class="bi bi-star-fill footer__rating-star"></i>
                 4.7 ⭐ (242 reseñas)
               </li>
             </ul>

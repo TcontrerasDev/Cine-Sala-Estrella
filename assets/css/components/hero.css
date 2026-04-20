@@ -11,6 +11,11 @@
   background-color: var(--color-negro);
 }
 
+/* Imagen rota: ocultar sin JS inline style */
+.img-error {
+  display: none;
+}
+
 /* ─── BACKGROUND ─────────────────────────────────────── */
 
 .hero__bg {
@@ -19,11 +24,12 @@
   background-image:
     radial-gradient(ellipse 80% 60% at 60% 30%, rgba(30, 86, 49, 0.18) 0%, transparent 70%),
     radial-gradient(ellipse 50% 70% at 85% 80%, rgba(169, 50, 38, 0.2) 0%, transparent 60%),
-    linear-gradient(160deg, rgba(13, 12, 11, 0.3) 0%, var(--color-negro) 100%);
+    linear-gradient(160deg, rgba(13, 12, 11, 0.3) 0%, #1a4311  100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transform: scale(1.03);
+  /* Parallax: JS setea --parallax-y via style.setProperty */
+  transform: scale(1.03) translateY(var(--parallax-y, 0px));
   transition: transform 0.8s var(--ease-out-strong);
 }
 
@@ -35,7 +41,8 @@
   object-fit: cover;
   object-position: center 20%;
   opacity: 0.35;
-  transform: scale(1.03);
+  /* Parallax: JS setea --parallax-y via style.setProperty */
+  transform: scale(1.06) translateY(var(--parallax-y, 0px));
 }
 
 /* Overlay gradiente */

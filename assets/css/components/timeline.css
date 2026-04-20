@@ -41,14 +41,14 @@
   transform: translateY(0) !important;
 }
 
-/* Par — izquierda */
+/* Par — entra desde la izquierda */
 .timeline__item:nth-child(odd) {
-  transform: translateY(20px);
+  transform: translateX(-30px) translateY(20px);
 }
 
-/* Impar — derecha */
+/* Impar — entra desde la derecha */
 .timeline__item:nth-child(even) {
-  transform: translateY(20px);
+  transform: translateX(30px) translateY(20px);
 }
 
 /* ─── PUNTO CENTRAL ──────────────────────────────────── */
@@ -168,6 +168,12 @@
 }
 
 /* ─── HOY ────────────────────────────────────────────── */
+
+/* El año "Hoy" siempre visible en verde, sin esperar hover */
+.timeline__item--hoy .timeline__year {
+  color: var(--color-verde-hover);
+  opacity: 1;
+}
 
 .timeline__item--hoy .timeline__dot {
   width: 18px;

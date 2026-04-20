@@ -35,61 +35,8 @@
   <link rel="stylesheet" href="assets/css/components/modal-pelicula.css">
   <link rel="stylesheet" href="assets/css/components/sede-selector.css">
   <link rel="stylesheet" href="assets/css/components/footer.css">
-
-  <style>
-    /* Overrides necesarios para contexto de página (no modal) */
-    .modal-pelicula__info-col {
-      max-height: none;
-      overflow: visible;
-    }
-
-    .single-pagina {
-      padding-top: var(--navbar-height);
-      min-height: 100dvh;
-      background-color: var(--color-bg);
-    }
-
-    .single-pagina__inner {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: var(--space-12) var(--space-8);
-    }
-
-    /* Enlace de vuelta */
-    .single-pagina__back {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      font-weight: var(--weight-medium);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(245, 240, 232, 0.45);
-      text-decoration: none;
-      margin-bottom: var(--space-8);
-      transition: color 0.2s ease;
-    }
-
-    .single-pagina__back:hover {
-      color: var(--color-blanco);
-    }
-
-    /* Contenedor de ficha — mismo que #modalPelicula .modal-content */
-    .single-pelicula {
-      background-color: var(--color-bg-card);
-      border: var(--border-sutil);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-modal);
-      overflow: hidden;
-    }
-
-    @media (max-width: 575px) {
-      .single-pagina__inner {
-        padding: var(--space-6) var(--space-4);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/pages/single-page.css">
+  
 </head>
 <body class="sede-pa">
 
@@ -108,9 +55,9 @@
           <img
             src="assets/img/logo.png"
             alt="Cine Sala Estrella"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            onerror="this.parentElement.classList.add('logo-error')"
           >
-          <span class="navbar-cine__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+          <span class="navbar-cine__logo-text navbar-cine__logo-fallback">CINE SALA <span class="navbar-cine__logo-accent">ESTRELLA</span></span>
         </a>
 
         <!-- Nav links (desktop) -->
@@ -144,7 +91,7 @@
     <!-- Offcanvas Mobile -->
     <div class="offcanvas offcanvas-start offcanvas-cine" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
       <div class="offcanvas-header">
-        <span class="navbar-cine__logo-text" id="offcanvasNavLabel">CINE SALA <span style="color: var(--color-verde-hover);">ESTRELLA</span></span>
+        <span class="navbar-cine__logo-text" id="offcanvasNavLabel">CINE SALA <span class="navbar-cine__logo-accent">ESTRELLA</span></span>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button>
       </div>
       <div class="offcanvas-body">
@@ -213,7 +160,7 @@
               </div>
               <div class="modal-pelicula__meta-item">
                 <span class="modal-pelicula__meta-label">Sedes</span>
-                <div style="display: flex; gap: var(--space-1); flex-wrap: wrap; margin-top: 2px;">
+                <div class="modal-pelicula__sedes-badges">
                   <span class="badge-cine badge-pa">Punta Arenas</span>
                   <span class="badge-cine badge-pn">Puerto Natales</span>
                 </div>
@@ -246,7 +193,7 @@
 
             <!-- TRAILER -->
             <div>
-              <p class="modal-pelicula__sinopsis-label" style="margin-bottom: var(--space-3);">Tráiler oficial</p>
+              <p class="modal-pelicula__sinopsis-label modal-pelicula__trailer-label">Tráiler oficial</p>
               <div class="modal-pelicula__trailer">
                 <iframe
                   src="https://www.youtube.com/embed/JuXGFQZRcGk"
@@ -292,9 +239,9 @@
             <img
               src="assets/img/logo.png"
               alt="Cine Sala Estrella"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              onerror="this.parentElement.classList.add('logo-error')"
             >
-            <span class="footer__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+            <span class="footer__logo-text footer__logo-fallback">CINE SALA <span>ESTRELLA</span></span>
           </div>
           <p class="footer__tagline">"Quien ama la vida, ama también al cine"</p>
 

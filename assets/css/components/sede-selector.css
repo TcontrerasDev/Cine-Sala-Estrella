@@ -36,8 +36,12 @@
   transition: background-color 0.3s var(--ease-out-strong);
 }
 
-.sede-banner__dot--pa { background-color: var(--color-verde-hover); }
-.sede-banner__dot--pn { background-color: var(--color-rojo-vivo); }
+.sede-banner__dot--pa {
+  background-color: var(--color-verde-hover);
+}
+.sede-banner__dot--pn {
+  background-color: var(--color-rojo-vivo);
+}
 
 .sede-banner__nombre {
   font-family: var(--font-body);
@@ -48,8 +52,12 @@
   transition: color 0.3s var(--ease-out-strong);
 }
 
-.sede-banner__nombre--pa { color: var(--color-verde-hover); }
-.sede-banner__nombre--pn { color: var(--color-rojo-vivo); }
+.sede-banner__nombre--pa {
+  color: var(--color-verde-hover);
+}
+.sede-banner__nombre--pn {
+  color: var(--color-rojo-vivo);
+}
 
 .sede-banner__address {
   font-size: var(--text-xs);
@@ -57,6 +65,10 @@
   display: flex;
   align-items: center;
   gap: var(--space-1);
+}
+
+.sede-banner__icon {
+  font-size: 11px;
 }
 
 .sede-banner__divider {
@@ -93,25 +105,51 @@
   border: 1px solid transparent;
   background-color: transparent;
   color: rgba(245, 240, 232, 0.45);
-  transition: background-color 0.2s var(--ease-out-strong),
-              border-color 0.2s var(--ease-out-strong),
-              color 0.2s var(--ease-out-strong),
-              transform 0.15s var(--ease-out-strong);
+  transition:
+    background-color 0.2s var(--ease-out-strong),
+    border-color 0.2s var(--ease-out-strong),
+    color 0.2s var(--ease-out-strong),
+    transform 0.15s var(--ease-out-strong);
   min-height: 28px;
+
+  .dot-pa,
+  .dot-pn {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot-pa {
+    background: var(--color-verde);
+  }
+  .dot-pn {
+    background: var(--color-rojo);
+  }
 }
 
-.sede-toggle-btn:active { transform: scale(0.95); }
+.sede-toggle-btn:active {
+  transform: scale(0.95);
+}
 
 .sede-toggle-btn[data-sede="pa"].active {
-  background-color: rgba(46, 204, 113, 0.15);
-  border-color: rgba(46, 204, 113, 0.4);
-  color: var(--color-verde-hover);
+  background-color: var(--color-verde-hover);
+  color: var(--color-blanco);
 }
 
 .sede-toggle-btn[data-sede="pn"].active {
-  background-color: rgba(169, 50, 38, 0.15);
-  border-color: rgba(169, 50, 38, 0.4);
-  color: var(--color-rojo-vivo);
+  background-color: var(--color-rojo-vivo);
+  color: var(--color-blanco);
+}
+
+/* ─── DOT COLOR POR SEDE (contextual via body class) ──── */
+
+.sede-pa [data-sede-dot] {
+  background-color: var(--color-verde-hover);
+}
+
+.sede-pn [data-sede-dot] {
+  background-color: var(--color-rojo-vivo);
 }
 
 /* ─── RESPONSIVE ─────────────────────────────────────── */
@@ -123,7 +161,7 @@
   }
 
   .sede-banner__dot,
-  .sede-banner__nombre{
+  .sede-banner__nombre {
     display: none;
   }
 }
@@ -133,4 +171,3 @@
     display: none;
   }
 }
-

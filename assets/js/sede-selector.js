@@ -67,10 +67,7 @@
       el.textContent = data.direccion;
     });
 
-    /* 3. Color dot en [data-sede-dot] */
-    document.querySelectorAll('[data-sede-dot]').forEach(el => {
-      el.style.backgroundColor = data.color;
-    });
+    /* 3. Color dot en [data-sede-dot]: gestionado por CSS via clase en body (.sede-pa / .sede-pn) */
 
     /* 4. Toggle buttons — active state */
     document.querySelectorAll('.sede-toggle-btn, .navbar-cine__sede-btn').forEach(btn => {

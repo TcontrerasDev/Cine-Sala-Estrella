@@ -29,7 +29,22 @@
   margin-bottom: var(--space-8);
 }
 
-.cartelera__header-left {}
+@keyframes pulse {
+  from { opacity: 0.4; }
+  to   { opacity: 0.7; }
+}
+
+/* Skeleton loaders de cartelera */
+.cartelera__skeleton {
+  aspect-ratio: 2 / 3;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  animation: pulse 1.5s ease infinite alternate;
+}
+
+.cartelera__skeleton--2 { animation-delay: 0.1s; }
+.cartelera__skeleton--3 { animation-delay: 0.2s; }
+.cartelera__skeleton--4 { animation-delay: 0.3s; }
 
 /* Grid de películas */
 .cartelera__grid {
@@ -62,21 +77,11 @@
 
 .seccion-proximamente {
   padding: var(--space-24) 0;
-  background-color: var(--color-bg-card);
+  background-color: var(--color-bg);
   position: relative;
   overflow: hidden;
-}
-
-/* Fondo decorativo */
-.seccion-proximamente::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 50%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, rgba(169, 50, 38, 0.06) 0%, transparent 70%);
-  pointer-events: none;
+  border-top: solid 1px #C9A96E1F;
+  border-bottom: solid 1px #C9A96E1F;
 }
 
 .proximamente__grid {
@@ -185,7 +190,9 @@
   border-bottom: var(--border-sutil);
 }
 
-.precios-table th:last-child { text-align: right; }
+.precios-table th:last-child {
+  text-align: right;
+}
 
 .precios-table td {
   padding: var(--space-3) 0;
@@ -239,6 +246,11 @@
   color: var(--color-gris);
 }
 
+/* Wrapper CTA en tarjetas de horarios */
+.horarios__cta-wrapper {
+  margin-top: var(--space-4);
+}
+
 /* ─── HISTORIA TEASER ────────────────────────────────── */
 
 .seccion-historia-teaser {
@@ -249,11 +261,14 @@
 }
 
 .seccion-historia-teaser::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(46, 204, 113, 0.06) 0%, transparent 60%);
+  background: radial-gradient(
+    ellipse 60% 80% at 80% 50%,
+    rgba(46, 204, 113, 0.06) 0%,
+    transparent 60%
+  );
   pointer-events: none;
 }
 
@@ -264,7 +279,8 @@
   align-items: center;
 }
 
-.historia-teaser__content {}
+.historia-teaser__content {
+}
 
 .historia-teaser__year-badge {
   font-family: var(--font-display);
@@ -296,6 +312,13 @@
   max-width: none;
 }
 
+/* Wrapper de botones CTA en sección historia teaser */
+.historia-teaser__ctas {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
 .historia-teaser__imagen-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -320,8 +343,9 @@
   object-fit: cover;
   filter: grayscale(0.7) sepia(0.2);
   opacity: 0.8;
-  transition: filter 0.5s var(--ease-out-strong),
-              opacity 0.5s var(--ease-out-strong);
+  transition:
+    filter 0.5s var(--ease-out-strong),
+    opacity 0.5s var(--ease-out-strong);
 }
 
 .historia-teaser__foto:hover img {
@@ -402,4 +426,3 @@
     font-size: 5rem;
   }
 }
-

@@ -29,6 +29,25 @@
   z-index: var(--z-base);
 }
 
+/* Título h1 del hero */
+.hero-contacto__titulo {
+  font-family: var(--font-marca);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: var(--weight-black);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  padding-bottom: var(--space-4);
+  color: var(--color-blanco);
+}
+
+/* Párrafo subtítulo del hero */
+.hero-contacto__subtitulo {
+  font-size: var(--text-lg);
+  color: rgba(245, 240, 232, 0.65);
+  max-width: 520px;
+  line-height: var(--leading-loose);
+}
+
 /* ─── SECCIÓN CONTACTO ───────────────────────────────── */
 
 .contacto-main {
@@ -158,6 +177,27 @@
   max-width: none;
 }
 
+/* Links de contacto coloreados por sede */
+.contacto-link--pa {
+  color: var(--color-verde-hover);
+  text-decoration: none;
+  transition: opacity 0.2s var(--ease-out-strong);
+}
+
+.contacto-link--pa:hover {
+  opacity: 0.8;
+}
+
+.contacto-link--pn {
+  color: var(--color-rojo-vivo);
+  text-decoration: none;
+  transition: opacity 0.2s var(--ease-out-strong);
+}
+
+.contacto-link--pn:hover {
+  opacity: 0.8;
+}
+
 /* Mapa embed */
 .contacto-mapa {
   border-radius: var(--radius-md);
@@ -196,6 +236,54 @@
 .contacto-mapa__placeholder p {
   color: var(--color-gris);
   font-size: var(--text-sm);
+  max-width: none;
+}
+
+/* ─── LISTA DE FEATURES (columna izquierda del form) ──── */
+
+.contacto-form__intro {
+  color: rgba(245, 240, 232, 0.65);
+  line-height: var(--leading-loose);
+  margin-bottom: var(--space-8);
+  max-width: none;
+}
+
+.contacto-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contacto-feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.contacto-feature__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: rgba(46, 204, 113, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-verde-hover);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.contacto-feature__title {
+  font-weight: var(--weight-bold);
+  color: var(--color-blanco);
+  font-size: var(--text-sm);
+  margin-bottom: 0;
+  max-width: none;
+}
+
+.contacto-feature__desc {
+  font-size: var(--text-xs);
+  color: var(--color-gris);
   max-width: none;
 }
 

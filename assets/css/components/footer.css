@@ -61,6 +61,24 @@
   max-width: 260px;
 }
 
+/* Logo fallback: oculto por defecto, visible si img falla */
+.footer__logo-fallback {
+  display: none;
+}
+
+.footer__logo.logo-error .footer__logo-fallback {
+  display: block;
+}
+
+.footer__logo.logo-error img {
+  display: none;
+}
+
+/* Estrella del rating en naranja */
+.footer__rating-star {
+  color: var(--color-naranja);
+}
+
 /* Redes sociales */
 .footer__socials {
   display: flex;

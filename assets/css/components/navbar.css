@@ -63,6 +63,24 @@
   color: var(--color-blanco);
 }
 
+/* Acento ESTRELLA en verde */
+.navbar-cine__logo-accent {
+  color: var(--color-verde-hover);
+}
+
+/* Logo fallback: oculto por defecto, visible si img falla */
+.navbar-cine__logo-fallback {
+  display: none;
+}
+
+.navbar-cine__logo.logo-error .navbar-cine__logo-fallback {
+  display: block;
+}
+
+.navbar-cine__logo.logo-error img {
+  display: none;
+}
+
 /* ─── NAV LINKS ──────────────────────────────────────── */
 
 .navbar-cine__nav {

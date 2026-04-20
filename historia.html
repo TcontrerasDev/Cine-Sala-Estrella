@@ -55,9 +55,9 @@
           <img
             src="assets/img/logo.png"
             alt="Cine Sala Estrella"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            onerror="this.parentElement.classList.add('logo-error')"
           >
-          <span class="navbar-cine__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+          <span class="navbar-cine__logo-text navbar-cine__logo-fallback">CINE SALA <span class="navbar-cine__logo-accent">ESTRELLA</span></span>
         </a>
 
         <nav class="navbar-cine__nav" aria-label="Secciones">
@@ -69,17 +69,6 @@
         </nav>
 
         <div class="navbar-cine__spacer"></div>
-
-        <div class="navbar-cine__sede" role="group" aria-label="Selección de sede">
-          <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pa active" data-sede="pa">
-            <span class="dot"></span>
-            Punta Arenas
-          </button>
-          <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pn" data-sede="pn">
-            <span class="dot"></span>
-            Puerto Natales
-          </button>
-        </div>
 
         <button
           class="navbar-cine__toggler"
@@ -100,7 +89,7 @@
     <!-- Offcanvas Mobile -->
     <div class="offcanvas offcanvas-start offcanvas-cine" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
       <div class="offcanvas-header">
-        <span class="navbar-cine__logo-text" id="offcanvasNavLabel">CINE SALA <span style="color: var(--color-verde-hover);">ESTRELLA</span></span>
+        <span class="navbar-cine__logo-text" id="offcanvasNavLabel">CINE SALA <span class="navbar-cine__logo-accent">ESTRELLA</span></span>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button>
       </div>
       <div class="offcanvas-body">
@@ -108,18 +97,7 @@
         <a href="index.html#proximamente" class="nav-link-mobile">Próximamente</a>
         <a href="index.html#horarios" class="nav-link-mobile">Horarios y Precios</a>
         <a href="historia.html" class="nav-link-mobile active">Historia</a>
-        <a href="contacto.html" class="nav-link-mobile">Contacto</a>
-        <div class="sede-section">
-          <p class="sede-label">Seleccionar sede</p>
-          <div class="sede-btns">
-            <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pa active" data-sede="pa" style="width: 100%; justify-content: flex-start; border-radius: var(--radius-md);">
-              <span class="dot"></span> Punta Arenas — Mejicana 777
-            </button>
-            <button class="navbar-cine__sede-btn navbar-cine__sede-btn--pn" data-sede="pn" style="width: 100%; justify-content: flex-start; border-radius: var(--radius-md);">
-              <span class="dot"></span> Puerto Natales — Esmeralda 777
-            </button>
-          </div>
-        </div>
+        <a href="contacto.html" class="nav-link-mobile">Contacto</a>S
       </div>
     </div>
   </header>
@@ -155,13 +133,13 @@
           <div>
             <span class="label-seccion">Nuestra identidad</span>
             <h2 class="titulo-seccion" id="tituloHistoriaIntro">Institución cultural<br>de Magallanes</h2>
-            <p style="color: rgba(245,240,232,0.7); line-height: var(--leading-loose); margin-bottom: var(--space-4); max-width: none;">
+            <p class="historia-intro__text">
               El Cine Sala Estrella no es simplemente un lugar donde se proyectan películas:
               es un pedazo de la identidad de Magallanes. Desde que Ángel Mattioni abrió
               sus puertas en 1891, el cine ha sido testigo de bodas, primeros amores,
               tardes de domingo y generaciones enteras de familias magallánicas.
             </p>
-            <p style="color: rgba(245,240,232,0.7); line-height: var(--leading-loose); max-width: none;">
+            <p class="historia-intro__text">
               Hoy operamos con tecnología de proyección 4K en 3D y un sistema de audio de
               16 canales, único en Chile al momento de su instalación — pero sin perder
               jamás el calor de lo familiar. Porque el cine, como decimos nosotros,
@@ -405,7 +383,7 @@
             </div>
             <div class="timeline__dot" aria-hidden="true"></div>
             <div class="timeline__year-col">
-              <span class="timeline__year" style="color: var(--color-verde-hover);">Hoy</span>
+              <span class="timeline__year">Hoy</span>
             </div>
           </div>
 
@@ -427,7 +405,7 @@
             <h2 class="titulo-seccion" id="tituloHistoriaHoy">
               Tecnología de primera<br>en el fin del mundo
             </h2>
-            <p style="color: rgba(245,240,232,0.7); line-height: var(--leading-loose); margin-bottom: var(--space-6); max-width: none;">
+            <p class="historia-hoy__text">
               Creemos que vivir en Magallanes no significa resignarse a menos.
               Por eso invertimos en tecnología que muchos complejos del centro del
               país no tienen. Porque la mejor experiencia de cine en Chile está aquí.
@@ -456,7 +434,7 @@
               </div>
             </div>
 
-            <div style="margin-top: var(--space-8);">
+            <div class="historia-hoy__cta">
               <a href="index.html#cartelera" class="btn-cine btn-lg btn-pa">
                 <i class="bi bi-camera-reels-fill"></i>
                 Ver cartelera
@@ -480,9 +458,9 @@
             <img
               src="assets/img/logo.png"
               alt="Cine Sala Estrella"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              onerror="this.parentElement.classList.add('logo-error')"
             >
-            <span class="footer__logo-text" style="display:none;">CINE SALA <span>ESTRELLA</span></span>
+            <span class="footer__logo-text footer__logo-fallback">CINE SALA <span>ESTRELLA</span></span>
           </div>
           <p class="footer__tagline">"Quien ama la vida, ama también al cine"</p>
           <nav class="footer__socials" aria-label="Redes sociales">

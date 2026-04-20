@@ -63,33 +63,8 @@
       rootMargin: '0px 0px -60px 0px'
     });
 
-    elements.forEach(el => {
-      /* Aplicar estado inicial */
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = `opacity 0.6s var(--ease-out-strong), transform 0.6s var(--ease-out-strong)`;
-      observer.observe(el);
-    });
-
-    /* Agregar clase revealed con CSS */
-    if (!document.getElementById('reveal-style')) {
-      const style = document.createElement('style');
-      style.id = 'reveal-style';
-      style.textContent = `
-        .reveal-element.revealed,
-        .historia-stat.revealed,
-        .historia-hoy__feature.revealed,
-        .horarios__sede-card.revealed,
-        .contacto-sede-card.revealed,
-        .footer__brand.revealed,
-        .footer__sedes.revealed,
-        .footer__links.revealed {
-          opacity: 1 !important;
-          transform: translateY(0) !important;
-        }
-      `;
-      document.head.appendChild(style);
-    }
+    /* Estado inicial y reveal manejados por CSS (.reveal-element en typography.css) */
+    elements.forEach(el => observer.observe(el));
   }
 
   /* ─── PARALLAX HERO ──────────────────────────────── */
@@ -108,11 +83,12 @@
       const scrollY = window.scrollY;
       const factor = scrollY * 0.3;
 
+      /* Setear custom properties — los transforms viven en CSS (hero.css) */
       if (heroBg) {
-        heroBg.style.transform = `scale(1.03) translateY(${factor * 0.15}px)`;
+        heroBg.style.setProperty('--parallax-y', `${factor * 0.15}px`);
       }
       if (heroBgImg) {
-        heroBgImg.style.transform = `scale(1.06) translateY(${factor * 0.12}px)`;
+        heroBgImg.style.setProperty('--parallax-y', `${factor * 0.12}px`);
       }
 
       ticking = false;
@@ -144,12 +120,8 @@
       rootMargin: '0px 0px -80px 0px'
     });
 
-    items.forEach((item, i) => {
-      /* Lados alternados: izquierda/derecha */
-      const direction = i % 2 === 0 ? -30 : 30;
-      item.style.transform = `translateX(${direction}px) translateY(20px)`;
-      observer.observe(item);
-    });
+    /* Transforms iniciales alternados manejados por CSS (timeline.css nth-child) */
+    items.forEach(item => observer.observe(item));
   }
 
   /* ─── LAZY IMAGES ────────────────────────────────── */
@@ -215,8 +187,7 @@
           const children = entry.target.querySelectorAll('.reveal-child');
           children.forEach((child, i) => {
             setTimeout(() => {
-              child.style.opacity = '1';
-              child.style.transform = 'translateY(0)';
+              child.classList.add('reveal-child--visible');
             }, i * 80);
           });
           observer.unobserve(entry.target);
