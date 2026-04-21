@@ -279,9 +279,6 @@
   align-items: center;
 }
 
-.historia-teaser__content {
-}
-
 .historia-teaser__year-badge {
   font-family: var(--font-display);
   font-size: clamp(5rem, 12vw, 10rem);

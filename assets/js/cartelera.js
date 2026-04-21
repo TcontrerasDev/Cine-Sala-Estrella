@@ -1,7 +1,7 @@
 /**
  * cartelera.js
  * Renderiza las cards de cartelera y gestiona el filtro de géneros.
- * Depende de: peliculas.js, sede-selector.js
+ * Depende de: peliculas.json, sede-selector.js
  */
 
 (function () {
@@ -9,6 +9,7 @@
 
   /* ─── CONFIG ─────────────────────────────────────── */
 
+  const DATA_URL = 'assets/js/data/peliculas.json';
   const STAGGER_DELAY = 60; /* ms entre cards */
 
   const GENEROS_LABEL = {
@@ -21,6 +22,8 @@
     romance:     'Romance',
     documental:  'Documental'
   };
+
+  let peliculasData = [];
 
   /* ─── HELPERS ────────────────────────────────────── */
 
@@ -39,6 +42,20 @@
 
   function buildPosterUrl(poster, titulo) {
     return poster || `https://placehold.co/300x450/0D2B1A/27AE60?text=${encodeURIComponent(titulo)}`;
+  }
+
+  /* ─── DATA LOADING ───────────────────────────────── */
+
+  async function fetchPeliculas() {
+    try {
+      const response = await fetch(DATA_URL);
+      if (!response.ok) throw new Error('Error al cargar las películas');
+      peliculasData = await response.json();
+      return peliculasData;
+    } catch (error) {
+      console.error('Fetch error:', error);
+      return [];
+    }
   }
 
   /* ─── RENDER CARD ────────────────────────────────── */
@@ -121,7 +138,7 @@
     const grid = document.getElementById('carteleraGrid');
     if (!grid) return;
 
-    const peliculas = (window.PELICULAS || []).filter(p => !p.proximamente);
+    const peliculas = peliculasData.filter(p => !p.proximamente);
     if (peliculas.length === 0) {
       grid.innerHTML = `<div class="cartelera__empty">
         <div class="cartelera__empty-icon"><i class="bi bi-camera-reels"></i></div>
@@ -139,7 +156,7 @@
     const grid = document.getElementById('proximamenteGrid');
     if (!grid) return;
 
-    const peliculas = (window.PELICULAS || []).filter(p => p.proximamente);
+    const peliculas = peliculasData.filter(p => p.proximamente);
     if (peliculas.length === 0) return;
 
     grid.innerHTML = peliculas.map((p, i) => renderCard(p, i, true)).join('');
@@ -152,7 +169,7 @@
     const container = document.getElementById('filtroGeneros');
     if (!container) return;
 
-    const peliculas = (window.PELICULAS || []).filter(p => !p.proximamente);
+    const peliculas = peliculasData.filter(p => !p.proximamente);
     const generosSet = new Set(peliculas.map(p => p.genero));
     const generos = ['todos', ...Array.from(generosSet).sort()];
 
@@ -247,7 +264,7 @@
     const sede = getSede();
     grid.querySelectorAll('.card-pelicula').forEach(card => {
       const id = parseInt(card.dataset.id);
-      const pelicula = (window.PELICULAS || []).find(p => p.id === id);
+      const pelicula = peliculasData.find(p => p.id === id);
       if (!pelicula) return;
 
       const horarios = pelicula.horarios[sede] || [];
@@ -266,7 +283,8 @@
 
   /* ─── INIT ───────────────────────────────────────── */
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
+    await fetchPeliculas();
     renderCartelera();
     renderProximamente();
   });
@@ -280,3 +298,4 @@
   };
 
 })();
+
