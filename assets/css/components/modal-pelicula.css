@@ -69,14 +69,13 @@
 .modal-pelicula__poster-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right , transparent 60%, var(--color-bg-card));
   pointer-events: none;
 }
 
 /* ─── COLUMNA DERECHA: INFO ───────────────────────────── */
 
 .modal-pelicula__info-col {
-  padding: var(--space-8) var(--space-6) var(--space-6);
+  padding: 0px var(--space-6);
   overflow-y: auto;
   max-height: 75vh;
   display: flex;

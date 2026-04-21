@@ -37,10 +37,6 @@
 
 /* Contenedor de ficha — mismo que #modalPelicula .modal-content */
 .single-pelicula {
-  background-color: var(--color-bg-card);
-  border: solid 1px #C9A96E1F;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-modal);
   overflow: hidden;
 }
 
