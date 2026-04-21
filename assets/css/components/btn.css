@@ -174,10 +174,6 @@
 /* ─── RESPONSIVE ─────────────────────────────────────── */
 
 @media (max-width: 575px) {
-  .btn-cine {
-    padding: var(--space-3) var(--space-5);
-  }
-
   .btn-lg {
     padding: var(--space-3) var(--space-6);
     font-size: var(--text-sm);

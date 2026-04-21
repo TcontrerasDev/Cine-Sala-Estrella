@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finaliza tu compra en Cine Sala Estrella.">
+  <meta name="theme-color" content="#0A1A0F">
+
+  <title>Resumen de Compra — Cine Sala Estrella</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- CSS Base -->
+  <link rel="stylesheet" href="assets/css/base/variables.css">
+  <link rel="stylesheet" href="assets/css/base/reset.css">
+  <link rel="stylesheet" href="assets/css/base/typography.css">
+
+  <!-- CSS Components -->
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/btn.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+
+  <!-- CSS Page -->
+  <link rel="stylesheet" href="assets/css/pages/compra-final.css">
+</head>
+<body class="sede-pa">
+
+  <!-- NAVBAR SIMPLIFICADA -->
+  <header>
+    <nav class="navbar-cine" role="navigation" aria-label="Navegación principal">
+      <div class="navbar-cine__inner">
+        <a href="index.html" class="navbar-cine__logo" aria-label="Cine Sala Estrella — Inicio">
+          <img src="assets/img/logo.png" alt="Cine Sala Estrella" onerror="this.parentElement.classList.add('logo-error')">
+          <span class="navbar-cine__logo-text navbar-cine__logo-fallback">CINE SALA <span class="navbar-cine__logo-accent">ESTRELLA</span></span>
+        </a>
+        <div class="navbar-cine__spacer"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="compra-final-page">
+    <div class="container">
+      
+      <!-- Paso de Compra -->
+      <div class="mb-5 text-center">
+        <span class="badge bg-success rounded-pill px-3 py-2 mb-5">Paso 2 de 2</span>
+        <h2 class="font-display text-white">Finaliza tu compra</h2>
+      </div>
+
+      <div class="compra-card">
+        <div class="compra-card__header text-center">
+          <h1 class="compra-card__title">Resumen de tu Pedido</h1>
+        </div>
+
+        <div class="compra-card__body">
+          
+          <!-- SECCIÓN: Película y Función -->
+          <div class="compra-section">
+            <h3 class="compra-section__title">Detalle de la Función</h3>
+            <div class="compra-movie-info">
+              <img src="https://placehold.co/300x450/0D2B1A/27AE60?text=SINNERS" alt="Poster Sinners" class="movie-poster-mini">
+              <div class="movie-details">
+                <h4>Sinners</h4>
+                <div class="movie-meta">
+                  <span><i class="bi bi-calendar3 me-2"></i> Hoy, 21 de Abril de 2026</span>
+                  <span><i class="bi bi-clock me-2"></i> 18:30 hrs</span>
+                  <span><i class="bi bi-geo-alt me-2"></i> Sede Punta Arenas — Mejicana 777</span>
+                  <span><i class="bi bi-door-open me-2"></i> Sala 1 (Digital 4K)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECCIÓN: Datos del Comprador -->
+          <div class="compra-section">
+            <h3 class="compra-section__title">Datos del Comprador</h3>
+            <div class="compra-form-grid">
+              <div class="form-group-static">
+                <span class="form-label-static">Nombre Completo</span>
+                <div class="form-value-static">Juan Pérez González</div>
+              </div>
+              <div class="form-group-static">
+                <span class="form-label-static">RUT</span>
+                <div class="form-value-static">12.345.678-9</div>
+              </div>
+              <div class="form-group-static">
+                <span class="form-label-static">Correo Electrónico</span>
+                <div class="form-value-static">juan.perez@email.com</div>
+              </div>
+              <div class="form-group-static">
+                <span class="form-label-static">Teléfono de contacto</span>
+                <div class="form-value-static">+56 9 1234 5678</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECCIÓN: Detalle de Asientos y Pago -->
+          <div class="compra-section">
+            <h3 class="compra-section__title">Detalle de Pago</h3>
+            <table class="compra-table">
+              <tr>
+                <td class="label">Asientos seleccionados:</td>
+                <td class="value">F7, F8, F9</td>
+              </tr>
+              <tr>
+                <td class="label">Entradas (3 x $4.500):</td>
+                <td class="value">$13.500</td>
+              </tr>
+              <tr>
+                <td class="label">Cargo por servicio (3 x $500):</td>
+                <td class="value">$1.500</td>
+              </tr>
+              <tr class="row-total">
+                <td class="total-label">Total a pagar</td>
+                <td class="total-value">$15.000</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- SECCIÓN: Método de Pago -->
+          <div class="compra-section">
+            <h3 class="compra-section__title">Método de Pago</h3>
+            <div class="pago-container">
+              <div class="pago-info">
+                <i class="bi bi-shield-check"></i>
+                <div>
+                  <p class="m-0 text-white fw-bold">Pago Seguro vía Webpay</p>
+                  <p class="m-0 text-secondary" style="font-size: 0.8rem;">Serás redirigido a la plataforma de pago.</p>
+                </div>
+              </div>
+              <div class="pago-logos">
+                <i class="bi bi-credit-card"></i>
+                <i class="bi bi-wallet2"></i>
+                <img src="https://placehold.co/80x30/000000/FFFFFF?text=Webpay" alt="Webpay Logo" style="height: 20px;">
+              </div>
+            </div>
+          </div>
+
+          <!-- ACCIONES -->
+          <div class="compra-acciones">
+            <a href="seleccion-asientos.html" class="btn-cine btn-ghost">
+              <i class="bi bi-arrow-left"></i> Volver
+            </a>
+            <button type="button" class="btn-cine btn-lg btn-pa">
+              Ir a Pagar — $15.000 <i class="bi bi-credit-card-fill ms-2"></i>
+            </button>
+          </div>
+
+          <!-- FOOTER INFORMATIVO -->
+          <div class="mt-4 text-center">
+            <p class="text-secondary mb-0" style="font-size: 0.75rem;">
+              Las entradas no son reembolsables. Puedes cambiar horario hasta 2 horas antes de la función.<br>
+              Al hacer clic en "Ir a Pagar" aceptas nuestros términos y condiciones.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          © 2026 <strong>Cine Sala Estrella</strong>. Familia Mattioni desde 1891.
+        </div>
+        <div class="footer__legal-links">
+          <a href="#">Privacidad</a>
+          <a href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

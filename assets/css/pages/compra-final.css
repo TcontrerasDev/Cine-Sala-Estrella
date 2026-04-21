@@ -1,0 +1,205 @@
+/* ─── COMPRA FINAL ─────────────────────────────────────── */
+
+.compra-final-page {
+  padding-top: calc(var(--navbar-height) + var(--space-8));
+  padding-bottom: var(--space-16);
+  background-color: var(--color-bg);
+  min-height: 100dvh;
+}
+
+/* ─── TARJETA CENTRAL DE COMPRA ────────────────────────── */
+.compra-card {
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.compra-card__header {
+  background: linear-gradient(135deg, var(--color-verde), var(--color-bg-card));
+  padding: var(--space-8);
+  border-bottom: var(--border-sutil);
+}
+
+.compra-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-blanco);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.compra-card__body {
+  padding: var(--space-8);
+}
+
+/* ─── SECCIONES DEL RESUMEN ────────────────────────────── */
+.compra-section {
+  margin-bottom: var(--space-8);
+}
+
+.compra-section__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-verde-hover);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #C9A96E1F;
+  padding-bottom: var(--space-2);
+}
+
+/* Info Película */
+.compra-movie-info {
+  display: flex;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.movie-poster-mini {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.movie-details h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-blanco);
+  margin-bottom: var(--space-2);
+}
+
+.movie-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  color: var(--color-gris);
+  font-size: var(--text-sm);
+}
+
+/* Tabla de Costos */
+.compra-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.compra-table td {
+  padding: var(--space-2) 0;
+  font-size: var(--text-sm);
+  color: var(--color-gris);
+}
+
+.compra-table .label { color: var(--color-gris); }
+.compra-table .value { color: var(--color-blanco); text-align: right; font-weight: var(--weight-medium); }
+
+.compra-table .row-total {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+}
+
+.compra-table .total-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-blanco);
+}
+
+.compra-table .total-value {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  color: var(--color-verde-hover);
+  text-align: right;
+}
+
+/* ─── FORMULARIO ESTÁTICO ────────────────────────────── */
+.compra-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.form-group-static {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.form-label-static {
+  font-size: var(--text-xs);
+  color: var(--color-gris);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-value-static {
+  background-color: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  color: var(--color-blanco);
+  font-size: var(--text-sm);
+}
+
+/* ─── MÉTODOS DE PAGO ────────────────────────────────── */
+.pago-container {
+  background-color: rgba(255,255,255,0.02);
+  border: 1px dashed rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pago-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.pago-info i {
+  font-size: var(--text-3xl);
+  color: var(--color-verde-hover);
+}
+
+.pago-logos {
+  display: flex;
+  gap: var(--space-3);
+  filter: grayscale(1) brightness(0.8);
+  opacity: 0.6;
+}
+
+.pago-logos i {
+  font-size: 1.5rem;
+}
+
+/* ─── ACCIONES ────────────────────────────────────────── */
+.compra-acciones {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+/* ─── RESPONSIVE ────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .compra-form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .compra-acciones {
+    grid-template-columns: 1fr;
+  }
+  
+  .compra-card__body {
+    padding: var(--space-4);
+  }
+
+  .pago-container {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+}
