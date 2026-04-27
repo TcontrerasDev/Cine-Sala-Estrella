@@ -39,6 +39,9 @@
   <link rel="stylesheet" href="assets/css/components/sede-selector.css">
   <link rel="stylesheet" href="assets/css/components/footer.css">
 
+  <!-- CSS Components (sección) -->
+  <link rel="stylesheet" href="assets/css/components/seccion-info-importante.css">
+
   <!-- CSS Page -->
   <link rel="stylesheet" href="assets/css/pages/home.css">
 </head>
@@ -68,7 +71,7 @@
         <nav class="navbar-cine__nav" aria-label="Secciones">
           <a href="#cartelera" class="navbar-cine__link">En Cartelera</a>
           <a href="#proximamente" class="navbar-cine__link">Próximamente</a>
-          <a href="#horarios" class="navbar-cine__link">Horarios</a>
+          <a href="#info-importante" class="navbar-cine__link">Información</a>
           <a href="historia.html" class="navbar-cine__link">Historia</a>
           <a href="contacto.html" class="navbar-cine__link">Contacto</a>
         </nav>
@@ -101,7 +104,7 @@
       <div class="offcanvas-body">
         <a href="#cartelera" class="nav-link-mobile" data-bs-dismiss="offcanvas">En Cartelera</a>
         <a href="#proximamente" class="nav-link-mobile" data-bs-dismiss="offcanvas">Próximamente</a>
-        <a href="#horarios" class="nav-link-mobile" data-bs-dismiss="offcanvas">Horarios y Precios</a>
+        <a href="#info-importante" class="nav-link-mobile" data-bs-dismiss="offcanvas">Información Importante</a>
         <a href="historia.html" class="nav-link-mobile">Historia</a>
         <a href="contacto.html" class="nav-link-mobile">Contacto</a>
       </div>
@@ -141,9 +144,9 @@
             <i class="bi bi-camera-reels-fill"></i>
             Ver cartelera
           </a>
-          <a href="#horarios" class="btn-cine btn-lg btn-ghost">
-            <i class="bi bi-clock"></i>
-            Horarios y precios
+          <a href="#info-importante" class="btn-cine btn-lg btn-ghost">
+            <i class="bi bi-info-circle"></i>
+            Información
           </a>
         </div>
 
@@ -263,183 +266,87 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
-         HORARIOS Y PRECIOS
+         INFORMACIÓN IMPORTANTE
     ═══════════════════════════════════════════════════════ -->
-    <section class="seccion-horarios" id="horarios" aria-labelledby="tituloHorarios">
+    <section class="seccion-info-importante" id="info-importante" aria-labelledby="tituloInfoImportante">
       <div class="seccion__inner">
 
-        <span class="label-seccion">Información</span>
-        <h2 class="titulo-seccion" id="tituloHorarios">Horarios y Precios</h2>
+        <span class="label-seccion">Políticas</span>
+        <h2 class="titulo-seccion" id="tituloInfoImportante">
+          <span class="info-importante__titulo-accent">Condiciones de Cambio</span> de Entradas
+        </h2>
+        <p class="info-importante__subtitulo">Para que tu experiencia sea siempre la mejor, ten en cuenta nuestras condiciones de cambio:</p>
 
-        <div class="horarios__grid">
+        <div class="info-importante__grid">
 
-          <!-- Punta Arenas -->
-          <article class="horarios__sede-card horarios__sede-card--pa reveal-element" aria-labelledby="horariosPATitulo">
-            <div class="horarios__sede-header horarios__sede-header--pa">
-              <span class="horarios__sede-dot"></span>
-              <span class="horarios__sede-nombre" id="horariosPATitulo">Punta Arenas</span>
-              <span class="horarios__sede-direccion">
-                <i class="bi bi-geo-alt"></i>
-                Mejicana 777
-              </span>
+          <!-- Card 1 -->
+          <article class="info-importante__card reveal-element">
+            <div class="info-importante__card-icon" aria-hidden="true">
+              <i class="bi bi-calendar2-check"></i>
             </div>
-            <div class="horarios__sede-body">
-              <table class="precios-table" aria-label="Precios sede Punta Arenas">
-                <thead>
-                  <tr>
-                    <th scope="col">Tipo de entrada</th>
-                    <th scope="col">Precio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      General
-                      <span class="tag-especial">Lunes a viernes</span>
-                    </td>
-                    <td>$4.500</td>
-                  </tr>
-                  <tr>
-                    <td>General fin de semana</td>
-                    <td>$5.500</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Estudiante
-                      <span class="tag-especial">Con credencial</span>
-                    </td>
-                    <td>$3.500</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      3D
-                      <span class="tag-especial">Incluye lentes</span>
-                    </td>
-                    <td>$6.500</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Niños
-                      <span class="tag-especial">Hasta 10 años</span>
-                    </td>
-                    <td>$3.000</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Tercera edad
-                      <span class="tag-especial">Con credencial</span>
-                    </td>
-                    <td>$3.000</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div class="horarios__info-row">
-                <i class="bi bi-clock-fill"></i>
-                <span>Primera función desde las 14:00 hrs</span>
-              </div>
-              <div class="horarios__info-row">
-                <i class="bi bi-calendar-check-fill"></i>
-                <span>Abierto todos los días, incluyendo festivos</span>
-              </div>
-              <div class="horarios__info-row">
-                <i class="bi bi-telephone-fill"></i>
-                <span>Consultas: +56 61 222 3456</span>
-              </div>
-
-              <div class="horarios__cta-wrapper">
-                <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer" class="btn-cine btn-pa btn-sm">
-                  <i class="bi bi-ticket-perforated"></i>
-                  Comprar entradas en línea
-                </a>
-              </div>
-            </div>
+            <h3 class="info-importante__card-titulo">Cambios solo Lun, Mar y Mié</h3>
+            <p class="info-importante__card-desc">Solo se realizan cambios para funciones de Lunes, Martes y Miércoles.</p>
+            <span class="info-importante__card-tag">Sin excepciones</span>
           </article>
 
-          <!-- Puerto Natales -->
-          <article class="horarios__sede-card horarios__sede-card--pn reveal-element" aria-labelledby="horariosPNTitulo">
-            <div class="horarios__sede-header horarios__sede-header--pn">
-              <span class="horarios__sede-dot"></span>
-              <span class="horarios__sede-nombre" id="horariosPNTitulo">Puerto Natales</span>
-              <span class="horarios__sede-direccion">
-                <i class="bi bi-geo-alt"></i>
-                Esmeralda 777
-              </span>
+          <!-- Card 2 -->
+          <article class="info-importante__card reveal-element">
+            <div class="info-importante__card-icon" aria-hidden="true">
+              <i class="bi bi-clock-history"></i>
             </div>
-            <div class="horarios__sede-body">
-              <table class="precios-table" aria-label="Precios sede Puerto Natales">
-                <thead>
-                  <tr>
-                    <th scope="col">Tipo de entrada</th>
-                    <th scope="col">Precio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      General
-                      <span class="tag-especial">Lunes a viernes</span>
-                    </td>
-                    <td>$4.000</td>
-                  </tr>
-                  <tr>
-                    <td>General fin de semana</td>
-                    <td>$5.000</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Estudiante
-                      <span class="tag-especial">Con credencial</span>
-                    </td>
-                    <td>$3.000</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      3D
-                      <span class="tag-especial">Incluye lentes</span>
-                    </td>
-                    <td>$6.000</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Niños
-                      <span class="tag-especial">Hasta 10 años</span>
-                    </td>
-                    <td>$2.500</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Tercera edad
-                      <span class="tag-especial">Con credencial</span>
-                    </td>
-                    <td>$2.500</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div class="horarios__info-row pn">
-                <i class="bi bi-clock-fill"></i>
-                <span>Primera función desde las 16:00 hrs</span>
-              </div>
-              <div class="horarios__info-row pn">
-                <i class="bi bi-calendar-check-fill"></i>
-                <span>Abierto todos los días, incluyendo festivos</span>
-              </div>
-              <div class="horarios__info-row pn">
-                <i class="bi bi-telephone-fill"></i>
-                <span>Consultas: +56 61 241 5678</span>
-              </div>
-
-              <div class="horarios__cta-wrapper">
-                <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer" class="btn-cine btn-pn btn-sm">
-                  <i class="bi bi-ticket-perforated"></i>
-                  Comprar entradas en línea
-                </a>
-              </div>
-            </div>
+            <h3 class="info-importante__card-titulo">Solicitud hasta 24 horas antes</h3>
+            <p class="info-importante__card-desc">No se realizan cambios el mismo día de la función.</p>
+            <span class="info-importante__card-tag">24h de anticipación</span>
           </article>
 
-        </div><!-- /.horarios__grid -->
+          <!-- Card 3 -->
+          <article class="info-importante__card reveal-element">
+            <div class="info-importante__card-icon" aria-hidden="true">
+              <i class="bi bi-cash-coin"></i>
+            </div>
+            <h3 class="info-importante__card-titulo">Sin devolución de dinero</h3>
+            <p class="info-importante__card-desc">No se realizan devoluciones. Solo se permiten cambios de función.</p>
+            <span class="info-importante__card-tag">Solo cambios</span>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="info-importante__card reveal-element">
+            <div class="info-importante__card-icon" aria-hidden="true">
+              <i class="bi bi-ui-checks-grid"></i>
+            </div>
+            <h3 class="info-importante__card-titulo">Revisa antes de comprar</h3>
+            <p class="info-importante__card-desc">Verifica ciudad, día y horario antes de confirmar tu compra para evitar inconvenientes.</p>
+            <span class="info-importante__card-tag">Para evitar inconvenientes</span>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="info-importante__card reveal-element">
+            <div class="info-importante__card-icon" aria-hidden="true">
+              <i class="bi bi-slash-circle"></i>
+            </div>
+            <h3 class="info-importante__card-titulo">Sin cambios entre cines</h3>
+            <p class="info-importante__card-desc">El cambio aplica únicamente para el mismo cine donde se adquirió la entrada.</p>
+            <span class="info-importante__card-tag">Mismo cine</span>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="info-importante__card reveal-element">
+            <div class="info-importante__card-icon" aria-hidden="true">
+              <i class="bi bi-ticket-perforated"></i>
+            </div>
+            <h3 class="info-importante__card-titulo">Cambios solo en boletería</h3>
+            <p class="info-importante__card-desc">Presenta tu entrada física en boletería para realizar el cambio de función.</p>
+            <span class="info-importante__card-tag">Presencial</span>
+          </article>
+
+        </div><!-- /.info-importante__grid -->
+
+        <div class="info-importante__cierre" role="note">
+          <p>¡Gracias por tu comprensión y por elegirnos! ¡Nos vemos en el cine! 🎬⭐</p>
+        </div>
+
+        <p class="info-importante__legal">Al comprar tu entrada, aceptas las condiciones establecidas por Cine Sala Estrella. Para dudas o consultas, acércate a nuestra boletería.</p>
+
       </div>
     </section>
 
@@ -597,7 +504,7 @@
             <a href="index.html">Inicio</a>
             <a href="#cartelera">En Cartelera</a>
             <a href="#proximamente">Próximamente</a>
-            <a href="#horarios">Horarios y Precios</a>
+            <a href="#info-importante">Información Importante</a>
             <a href="historia.html">Nuestra Historia</a>
             <a href="contacto.html">Contacto</a>
             <a href="https://cineestrella.cl" target="_blank" rel="noopener noreferrer">Comprar entradas</a>

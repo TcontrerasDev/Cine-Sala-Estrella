@@ -90,167 +90,6 @@
   gap: var(--space-6);
 }
 
-/* ─── HORARIOS Y PRECIOS ─────────────────────────────── */
-
-.seccion-horarios {
-  padding: var(--space-24) 0;
-  background-color: var(--color-bg);
-}
-
-.horarios__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
-}
-
-.horarios__sede-card {
-  background-color: var(--color-bg-card);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: var(--border-sutil);
-  transition: border-color 0.3s var(--ease-out-strong);
-}
-
-.horarios__sede-card--pa:hover {
-  border-color: rgba(46, 204, 113, 0.3);
-}
-
-.horarios__sede-card--pn:hover {
-  border-color: rgba(169, 50, 38, 0.3);
-}
-
-.horarios__sede-header {
-  padding: var(--space-4) var(--space-6);
-  border-bottom: var(--border-sutil);
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.horarios__sede-header--pa {
-  background-color: rgba(255, 255, 255, 0.02);
-}
-
-.horarios__sede-header--pn {
-  background-color: rgba(255, 255, 255, 0.02);
-}
-
-.horarios__sede-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.horarios__sede-header--pa .horarios__sede-dot {
-  background-color: var(--color-verde-hover);
-}
-
-.horarios__sede-header--pn .horarios__sede-dot {
-  background-color: var(--color-rojo-vivo);
-}
-
-.horarios__sede-nombre {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  font-weight: var(--weight-bold);
-  color: var(--color-blanco);
-  flex: 1;
-}
-
-.horarios__sede-direccion {
-  font-size: var(--text-xs);
-  color: var(--color-gris);
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-}
-
-.horarios__sede-body {
-  padding: var(--space-6);
-}
-
-/* Precios table */
-.precios-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin-bottom: var(--space-6);
-}
-
-.precios-table th {
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-gris);
-  padding: 0 0 var(--space-3);
-  text-align: left;
-  border-bottom: var(--border-sutil);
-}
-
-.precios-table th:last-child {
-  text-align: right;
-}
-
-.precios-table td {
-  padding: var(--space-3) 0;
-  font-size: var(--text-sm);
-  color: rgba(245, 240, 232, 0.75);
-  border-bottom: var(--border-sutil);
-  vertical-align: middle;
-}
-
-.precios-table tr:last-child td {
-  border-bottom: none;
-}
-
-.precios-table td:last-child {
-  text-align: right;
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  letter-spacing: 0.04em;
-  color: var(--color-blanco);
-}
-
-.precios-table .tag-especial {
-  font-size: 10px;
-  background-color: rgba(197, 163, 127, 0.15);
-  color: var(--color-naranja);
-  border: 1px solid rgba(197, 163, 127, 0.25);
-  border-radius: var(--radius-pill);
-  padding: 1px 6px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-left: var(--space-2);
-}
-
-/* Info horarios */
-.horarios__info-row {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  font-size: var(--text-sm);
-  color: rgba(245, 240, 232, 0.6);
-  margin-bottom: var(--space-2);
-}
-
-.horarios__info-row i {
-  color: var(--color-gris);
-  font-size: var(--text-sm);
-  flex-shrink: 0;
-}
-
-.horarios__info-row.pn i {
-  color: var(--color-gris);
-}
-
-/* Wrapper CTA en tarjetas de horarios */
-.horarios__cta-wrapper {
-  margin-top: var(--space-4);
-}
-
 /* ─── HISTORIA TEASER ────────────────────────────────── */
 
 .seccion-historia-teaser {
@@ -378,11 +217,6 @@
     gap: var(--space-4);
   }
 
-  .horarios__grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-
   .historia-teaser__grid {
     grid-template-columns: 1fr;
     gap: var(--space-8);
@@ -397,7 +231,6 @@
 @media (max-width: 767px) {
   .seccion-cartelera,
   .seccion-proximamente,
-  .seccion-horarios,
   .seccion-historia-teaser {
     padding: var(--space-16) 0;
   }
