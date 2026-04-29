@@ -1,8 +1,3 @@
-.agents
-.claude
-CLAUDE.md
-skills-lock.json
-GEMINI.md
 node_modules
 package-lock.json
 package.json
