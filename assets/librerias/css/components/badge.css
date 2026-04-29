@@ -1,0 +1,85 @@
+/* ─── BADGES ──────────────────────────────────────────── */
+
+.badge-cine {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* ─── SEDE ───────────────────────────────────────────── */
+
+.badge-pa {
+  background-color: transparent;
+  color: var(--color-blanco);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.badge-pn {
+  background-color: transparent;
+  color: var(--color-blanco);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ─── CLASIFICACIÓN ETARIA ───────────────────────────── */
+
+.badge-clasificacion {
+  background-color: rgba(197, 163, 127, 0.15);
+  color: var(--color-naranja);
+  border: 1px solid rgba(197, 163, 127, 0.35);
+  font-weight: var(--weight-bold);
+}
+
+.badge-atp {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(245, 240, 232, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ─── GÉNEROS ────────────────────────────────────────── */
+
+.badge-genero {
+  background-color: rgba(255, 255, 255, 0.07);
+  color: rgba(245, 240, 232, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ─── ESTRENO ────────────────────────────────────────── */
+
+.badge-estreno {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: var(--color-rojo-vivo);
+  border: 1px solid rgba(231, 76, 60, 0.4);
+  font-weight: var(--weight-bold);
+}
+
+/* ─── BADGE EN CARD ESQUINA ──────────────────────────── */
+
+.badge-card-sede {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: var(--z-card-overlay);
+  font-size: 10px;
+  padding: 2px 8px;
+}
+
+.badge-card-clasificacion {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: var(--z-card-overlay);
+  font-size: 10px;
+  font-weight: var(--weight-black);
+  padding: 2px 7px;
+}
+
+

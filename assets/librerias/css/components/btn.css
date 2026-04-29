@@ -1,0 +1,183 @@
+/* ─── BOTONES ─────────────────────────────────────────── */
+
+/* Base */
+.btn-cine {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.2s var(--ease-out-strong),
+              border-color 0.2s var(--ease-out-strong),
+              box-shadow 0.2s var(--ease-out-strong),
+              transform 0.15s var(--ease-out-strong),
+              color 0.2s var(--ease-out-strong);
+  white-space: nowrap;
+  line-height: 1;
+  min-height: 44px; /* Touch target mínimo */
+}
+
+/* Press feedback — responde a la acción */
+.btn-cine:active {
+  transform: scale(0.97);
+}
+
+/* ─── VARIANTES ───────────────────────────────────────── */
+
+/* Punta Arenas — Verde oscuro */
+.btn-pa {
+  background-color: var(--color-verde);
+  color: var(--color-blanco);
+  border-color: var(--color-verde);
+}
+
+.btn-pa:hover {
+  background-color: rgba(30, 86, 49, 0.85);
+  border-color: rgba(30, 86, 49, 0.9);
+  box-shadow: none;
+  color: var(--color-blanco);
+}
+
+/* Puerto Natales — Rojo */
+.btn-pn {
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+  border-color: var(--color-rojo);
+}
+
+.btn-pn:hover {
+  background-color: var(--color-rojo-vivo);
+  border-color: var(--color-rojo-vivo);
+  box-shadow: var(--shadow-rojo-hover);
+  color: var(--color-blanco);
+}
+
+/* Outline blanco (CTA secundario) */
+.btn-outline-pa {
+  background-color: transparent;
+  color: var(--color-blanco);
+  border-color: rgba(245, 240, 232, 0.35);
+}
+
+.btn-outline-pa:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(245, 240, 232, 0.6);
+  color: var(--color-blanco);
+  box-shadow: none;
+}
+
+/* Outline rojo */
+.btn-outline-pn {
+  background-color: transparent;
+  color: var(--color-rojo-vivo);
+  border-color: rgba(169, 50, 38, 0.5);
+}
+
+.btn-outline-pn:hover {
+  background-color: rgba(169, 50, 38, 0.12);
+  border-color: var(--color-rojo);
+  color: var(--color-rojo-vivo);
+  box-shadow: var(--shadow-rojo-hover);
+}
+
+/* Ghost */
+.btn-ghost {
+  background-color: transparent;
+  color: rgba(245, 240, 232, 0.65);
+  border-color: rgba(245, 240, 232, 0.18);
+}
+
+.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(245, 240, 232, 0.35);
+  color: var(--color-blanco);
+}
+
+/* ─── TAMAÑOS ─────────────────────────────────────────── */
+
+.btn-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+  min-height: 36px;
+}
+
+.btn-lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-base);
+  letter-spacing: 0.1em;
+  min-height: 52px;
+}
+
+/* ─── CON ICONO ───────────────────────────────────────── */
+
+.btn-cine i,
+.btn-cine svg {
+  font-size: 1em;
+  transition: transform 0.2s var(--ease-out-strong);
+}
+
+.btn-cine:hover i,
+.btn-cine:hover svg {
+  transform: translateX(2px);
+}
+
+/* ─── SEDE DINÁMICO ───────────────────────────────────── */
+
+/* Clase que cambia según sede activa (asignada por JS) */
+.btn-sede-activa {
+  background-color: var(--color-verde);
+  color: var(--color-blanco);
+  border-color: var(--color-verde);
+}
+
+.btn-sede-activa:hover {
+  background-color: rgba(30, 86, 49, 0.85);
+  border-color: rgba(30, 86, 49, 0.9);
+  box-shadow: none;
+  color: var(--color-blanco);
+}
+
+/* Puerto Natales override */
+[data-sede="pn"] .btn-sede-activa,
+.sede-pn .btn-sede-activa {
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+  border-color: var(--color-rojo);
+}
+
+[data-sede="pn"] .btn-sede-activa:hover,
+.sede-pn .btn-sede-activa:hover {
+  background-color: var(--color-rojo-vivo);
+  border-color: var(--color-rojo-vivo);
+  box-shadow: var(--shadow-rojo-hover);
+  color: var(--color-blanco);
+}
+
+/* ─── DISABLED ───────────────────────────────────────── */
+
+.btn-cine:disabled,
+.btn-cine[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+
+@media (max-width: 575px) {
+  .btn-lg {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-sm);
+  }
+}
+
+

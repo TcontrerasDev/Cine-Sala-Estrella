@@ -1,0 +1,104 @@
+:root {
+
+  /* ─── COLORES VIVOS Y CINEMATOGRÁFICOS ───────────────── */
+  --color-bg:              #0E1A12;   /* Negro verdoso muy profundo */
+  --color-bg-card:         #162318;   /* Fondo de card un poco más claro */
+  --color-verde:           #2D5A3D;   /* Verde bosque profundo y vivo (Sede PA) */
+  --color-verde-hover:     #5C8C6A;   /* Verde esmeralda vibrante */
+  --color-verde-hover-alt: #5C8C6A;   /* Verde esmeralda profundo */
+  --color-rojo:            #8B3A3A;   /* Rojo ladrillo vivo (Sede PN) */
+  --color-rojo-vivo:       #E74C3C;   /* Rojo coral vibrante */
+  --color-naranja:         #C9A96E;   /* Naranja vivo (Avisos/Estrenos) */
+  --color-blanco:          #FDFEFE;   /* Blanco puro para contraste */
+  --color-gris:            #95A5A6;   /* Gris plateado (textos secundarios) */
+  --color-negro:           #050806;   /* Negro casi total */
+
+  /* Sedes */
+  --sede-pa-color:         #2ECC71;   /* Punta Arenas */
+  --sede-pn-color:         #E74C3C;   /* Puerto Natales */
+
+  /* ─── TIPOGRAFÍA ──────────────────────────────── */
+  --font-display:          'Bebas Neue', sans-serif;
+  --font-marca:            'Cinzel', serif;
+  --font-body:             'DM Sans', sans-serif;
+
+  --text-xs:               0.75rem;
+  --text-sm:               0.875rem;
+  --text-base:             1rem;
+  --text-lg:               1.125rem;
+  --text-xl:               1.25rem;
+  --text-2xl:              1.5rem;
+  --text-3xl:              2rem;
+  --text-4xl:              3rem;
+  --text-hero:             clamp(3rem, 8vw, 4rem);
+
+  --weight-light:          300;
+  --weight-regular:        400;
+  --weight-medium:         500;
+  --weight-bold:           700;
+  --weight-black:          900;
+
+  --leading-tight:         1.1;
+  --leading-normal:        1.5;
+  --leading-loose:         1.8;
+
+  /* ─── ESPACIADO ───────────────────────────────── */
+  --space-1:               0.25rem;
+  --space-2:               0.5rem;
+  --space-3:               0.75rem;
+  --space-4:               1rem;
+  --space-6:               1.5rem;
+  --space-8:               2rem;
+  --space-12:              3rem;
+  --space-16:              4rem;
+  --space-24:              6rem;
+  --space-32:              8rem;
+
+  /* ─── BORDES Y RADIOS ─────────────────────────── */
+  --radius-sm:             4px;
+  --radius-md:             8px;
+  --radius-lg:             12px;
+  --radius-pill:           999px;
+
+  --border-accent:         1px solid var(--color-verde-hover);
+  --border-rojo:           1px solid var(--color-rojo);
+  --border-sutil:          1px solid rgba(255,255,255,0.08);
+
+  /* ─── SOMBRAS (Más profundas y vibrantes) ─────── */
+  --shadow-card:           0 8px 32px rgba(0,0,0,0.6);
+  --shadow-card-hover:     0 12px 48px rgba(46, 204, 113, 0.25);
+  --shadow-rojo-hover:     0 12px 48px rgba(231, 76, 60, 0.25);
+  --shadow-modal:          0 32px 100px rgba(0,0,0,0.85);
+
+  /* ─── TRANSICIONES ────────────────────────────── */
+  --transition-base:       all 0.3s ease;
+  --transition-fast:       all 0.15s ease;
+  --transition-slow:       all 0.5s ease;
+
+  /* Curvas personalizadas (Emil Kowalski) */
+  --ease-out-strong:       cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong:    cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer:           cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* ─── Z-INDEX ─────────────────────────────────── */
+  --z-base:                1;
+  --z-card-overlay:        10;
+  --z-navbar:              100;
+  --z-modal:               200;
+  --z-toast:               300;
+
+  /* ─── BREAKPOINTS (usar en media queries) ──────── */
+  /* mobile:   < 576px   */
+  /* tablet:   576–991px */
+  /* desktop:  ≥ 992px   */
+  /* wide:     ≥ 1400px  */
+
+  /* ─── COMPONENTES REUTILIZABLES ───────────────── */
+  --navbar-height:         72px;
+  --card-poster-ratio:     calc(3/2);   /* ratio vertical 2:3 */
+  --grid-cols-desktop:     4;
+  --grid-cols-tablet:      2;
+  --grid-cols-mobile:      1;
+  --section-padding:       var(--space-24) 0;
+}
+

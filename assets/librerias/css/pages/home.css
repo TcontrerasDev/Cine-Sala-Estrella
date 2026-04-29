@@ -1,0 +1,257 @@
+/* ─── HOME PAGE ───────────────────────────────────────── */
+/* Estilos exclusivos de index.html */
+
+/* ─── SECCIÓN BASE ───────────────────────────────────── */
+
+.seccion {
+  padding: var(--section-padding);
+}
+
+.seccion__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+
+/* ─── CARTELERA ──────────────────────────────────────── */
+
+.seccion-cartelera {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg);
+}
+
+.cartelera__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+@keyframes pulse {
+  from { opacity: 0.4; }
+  to   { opacity: 0.7; }
+}
+
+/* Skeleton loaders de cartelera */
+.cartelera__skeleton {
+  aspect-ratio: 2 / 3;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  animation: pulse 1.5s ease infinite alternate;
+}
+
+.cartelera__skeleton--2 { animation-delay: 0.1s; }
+.cartelera__skeleton--3 { animation-delay: 0.2s; }
+.cartelera__skeleton--4 { animation-delay: 0.3s; }
+
+/* Grid de películas */
+.cartelera__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+/* Estado vacío si no hay películas para un filtro */
+.cartelera__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-16) 0;
+}
+
+.cartelera__empty-icon {
+  font-size: 3rem;
+  color: var(--color-verde);
+  margin-bottom: var(--space-4);
+  opacity: 0.5;
+}
+
+.cartelera__empty-text {
+  color: var(--color-gris);
+  font-size: var(--text-base);
+  max-width: none;
+}
+
+/* ─── PRÓXIMAMENTE ───────────────────────────────────── */
+
+.seccion-proximamente {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  border-top: solid 1px #C9A96E1F;
+  border-bottom: solid 1px #C9A96E1F;
+}
+
+.proximamente__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+/* ─── HISTORIA TEASER ────────────────────────────────── */
+
+.seccion-historia-teaser {
+  padding: var(--space-24) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.seccion-historia-teaser::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 80% at 80% 50%,
+    rgba(46, 204, 113, 0.06) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.historia-teaser__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.historia-teaser__year-badge {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 12vw, 10rem);
+  line-height: 0.85;
+  color: var(--color-verde);
+  opacity: 0.06;
+  letter-spacing: 0.02em;
+  margin-bottom: calc(var(--space-4) * -1);
+  user-select: none;
+}
+
+.historia-teaser__titulo {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-blanco);
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.historia-teaser__texto {
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+  color: rgba(245, 240, 232, 0.65);
+  margin-bottom: var(--space-8);
+  max-width: none;
+}
+
+/* Wrapper de botones CTA en sección historia teaser */
+.historia-teaser__ctas {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.historia-teaser__imagen-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: auto auto;
+  gap: var(--space-3);
+  position: relative;
+}
+
+.historia-teaser__foto {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-verde);
+}
+
+.historia-teaser__foto:first-child {
+  grid-row: 1 / 3;
+}
+
+.historia-teaser__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.7) sepia(0.2);
+  opacity: 0.8;
+  transition:
+    filter 0.5s var(--ease-out-strong),
+    opacity 0.5s var(--ease-out-strong);
+}
+
+.historia-teaser__foto:hover img {
+  filter: grayscale(0.2) sepia(0.1);
+  opacity: 1;
+}
+
+.historia-teaser__foto--tall img {
+  aspect-ratio: 3 / 4;
+}
+
+.historia-teaser__foto--sq img {
+  aspect-ratio: 1 / 1;
+}
+
+/* ─── RESPONSIVE HOME ────────────────────────────────── */
+
+@media (max-width: 1199px) {
+  .cartelera__grid,
+  .proximamente__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .seccion__inner {
+    padding: 0 var(--space-6);
+  }
+
+  .cartelera__grid,
+  .proximamente__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .historia-teaser__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .historia-teaser__imagen-grid {
+    order: -1;
+    max-height: 360px;
+  }
+}
+
+@media (max-width: 767px) {
+  .seccion-cartelera,
+  .seccion-proximamente,
+  .seccion-historia-teaser {
+    padding: var(--space-16) 0;
+  }
+
+  .cartelera__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 575px) {
+  .seccion__inner {
+    padding: 0 var(--space-4);
+  }
+
+  .cartelera__grid,
+  .proximamente__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .historia-teaser__year-badge {
+    font-size: 5rem;
+  }
+}
