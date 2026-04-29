@@ -17,14 +17,23 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 30% 40%, rgba(30, 86, 49, 0.35) 0%, transparent 70%),
+    radial-gradient(
+      ellipse 70% 60% at 30% 40%,
+      rgba(30, 86, 49, 0.35) 0%,
+      transparent 70%
+    ),
     linear-gradient(160deg, rgba(13, 12, 11, 0.4) 0%, var(--color-negro) 80%);
 }
 
 .hero-historia__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, var(--color-negro) 0%, rgba(13, 12, 11, 0.6) 50%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    var(--color-negro) 0%,
+    rgba(13, 12, 11, 0.6) 50%,
+    transparent 100%
+  );
 }
 
 .hero-historia__content {
@@ -139,7 +148,7 @@
 }
 
 .historia-intro__imagen::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: var(--radius-lg);
@@ -184,11 +193,14 @@
 }
 
 .historia-hoy::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 50% 50%, rgba(46, 204, 113, 0.08) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse 60% 80% at 50% 50%,
+    rgba(46, 204, 113, 0.08) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -240,8 +252,9 @@
   background-color: var(--color-verde);
   border: var(--border-sutil);
   border-radius: var(--radius-md);
-  transition: border-color  var(--transition-base),
-              background-color  var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    background-color var(--transition-base);
 }
 
 .historia-hoy__feature:hover {
@@ -295,6 +308,19 @@
   }
 }
 
+@media (max-width: 767px) {
+  .timeline__dot {
+    display: none;
+  }
+
+  .timeline {
+    padding-left: 0;
+    &::before {
+      display: none;
+    }
+  }
+}
+
 @media (max-width: 575px) {
   .hero-historia__content,
   .historia-intro__inner,
@@ -313,4 +339,3 @@
     grid-template-columns: 1fr;
   }
 }
-

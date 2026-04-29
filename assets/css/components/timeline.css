@@ -198,7 +198,7 @@
   .timeline__item {
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
-    gap: var(--space-2) var(--space-4);
+    gap: var(--space-2) 0;
   }
 
   .timeline__dot {
