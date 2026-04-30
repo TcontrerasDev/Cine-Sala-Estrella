@@ -17,12 +17,10 @@ function js_functions(){
         wp_enqueue_script('offcanvas-nav');
 
         //Localize Scripts
-        if (is_page_template('home-page.php')) {
-            wp_localize_script('sede-selector', 'Sedes', array(
-                'sedeurl' => esc_url(rest_url('wp/v2/')),
-                'nonce' => wp_create_nonce('sedes-nonce'),
-            ));
-        }
+        wp_localize_script('sede-selector', 'Sedes', array(
+            'sedeurl' => esc_url(rest_url('wp/v2/')),
+            'nonce' => wp_create_nonce('sedes-nonce'),
+        ));
 
     }
 

@@ -127,6 +127,7 @@
   font-weight: var(--weight-medium);
 }
 
+
 /* ─── SINOPSIS ───────────────────────────────────────── */
 
 .modal-pelicula__sinopsis-label {
@@ -145,6 +146,11 @@
 }
 
 /* ─── HORARIOS ───────────────────────────────────────── */
+
+.modal-pelicula__horarios-container{
+  display: flex;
+  gap: var(--space-4);
+}
 
 .modal-pelicula__horarios {
   background-color: rgba(0, 0, 0, 0.25);
@@ -217,6 +223,9 @@
   font-style: italic;
 }
 
+.modal-pelicula__fecha-label{
+  color: var(--color-naranja);
+}
 /* ─── TRAILER ────────────────────────────────────────── */
 
 .modal-pelicula__trailer {

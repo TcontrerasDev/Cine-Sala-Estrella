@@ -35,10 +35,6 @@
   color: var(--color-blanco);
 }
 
-/* Contenedor de ficha — mismo que #modalPelicula .modal-content */
-.single-pelicula {
-  overflow: hidden;
-}
 
 /* Sedes badges en la ficha de película */
 .modal-pelicula__sedes-badges {

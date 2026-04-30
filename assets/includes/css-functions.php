@@ -46,7 +46,7 @@ function css_function(){
     wp_enqueue_style('components-filtro-generos');
     wp_enqueue_style('components-footer');
     wp_enqueue_style('components-hero');
-    wp_enqueue_style('components-modal-peliculas');
+    wp_enqueue_style('components-modal-pelicula');
     wp_enqueue_style('components-navbar');
     wp_enqueue_style('components-info-importante');
     wp_enqueue_style('components-sede-selector');
