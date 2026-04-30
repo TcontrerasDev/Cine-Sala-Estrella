@@ -51,10 +51,6 @@
   display: block;
 }
 
-.card-pelicula:hover .card-pelicula__img {
-  transform: scale(1.06);
-}
-
 /* ─── OVERLAY ────────────────────────────────────────── */
 
 .card-pelicula__overlay {

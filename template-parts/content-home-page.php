@@ -12,15 +12,6 @@
 		HERO
 ═══════════════════════════════════════════════════════ -->
 <section class="hero" aria-label="Presentación">
-	<div class="hero__bg">
-		<img
-			src="assets/img/hero-bg.jpg"
-			alt=""
-			class="hero__bg-img"
-			aria-hidden="true"
-			onerror="this.classList.add('img-error')"
-		>
-	</div>
 
 	<div class="hero__overlay" aria-hidden="true"></div>
 
@@ -97,6 +88,40 @@
 <!-- ═══════════════════════════════════════════════════════
 		CARTELERA
 ═══════════════════════════════════════════════════════ -->
+<section class="seccion-cartelera" id="cartelera" aria-labelledby="tituloCartelera">
+	<div class="seccion__inner">
+
+		<div class="cartelera__header">
+			<div class="cartelera__header-left">
+			<span class="label-seccion">Cartelera</span>
+			<h2 class="titulo-seccion" id="tituloCartelera">En Cartelera</h2>
+			</div>
+		</div>
+
+		<!-- Filtro géneros — llenado por JS -->
+		<div
+			class="filtro-generos"
+			id="filtroGeneros"
+			role="group"
+			aria-label="Filtrar por género"
+		></div>
+
+		<!-- Grid de cards — llenado por JS -->
+		<div
+			class="cartelera__grid"
+			id="carteleraGrid"
+			role="list"
+			aria-label="Películas en cartelera"
+		>
+			<!-- Skeleton loaders mientras carga JS -->
+			<div class="cartelera__skeleton" aria-hidden="true"></div>
+			<div class="cartelera__skeleton cartelera__skeleton--2" aria-hidden="true"></div>
+			<div class="cartelera__skeleton cartelera__skeleton--3" aria-hidden="true"></div>
+			<div class="cartelera__skeleton cartelera__skeleton--4" aria-hidden="true"></div>
+		</div>
+
+	</div>
+</section>
 
 <!-- ═══════════════════════════════════════════════════════
 		PRÓXIMAMENTE

@@ -11,7 +11,7 @@
 <div class="single-pagina__inner">
 
       <!-- Volver -->
-      <a href="index.html#cartelera" class="single-pagina__back">
+      <a href="<?php echo home_url('/#cartelera'); ?>" class="single-pagina__back">
         <i class="bi bi-arrow-left"></i>
         Volver a cartelera
       </a>

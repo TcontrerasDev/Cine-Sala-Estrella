@@ -276,7 +276,7 @@
 
 /* ─── RESPONSIVE ─────────────────────────────────────── */
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   #modalPelicula .modal-dialog {
     margin: 0;
     max-width: 100%;
@@ -294,7 +294,7 @@
   }
 
   .modal-pelicula__poster-col {
-    max-height: 300px;
+    max-width: 300px;
     overflow: hidden;
   }
 

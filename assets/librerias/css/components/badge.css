@@ -18,15 +18,15 @@
 /* ─── SEDE ───────────────────────────────────────────── */
 
 .badge-pa {
-  background-color: transparent;
+  background-color: rgba(39, 174, 96, 0.5);
   color: var(--color-blanco);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(39, 174, 96, 0.8);
 }
 
 .badge-pn {
-  background-color: transparent;
+  background-color: rgba(192, 57, 43, 0.5);
   color: var(--color-blanco);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(192, 57, 43, 0.8);
 }
 
 /* ─── CLASIFICACIÓN ETARIA ───────────────────────────── */
@@ -62,6 +62,22 @@
 }
 
 /* ─── BADGE EN CARD ESQUINA ──────────────────────────── */
+
+.card-pelicula__ciudad-badges {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: var(--z-card-overlay);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-pelicula__ciudad-badges .badge-cine {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 0px !important;
+}
 
 .badge-card-sede {
   position: absolute;
