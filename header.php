@@ -34,6 +34,7 @@
 
 	<header id="masthead" class="site-header">
 
+	<?php if(!is_page('seleccion-asientos')) { ?>
 		<div id="site-navigation" class="navbar-cine" role="navigation" aria-label="Navegación principal">
 			<div class="navbar-cine__inner">
 
@@ -93,5 +94,18 @@
 				?>
 			</div>
 		</div>
-
+	<?php } else { ?>
+		<nav class="navbar-cine" role="navigation" aria-label="Navegación principal">
+			<div class="navbar-cine__inner navbar-cine__inner-funcion">
+				<a href="index.html" class="navbar-cine__logo" aria-label="Cine Sala Estrella — Inicio">
+					<?php the_custom_logo(); ?>
+					<span class="navbar-cine__logo-text navbar-cine__logo-fallback">CINE SALA <span class="navbar-cine__logo-accent">ESTRELLA</span></span>
+				</a>
+				<div class="navbar-cine__spacer"></div>
+				<a href="<?= home_url('/#cartelera') ?>" class="btn-cine btn-sm btn-ghost">
+					<i class="bi bi-arrow-left"></i> Volver a Cartelera
+				</a>
+			</div>
+		</nav>
+	<?php } ?>
 	</header><!-- #masthead -->

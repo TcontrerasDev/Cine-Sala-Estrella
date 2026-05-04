@@ -40,3 +40,10 @@ add_filter( 'render_block', function( $block_content, $block ) {
     }
     return $block_content;
 }, 10, 2 );
+
+//No mostrar las entradas de Wordpress
+function cnes_limpiar_menu_admin() {
+    // Ocultar "Entradas" (Blog)
+    remove_menu_page( 'edit.php' );
+}
+add_action( 'admin_menu', 'cnes_limpiar_menu_admin', 999 );

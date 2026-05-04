@@ -14,7 +14,7 @@
 <section class="hero" aria-label="Presentación">
 
 	<div class="hero__overlay" aria-hidden="true"></div>
-
+	<div class="hero__bg" style="--parallax-y: 0px;"></div>
 	<div class="hero__content">
 		<span class="hero__eyebrow"><?php the_field('antetitulo') ?></span>
 

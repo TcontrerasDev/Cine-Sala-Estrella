@@ -2,7 +2,7 @@
 
 .seleccion-asientos-page {
   padding-top: calc(var(--navbar-height) + var(--space-8));
-  padding-bottom: var(--space-16);
+  padding-bottom: 15rem;
   background-color: var(--color-bg);
   min-height: 100dvh;
 }
@@ -25,7 +25,7 @@
   height: 90px;
   object-fit: cover;
   border-radius: var(--radius-sm);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .funcion-info h1 {
@@ -71,9 +71,13 @@
 
 .pantalla {
   height: 8px;
-  background: linear-gradient(to bottom, var(--color-blanco), rgba(255,255,255,0.2));
+  background: linear-gradient(
+    to bottom,
+    var(--color-blanco),
+    rgba(255, 255, 255, 0.2)
+  );
   border-radius: var(--radius-pill);
-  box-shadow: 0 10px 30px rgba(255,255,255,0.15);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
   margin-bottom: var(--space-2);
 }
 
@@ -128,7 +132,7 @@
   height: 32px;
   flex-shrink: 0;
   background-color: var(--color-bg-card);
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-sm) var(--radius-sm) 2px 2px;
   position: relative;
   cursor: pointer;
@@ -142,7 +146,7 @@
 }
 
 .asiento::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 2px;
@@ -170,12 +174,12 @@
 .asiento.ocupado {
   background-color: #2c3e50;
   border-color: transparent;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255, 255, 255, 0.2);
   cursor: not-allowed;
 }
 
 .asiento.ocupado::before {
-  content: '×';
+  content: "×";
   font-size: 16px;
 }
 
@@ -202,9 +206,16 @@
   border-radius: 4px;
 }
 
-.leyenda-box.disponible { background-color: var(--color-bg-card); border: 1px solid rgba(255,255,255,0.15); }
-.leyenda-box.seleccionado { background-color: var(--color-verde-hover); }
-.leyenda-box.ocupado { background-color: #2c3e50; }
+.leyenda-box.disponible {
+  background-color: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.leyenda-box.seleccionado {
+  background-color: var(--color-verde-hover);
+}
+.leyenda-box.ocupado {
+  background-color: #2c3e50;
+}
 
 /* ─── PANEL DE RESUMEN ─────────────────────────────────── */
 .resumen-compra {
@@ -222,7 +233,7 @@
   font-size: var(--text-xl);
   color: var(--color-blanco);
   margin-bottom: var(--space-6);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: var(--space-3);
 }
 
@@ -239,8 +250,13 @@
   font-size: var(--text-sm);
 }
 
-.resumen-label { color: var(--color-gris); }
-.resumen-valor { color: var(--color-blanco); font-weight: var(--weight-medium); }
+.resumen-label {
+  color: var(--color-gris);
+}
+.resumen-valor {
+  color: var(--color-blanco);
+  font-weight: var(--weight-medium);
+}
 
 .asientos-seleccionados-tags {
   display: flex;
@@ -259,7 +275,7 @@
 }
 
 .resumen-total {
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: var(--space-4);
   margin-top: var(--space-4);
   display: flex;
@@ -286,6 +302,43 @@
   gap: var(--space-3);
 }
 
+/* MODAL CANCELACIÓN */
+.modal-content {
+  background-color: var(--color-bg-card);
+  border: var(--border-sutil);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-modal);
+}
+
+.modal-content .modal-header {
+  border-bottom: var(--border-sutil);
+  padding: var(--space-4) var(--space-6);
+}
+
+.modal-content .modal-body {
+  padding: var(--space-6);
+
+  p {
+    font-family: var(--font-body);
+    line-height: var(--leading-loose);
+  }
+}
+
+.modal-content .modal-footer {
+  border-top: var(--border-sutil);
+  padding: var(--space-3) var(--space-6);
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+.btn-mantener{
+  min-height: 44px;
+}
+
+.btn-cancelar{
+  min-height: 44px;
+}
+
 /* ─── RESPONSIVE ────────────────────────────────────────── */
 @media (max-width: 991px) {
   .resumen-compra {
@@ -300,7 +353,7 @@
     padding-left: var(--space-4);
     padding-right: var(--space-4);
   }
-  
+
   .fila {
     /* Mantener ancho real para el centrado */
     width: max-content;
@@ -314,6 +367,4 @@
   .función-detalles {
     justify-content: center;
   }
-
 }
-

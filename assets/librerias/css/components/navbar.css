@@ -34,6 +34,10 @@
   gap: var(--space-8);
 }
 
+.navbar-cine__inner-funcion{
+  gap: 0;
+}
+
 /* ─── LOGO ───────────────────────────────────────────── */
 
 .navbar-cine__logo {

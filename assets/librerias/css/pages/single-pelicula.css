@@ -3,6 +3,13 @@
   overflow: visible;
 }
 
+.modal-pelicula__horario-chip.active {
+  background-color: var(--color-verde-hover);
+  color: var(--color-blanco);
+  border-color: var(--color-verde-hover);
+  box-shadow: 0 0 12px rgba(46, 204, 113, 0.4);
+}
+
 .single-pagina {
   padding-top: var(--navbar-height);
   min-height: 100dvh;

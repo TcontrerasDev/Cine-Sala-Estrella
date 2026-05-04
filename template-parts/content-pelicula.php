@@ -109,9 +109,10 @@
 									<div class="modal-pelicula__horarios-grid d-flex flex-wrap gap-2">
 										<?php foreach ( $lista_funciones as $funcion ) { 
 											$hora = date( 'H:i', strtotime( $funcion->hora_inicio ) );
+                      $idioma = $funcion->formato_idioma;
 										?>
-											<button class="modal-pelicula__horario-chip" type="button">
-												<?php echo $hora; ?>
+											<button class="modal-pelicula__horario-chip" type="button" data-funcion-id="<?php echo esc_attr($funcion->id); ?>">
+												<?php echo $hora . " - " . $idioma; ?>
 											</button>
 										<?php } ?>
 									</div>
@@ -136,15 +137,10 @@
             </div>
 
             <!-- CTA -->
-            <div class="modal-pelicula__cta">
-              <a
-                href="seleccion-asientos.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-cine btn-lg btn-pa"
-              >
+            <div class="modal-pelicula__cta" id="ctaComprar">
+              <a href="#" id="btnComprarEntradas" class="btn-cine btn-lg btn-pa disabled" aria-disabled="true">
                 <i class="bi bi-ticket-perforated-fill"></i>
-                Comprar entradas
+                Selecciona un horario
               </a>
             </div>
 
@@ -154,3 +150,26 @@
       </article>
 
     </div>
+
+<script>
+(function () {
+  var chips = document.querySelectorAll('.modal-pelicula__horario-chip');
+  var btn   = document.getElementById('btnComprarEntradas');
+  var base  = '<?php echo esc_js( home_url('/seleccion-asientos/') ); ?>';
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+
+      var id = chip.getAttribute('data-funcion-id');
+      btn.setAttribute('href', base + '?funcion_id=' + id);
+      btn.classList.remove('disabled');
+      btn.removeAttribute('aria-disabled');
+      btn.querySelector('i').nextSibling.textContent = ' Comprar entradas';
+
+      document.getElementById('ctaComprar').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+})();
+</script>
