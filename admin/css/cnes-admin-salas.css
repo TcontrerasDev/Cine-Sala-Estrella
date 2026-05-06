@@ -1,0 +1,110 @@
+/* Layout Grid Styles */
+#cnes-layout-container {
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.cnes-layout-legend {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.legend-item .box {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.cnes-layout-grid-wrapper {
+    overflow-x: auto;
+    padding: 20px;
+    background: #23282d;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.cnes-screen {
+    width: 80%;
+    margin: 0 auto 40px;
+    padding: 10px;
+    background: #e5e5e5;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0 0 50% 50% / 0 0 20px 20px;
+    box-shadow: 0 5px 15px rgba(255,255,255,0.1);
+}
+
+.cnes-layout-grid {
+    display: grid;
+    gap: 8px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.grid-header, .grid-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.seat {
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    user-select: none;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.seat:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255,255,255,0.3);
+    z-index: 10;
+}
+
+/* Tipos de asientos */
+.type-normal { background-color: #28a745; } /* Verde */
+.type-vip { background-color: #ffc107; color: #000; } /* Dorado */
+.type-discapacidad { background-color: #007bff; } /* Azul */
+.type-pasillo { background-color: transparent; border: 1px dashed #555; color: transparent; }
+.type-inactivo { background-color: #dc3545; } /* Rojo */
+
+.seat.is-inactive {
+    opacity: 0.5;
+    background-color: #dc3545;
+}
+
+.layout-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.layout-actions .spinner {
+    float: none;
+    margin: 0;
+}

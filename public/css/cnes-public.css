@@ -1,0 +1,41 @@
+/* -------------------------------------------------------
+   CNES Public Styles
+   ------------------------------------------------------- */
+
+/* Format badges — DOB (green) and SUB (blue) */
+.cnes-badge {
+	display: inline-block;
+	padding: 2px 7px;
+	border-radius: 3px;
+	font-size: 0.72em;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	line-height: 1.6;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
+.cnes-badge-dob {
+	background-color: #2e7d32;
+	color: #fff;
+}
+
+.cnes-badge-sub {
+	background-color: #1565c0;
+	color: #fff;
+}
+
+.cnes-badge-agotada {
+	background-color: #b71c1c;
+	color: #fff;
+}
+
+.cnes-btn-agotada,
+.cnes-btn-agotada:hover {
+	background-color: #9e9e9e;
+	border-color: #9e9e9e;
+	color: #fff;
+	cursor: not-allowed;
+	pointer-events: none;
+	opacity: 0.7;
+}

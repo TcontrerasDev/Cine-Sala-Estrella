@@ -1,0 +1,27 @@
+.cnes-bulk-bar {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 8px 0;
+}
+
+.cnes-bulk-bar .button-link-delete:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+.nav-tab-wrapper .count {
+	color: #666;
+	font-size: 12px;
+}
+
+.nav-tab-active .count {
+	color: #444;
+}
+
+/* Read-only row styling for pasadas tab */
+.cnes-row-pasada td,
+.cnes-row-pasada th {
+	color: #666;
+}

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem \"C:\\\\MAMP\\\\htdocs\\\\cine-sala-estrella\" -Recurse -Filter \"php_error*\")",
+      "Bash(Select-Object -First 5 FullName)",
+      "Bash(Get-ChildItem \"C:\\\\MAMP\\\\logs\" -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object Name)"
+    ]
+  }
+}
