@@ -16,6 +16,10 @@ Sala Estrella Manager es un plugin especializado para WordPress diseñado para l
     - Inyección de metadatos (sala, función, fila, número) en el pedido.
     - Generación automática de códigos de tickets únicos tras el pago.
 
+## Nota de Alcance
+
+Este plugin está diseñado para gestionar la **lógica de negocio y la persistencia de datos**. Es responsable de almacenar y procesar la información en la base de datos (películas, funciones, salas y reservas). No se encarga de la visualización estética o el diseño de los datos en el frontend (como la cartelera o listas de películas), dejando esa responsabilidad al tema activo de WordPress o a implementaciones personalizadas de plantillas.
+
 ## Requisitos
 
 - **WordPress**: 6.0 o superior.
